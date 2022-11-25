@@ -1,0 +1,126 @@
+.header {
+  font-family: "Ibarra Real Nova", serif;
+  position: fixed;
+  
+  padding: 0px 24px;
+  margin: 0px auto;
+  max-height: 80px;
+  display: flex;
+
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 10;
+  background-color: white;
+}
+
+.section_one {
+  margin: auto;
+  color: black;
+  font-size: 30px;
+  justify-items: flex-start;
+  flex: 1 1 0%;
+  font-family: "Zen Tokyo Zoo", cursive;
+}
+
+@font-face {
+  font-family: 'Zen Tokyo Zoo'; /*a name to be used later*/
+  src: url('../public/fonts/ZenTokyoZoo-Regular.ttf'); /*URL to font*/
+}
+
+.logoContainer {
+  font-family: "Zen Tokyo Zoo", cursive;
+  margin: 30px 0px 0px 30px; /* top right bottom left*/
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logoContainer a {
+  padding: 0px 20px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Zen Tokyo Zoo", cursive;
+  text-transform: uppercase;
+}
+
+.section_two {
+  margin: inherit;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.section_two a {
+  color: black;
+  font-size: 10px;
+  padding: 0px 16px;
+  margin: 16px 0px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -1px;
+  font-family: "Baskerville";
+}
+
+.linkContainer {
+  display: flex;
+  position: relative;
+  margin: 30px 0px 0px 0px;
+}
+
+.linkContainer a {
+  position: relative;
+}
+
+.linkContainer a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 10%;
+  background-color: #000;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.linkContainer a:hover:before {
+  visibility: visible;
+  width: 80%;
+}
+
+.darkModeToggler {
+  margin: 47px 0px 0px 0px;
+  width: 40px;
+  height: 20px;
+  border-radius: 12px;
+  border: 1px solid black;
+  cursor: pointer;
+  border-width: all;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  padding: 2px;
+  background-color: white;
+}
+
+.darkModeTogglerIcon {
+  background-color: black;
+  height: calc(100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+  
