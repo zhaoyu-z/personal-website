@@ -29,7 +29,7 @@ function Header({}: Props) {
             <div className={styles.linkContainer}>
               <Link href="/">Projects</Link>
               <Link href="/cooking/">Cooking</Link>
-              <Link href="/lifes/">Lifes</Link> 
+              <Link href="/life/">Life</Link> 
               <Link href="/aboutme/">About Me</Link>
             </div>
             <button id="dark-mode-button" className={styles.darkModeToggler}>
