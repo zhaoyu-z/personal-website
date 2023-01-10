@@ -1,15 +1,16 @@
 .contentContainer {
-    width: 600px;
+    width: 80%;
 }
 
 .main {
     min-height: 100vh;
-    padding: 4rem 0;
-    flex: 1;
+    /* padding: 4rem 0; */
+    /* flex: 1; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* margin-top: 20px; */
 }
 
 .imageContainer {
@@ -36,13 +37,15 @@
   
 .title,
 .description {
-    text-align: center;
+    text-align: left;
 }
 
 .description {
+    font-family: Sequel, sans-serif;
     margin: 4rem 0;
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 9.0rem;
+    line-height: 140px;
     color: black;
 }
 

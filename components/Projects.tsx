@@ -7,7 +7,7 @@ function Projects({}: Props) {
   return (
     <main className={styles.main}>
         <div className={styles.contentContainer}>
-            <div className={styles.imageContainer}>
+            {/* <div className={styles.imageContainer}>
               <img className={styles.image} src={'/images/me.jpg'} alt="My Image" />
             </div>
 
@@ -17,6 +17,11 @@ function Projects({}: Props) {
 
             <p className={styles.description}>
                 Get Connected with Me!
+            </p> */}
+
+            <p className={styles.description}>
+              What Obsessed Me <br/>
+              Shapes My Future.
             </p>
         </div>
     </main>
