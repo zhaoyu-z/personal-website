@@ -15,12 +15,11 @@
   align-items: center;
 
   z-index: 10;
-  background-color: white;
 }
 
 .section_one {
   margin: auto;
-  color: black;
+  /* color: green; */
   font-size: 30px;
   justify-items: flex-start;
   flex: 1 1 0%;
@@ -95,7 +94,7 @@
   width: 80%;
 }
 
-.darkModeToggler {
+.modeToggler {
   margin: 47px 0px 0px 0px;
   width: 40px;
   height: 20px;
@@ -112,15 +111,11 @@
   background-color: white;
 }
 
-.darkModeTogglerIcon {
+.modeTogglerIcon {
   background-color: black;
   height: calc(100%);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
 }
 
-.dark-mode {
-  background-color: black;
-  color: white;
-}
   
