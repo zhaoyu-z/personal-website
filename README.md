@@ -1,10 +1,10 @@
 # My Personal Website (Under Development)
 
-Source Code for [URL](https://zhayu517.github.io/) (Using Github Pages for now, will be online after completing)
+Source Code for [zhaoyuzhangzzy.com](https://zhaoyuzhangzzy.com)
 
-Updated on 2022-11-25 
+Updated on 2023-1-12 
 
-![Screenshot on 2022-11-25](https://github.com/Zhayu517/zhayu517.github.io/blob/main/public/images/screenshot-221125.png)
+![Screenshot on 2023-1-12](https://github.com/Zhayu517/zhayu517.github.io/blob/main/public/images/screenshot-230112.png)
 
 ## Deployment
 
