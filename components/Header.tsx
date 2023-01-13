@@ -6,11 +6,8 @@ type Props = {}
 
 function Header({}: Props) {
   const [darkMode, setDarkMode] = useState(true);
-  const backGroundwhiteBlack = {backgroundColor: darkMode ? "white" : "black"};
-  const colorblackWhite = {
-    color: darkMode ? "black" : "white",
-    backgroundColor: darkMode ? "white" : "black",
-  };
+  const header = darkMode ? styles.header : styles.headerDark;
+  const logoContainer = darkMode ? styles.logoContainer : styles.logoContainerDark;
   const linkContainer = darkMode ? styles.linkContainer : styles.linkContainerDark;
   const toggleMode = () => {
       setDarkMode(!darkMode);
@@ -20,13 +17,11 @@ function Header({}: Props) {
 
   return (
     /* <body> */
-      <header style={backGroundwhiteBlack} className={styles.header}>
-      {/* <header className={styles.header}> */}
+      <header className={header}>
           <div className={styles.section_one}>
-            <div className={styles.logoContainer}>
+            <div className={logoContainer}>
               <Link href="/" >
-                <a style={colorblackWhite} >
-                {/* <a> */}
+                <a>
                   Zhaoyu Zhang
                 </a>
                </Link>
@@ -36,26 +31,22 @@ function Header({}: Props) {
           <div className={styles.section_two}>
               <div className={linkContainer}>
                 <Link href="/" >
-                  <a style={colorblackWhite}>
-                  {/* <a> */}
+                  <a>
                     Projects
                   </a>
                 </Link>
                 <Link href="/cooking/" >
-                  <a style={colorblackWhite}>
-                  {/* <a> */}
+                  <a>
                     Cooking
                   </a>
                 </Link>
                 <Link href="/life/" >
-                  <a style={colorblackWhite}>
-                  {/* <a> */}
+                  <a>
                     Life
                   </a>
                 </Link> 
                 <Link href="/aboutme/" >
-                  <a style={colorblackWhite}>
-                  {/* <a> */}
+                  <a>
                     About Me
                   </a>
                 </Link>
