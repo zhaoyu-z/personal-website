@@ -10,7 +10,7 @@ function Header({}: Props) {
   const logoContainer = darkMode ? styles.logoContainer : styles.logoContainerDark;
   const linkContainer = darkMode ? styles.linkContainer : styles.linkContainerDark;
   const toggleMode = () => {
-      setDarkMode(!darkMode);
+      // setDarkMode(!darkMode);
   };
 
   return (
