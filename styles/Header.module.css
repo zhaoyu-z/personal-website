@@ -30,7 +30,7 @@
 }
 
 @font-face {
-  font-family: 'Zen Tokyo Zoo'; /*a name to be used later*/
+  font-family: 'Zen Tokyo Zoo';
   src: url('../public/fonts/ZenTokyoZoo-Regular.ttf'); /*URL to font*/
 }
 
@@ -138,14 +138,10 @@
   width: calc(40%);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
+
+  transition: all 0.3s ease-in-out;
 }
 
 .modeTogglerIcon.move {
-  transition: all 0.3s ease-in-out;
   transform: translateX(20px);
 }
-
-/* .dark-mode {
-  background-color: black !important;
-  color: white !important;
-} */

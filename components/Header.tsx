@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 
@@ -11,12 +11,9 @@ function Header({}: Props) {
   const linkContainer = darkMode ? styles.linkContainer : styles.linkContainerDark;
   const toggleMode = () => {
       setDarkMode(!darkMode);
-      // var element = document.body;
-      // element.classList.toggle("dark-mode");
   };
 
   return (
-    /* <body> */
       <header className={header}>
           <div className={styles.section_one}>
             <div className={logoContainer}>
@@ -52,12 +49,10 @@ function Header({}: Props) {
                 </Link>
               </div>
               <button className={styles.modeToggler} onClick={toggleMode}>
-                <div className={`${styles.modeTogglerIcon} ${darkMode ? "" : "move"}`} />
-                {/* <div className={`${styles.modeTogglerIcon}`} /> */}
+                <div className={`${styles.modeTogglerIcon} ${darkMode ? "" : styles.move}`} />
               </button>
           </div>
       </header>
-      // {/* </body> */}
   )
 }
 
