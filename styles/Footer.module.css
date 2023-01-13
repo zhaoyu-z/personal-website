@@ -19,13 +19,13 @@
 
 .contact {
   display: flex;
-    flex-direction: row;
-    color: black;
-    font-weight: 700;
-    width: 20%;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+  flex-direction: row;
+  color: black;
+  font-weight: 700;
+  width: 480px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .contact a {
