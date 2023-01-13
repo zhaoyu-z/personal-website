@@ -49,7 +49,7 @@ function Header({}: Props) {
                 </Link>
               </div>
               <button className={styles.modeToggler} onClick={toggleMode}>
-                <div className={`${styles.modeTogglerIcon} ${darkMode ? "" : styles.move}`} />
+                <div className={`${styles.modeTogglerIcon} ${darkMode ? "" : styles.move}`}/>
               </button>
           </div>
       </header>
