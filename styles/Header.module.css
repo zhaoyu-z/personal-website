@@ -19,7 +19,6 @@
 
 .section_one {
   margin: auto;
-  /* color: green; */
   font-size: 30px;
   justify-items: flex-start;
   flex: 1 1 0%;

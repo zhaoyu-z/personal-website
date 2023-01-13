@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from '../styles/Header.module.css'
 import '../styles/Header.module.css'
 import Link from 'next/link'
+// import { Link } from 'react-router-dom'
 
 type Props = {}
 
@@ -17,23 +18,36 @@ function Header({}: Props) {
       <header style={{ backgroundColor: mode === "light" ? "white" : "black" }} className={styles.header}>
           <div className={styles.section_one}>
             <div className={styles.logoContainer}>
-              <a href="/" style={{ color: mode === "light" ? "black" : "white" }} >
+              <Link href="/" >
+                <a style={{ color: mode === "light" ? "black" : "white" }} >
                   Zhaoyu Zhang
-                  {/* ##### #   #   #   #    #   ###  
-                    #  #   #  # #  # #  #  # 
-                    #   ##### ##### #  # # #  ## 
-                  #    #   # #   # #   ## #   # 
-                  ##### #   # #   # #    #   ### */}
-              </a>
+                </a>
+               </Link>
             </div>
           </div>
 
           <div className={styles.section_two}>
               <div className={styles.linkContainer}>
-                <a href="/" style={{ color: mode === "light" ? "black" : "white" }}>Projects</a>
-                <a href="/cooking/" style={{ color: mode === "light" ? "black" : "white" }}>Cooking</a>
-                <a href="/life/" style={{ color: mode === "light" ? "black" : "white" }}>Life</a> 
-                <a href="/aboutme/" style={{ color: mode === "light" ? "black" : "white" }}>About Me</a>
+                <Link href="/" >
+                  <a style={{ color: mode === "light" ? "black" : "white" }}>
+                    Projects
+                  </a>
+                </Link>
+                <Link href="/cooking/" >
+                  <a style={{ color: mode === "light" ? "black" : "white" }}>
+                    Cooking
+                  </a>
+                </Link>
+                <Link href="/life/" >
+                  <a style={{ color: mode === "light" ? "black" : "white" }}>
+                    Life
+                  </a>
+                </Link> 
+                <Link href="/aboutme/" >
+                  <a style={{ color: mode === "light" ? "black" : "white" }}>
+                    About Me
+                  </a>
+                </Link>
               </div>
               <button className={styles.modeToggler} onClick={toggleMode}>
                 <div className={styles.modeTogglerIcon}>
