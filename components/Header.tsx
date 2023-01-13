@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styles from '../styles/Header.module.css'
-import '../styles/Header.module.css'
 import Link from 'next/link'
-// import { Link } from 'react-router-dom'
 
 type Props = {}
 
 function Header({}: Props) {
 
+  const iconRef = useRef<HTMLDivElement>(null);
+  const [move, setMove] = useState(false);
+
   const [mode, setMode] = useState("light");
 
   const toggleMode = () => {
       setMode(mode === "light" ? "dark" : "light");
+      setMove(!move);
   };
 
   return (
@@ -29,7 +31,7 @@ function Header({}: Props) {
           <div className={styles.section_two}>
               <div className={styles.linkContainer}>
                 <Link href="/" >
-                  <a style={{ color: mode === "light" ? "black" : "white" }}>
+                  <a style={{ color: mode === "light" ? "black" : "white"}}>
                     Projects
                   </a>
                 </Link>
@@ -50,8 +52,8 @@ function Header({}: Props) {
                 </Link>
               </div>
               <button className={styles.modeToggler} onClick={toggleMode}>
-                <div className={styles.modeTogglerIcon}>
-                </div>
+                {/* <div ref={iconRef} className={`${styles.modeTogglerIcon} ${move ? "move" : ""}`} /> */}
+                <div ref={iconRef} className={`${styles.modeTogglerIcon} `} />
               </button>
           </div>
       </header>
