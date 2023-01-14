@@ -61,6 +61,10 @@ jobs:
       #   uses: actions/upload-pages-artifact@v1
       #   with:
       #     path: ./out
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
+        with:
+          path: ./out
 
     # - run: npm i
     # - run: npm ci
@@ -68,6 +72,10 @@ jobs:
     # - run: npx next export
 
       - uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          path: ./out
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete --exclude '.git/*'
