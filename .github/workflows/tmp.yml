@@ -70,6 +70,6 @@ jobs:
           # SOURCE_DIR: 'out'      # optional: defaults to entire repository
         run: |
           aws s3 cp \
-          --recursive --acl public-read --follow-symlinks --delete --exclude '.git/*' \
+          --recursive --acl public-read --follow-symlinks --exclude '.git/*' \
           --region eu-west-2 \
           ./out s3://${{ secrets.AWS_S3_BUCKET }}
