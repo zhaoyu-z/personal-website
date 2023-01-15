@@ -2,6 +2,8 @@
 
 Source Code for [zhaoyuzhangzzy.com](https://zhaoyuzhangzzy.com)
 
+You may see the contents being strange, that's fine! because I'm testing it :)
+
 Updated on 2023-1-12 
 
 ![Screenshot on 2023-1-12](https://github.com/Zhayu517/zhayu517.github.io/blob/main/public/images/screenshot-230112.png)
@@ -14,12 +16,21 @@ Using Typescript, Javascript, Html, Css and Sass
 
 ## Getting Started
 
-First, run the development server:
+First, clone this project
+
+```bash
+git clone https://github.com/Zhayu517/personal-website.git
+cd personal-website
+```
+
+then run on the development server:
 
 ```bash
 npm run dev
 # or
-yarn dev
+npm install
+npm run build
+npm run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -32,10 +43,19 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### To learn more about Html, Css & Javascript, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  [HTML Documentation](https://developer.mozilla.org/en-US/docs/Learn/HTML) - Structuring the web with HTML.
+
+  [CSS Documentation](https://developer.mozilla.org/en-US/docs/Learn/CSS) - Learn to style HTML using CSS.
+
+  [JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript) - Dynamic client-side scripting.
+
+### To learn more about Next.js, take a look at the following resources:
+
+  [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+
+  [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/)
 
