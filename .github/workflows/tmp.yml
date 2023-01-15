@@ -9,15 +9,17 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
+    # strategy:
+    #   matrix:
+    #     node-version: [10.x]
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "16"
+          cache: npm
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -51,6 +53,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          path: out
       - name: Deploy to S3
         # with:
         #   args: --acl public-read --follow-symlinks --exclude '.git/*'
