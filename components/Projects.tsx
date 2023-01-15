@@ -8,8 +8,9 @@ function Projects({}: Props) {
     <main className={styles.main}>
         <div className={styles.contentContainer}>
             <p className={styles.description}>
-              What Obsessed Me <br/>
-              Shapes My Future.
+              {/* What Obsessed Me <br/>
+              Shapes My Future. */}
+              Just Test
             </p>
         </div>
     </main>
