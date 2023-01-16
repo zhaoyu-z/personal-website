@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 
-type Props = {}
+interface IProps {
+  darkMode: boolean,
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-function Header({}: Props) {
-  const [darkMode, setDarkMode] = useState(true);
+function Header({darkMode, setDarkMode}: IProps) {
   const header = darkMode ? styles.header : styles.headerDark;
   const logoContainer = darkMode ? styles.logoContainer : styles.logoContainerDark;
   const linkContainer = darkMode ? styles.linkContainer : styles.linkContainerDark;

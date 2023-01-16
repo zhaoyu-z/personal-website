@@ -1,9 +1,11 @@
 import styles from '../styles/Projects.module.css'
 import Link from 'next/link'
 
-type Props = {}
+interface IProps {
+  darkMode: boolean
+}
 
-function Projects({}: Props) {
+function Projects({darkMode}: IProps) {
   return (
     <main className={styles.main}>
         <div className={styles.contentContainer}>
