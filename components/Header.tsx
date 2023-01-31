@@ -2,24 +2,27 @@ import React, { useState } from 'react'
 import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 
-interface IProps {
-  darkMode: boolean,
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>
-}
+// interface IProps {
+//   darkMode: boolean,
+//   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>
+// }
 
-function Header({darkMode, setDarkMode}: IProps) {
-  const header = darkMode ? styles.header : styles.headerDark;
-  const logoContainer = darkMode ? styles.logoContainer : styles.logoContainerDark;
-  const linkContainer = darkMode ? styles.linkContainer : styles.linkContainerDark;
-  const toggleMode = () => {
-      setDarkMode(!darkMode);
-      return;
-  };
+// function Header({darkMode, setDarkMode}: IProps) {
+function Header() {
+  // const header = darkMode ? styles.header : styles.headerDark;
+  // const logoContainer = darkMode ? styles.logoContainer : styles.logoContainerDark;
+  // const linkContainer = darkMode ? styles.linkContainer : styles.linkContainerDark;
+  // const toggleMode = () => {
+  //     setDarkMode(!darkMode);
+  //     return;
+  // };
 
   return (
-      <header className={header}>
+      // <header className={header}>
+      <header className={styles.header}>
           <div className={styles.section_one}>
-            <div className={logoContainer}>
+            {/* <div className={logoContainer}> */}
+            <div className={styles.logoContainer}>
               <Link href="/" >
                 <a>
                   Zhaoyu Zhang
@@ -29,7 +32,8 @@ function Header({darkMode, setDarkMode}: IProps) {
           </div>
 
           <div className={styles.section_two}>
-              <div className={linkContainer}>
+              {/* <div className={linkContainer}> */}
+              <div className={styles.linkContainer}>
                 <Link href="/" >
                   <a>
                     Projects
@@ -51,8 +55,10 @@ function Header({darkMode, setDarkMode}: IProps) {
                   </a>
                 </Link>
               </div>
-              <button className={styles.modeToggler} onClick={toggleMode}>
-                <div className={`${styles.modeTogglerIcon} ${darkMode ? "" : styles.move}`}/>
+              {/* <button className={styles.modeToggler} onClick={toggleMode}> */}
+              <button className={styles.modeToggler}>
+                {/* <div className={`${styles.modeTogglerIcon} ${darkMode ? "" : styles.move}`}/> */}
+                <div className={styles.modeTogglerIcon}/>
               </button>
           </div>
       </header>
