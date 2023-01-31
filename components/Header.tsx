@@ -13,6 +13,7 @@ function Header({darkMode, setDarkMode}: IProps) {
   const linkContainer = darkMode ? styles.linkContainer : styles.linkContainerDark;
   const toggleMode = () => {
       setDarkMode(!darkMode);
+      return;
   };
 
   return (
