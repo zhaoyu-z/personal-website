@@ -24,7 +24,7 @@ function Header() {
             {/* <div className={logoContainer}> */}
             <div className={styles.logoContainer}>
               <Link href="/" >
-                <a>
+                <a title="Back to Home">
                   Zhaoyu Zhang
                 </a>
                </Link>
@@ -56,7 +56,7 @@ function Header() {
                 </Link>
               </div>
               {/* <button className={styles.modeToggler} onClick={toggleMode}> */}
-              <button className={styles.modeToggler}>
+              <button className={styles.modeToggler} title="Darkmode Toggler">
                 {/* <div className={`${styles.modeTogglerIcon} ${darkMode ? "" : styles.move}`}/> */}
                 <div className={styles.modeTogglerIcon}/>
               </button>

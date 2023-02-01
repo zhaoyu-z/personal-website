@@ -15,7 +15,7 @@ function Footer({}: Props) {
         <div className={styles.contact}>
           <div className={styles.contactItem}>
             <a href="https://www.linkedin.com/in/zhaoyuzhang/" target="_blank" rel="noreferrer" title="LinkedIn">
-              <img className={styles.icon} src={'/icons/linkedin-normal.svg'} alt="LinkedIn" id="LinkedIn" />
+              <img className={styles.icon} src={'/icons/linkedin-normal.svg'} alt="LinkedIn" id="LinkedIn"/>
             </a>
           </div>
           <div className={styles.contactItem}>
