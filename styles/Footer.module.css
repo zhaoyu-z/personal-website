@@ -1,5 +1,6 @@
 .footer {
     display: flex;
+    flex-direction: row;
     padding: 2rem 0;
     justify-content: center;
     align-items: center;
@@ -17,6 +18,19 @@
   width: 50%;
 }
 
+.contactContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.contactContainer p{
+  color: black;
+  font-weight: 700;
+}
+
 .contact {
   display: flex;
   flex-direction: row;
@@ -26,6 +40,7 @@
   align-items: center;
   justify-content: center;
   align-content: center;
+  margin-left: 10%;
 }
 
 .contact a {
@@ -34,9 +49,41 @@
   font-weight: 700;
 }
 
+.contactItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
 .icon {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 30%;
+}
+
+.contactItem img[alt="LinkedIn"]:hover {
+  content: url('/icons/linkedin-hover.svg');
+}
+
+.contactItem img[alt="Instagram"]:hover {
+  content: url('/icons/instagram-hover.svg');
+}
+
+.contactItem img[alt="Facebook"]:hover {
+  content: url('/icons/facebook-hover.svg');
+}
+
+.contactItem img[alt="Wechat"]:hover {
+  content: url('/icons/wechat-hover.svg');
+}
+
+.contactItem img[alt="Whatsapp"]:hover {
+  content: url('/icons/whatsapp-hover.svg');
+}
+
+.contactItem img[alt="Gmail"]:hover {
+  content: url('/icons/gmail-hover.svg');
 }
