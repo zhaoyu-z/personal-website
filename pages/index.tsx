@@ -4,17 +4,13 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Projects from '../components/Projects'
 import Title from '../components/Title'
-// import { useState } from 'react'
 
 const Home: NextPage = () => {
-  // const [darkMode, setDarkMode] = useState<boolean>(true);
 
   return (
     <div className={styles.container}>
       <Title />
-      {/* <Header darkMode={darkMode} setDarkMode={setDarkMode}/> */}
       <Header />
-      {/* <Projects darkMode={darkMode} /> */}
       <Projects />
       <Footer />
     </div>
