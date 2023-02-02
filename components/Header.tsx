@@ -2,9 +2,21 @@ import React, { useState } from 'react'
 import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 
+export const ThemeContext = React.createContext({
+  mode: 'light',
+  toggleMode: () => {}
+})
+
 function Header() {
 
+  const [mode, setMode] = useState('light')
+
+  const toggleMode = () => {
+    setMode(mode === 'light' ? 'dark' : 'light')
+  }
+
   return (
+    <ThemeContext.Provider value={{ mode, toggleMode }}>
       <header className={styles.header}>
           <div className={styles.section_one}>
             <div className={styles.logoContainer}>
@@ -39,11 +51,12 @@ function Header() {
                   </a>
                 </Link>
               </div>
-              <button className={styles.modeToggler} title="Darkmode Toggler">
+              <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}>
                 <div className={styles.modeTogglerIcon}/>
               </button>
           </div>
       </header>
+    </ThemeContext.Provider>
   )
 }
 

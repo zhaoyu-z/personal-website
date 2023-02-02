@@ -1,11 +1,15 @@
+import React, { useContext } from 'react'
 import styles from '../styles/Footer.module.css'
+import { ThemeContext } from './Header'
 
 type Props = {}
 
 function Footer({}: Props) {
+  const { mode } = useContext(ThemeContext)
 
   return (
-    <footer className={styles.footer}>
+    // <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${mode === 'dark' ? styles.dark : styles.light}`}>
       <div className={styles.copyRight}>
         All Rights Reserved © Zhaoyu Zhang 2023
       </div>
