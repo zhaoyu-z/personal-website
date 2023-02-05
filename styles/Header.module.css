@@ -142,3 +142,7 @@
 .modeTogglerIcon.move {
   transform: translateX(20px);
 }
+
+.switch {
+  margin: 42px 0px 0px 0px;
+}

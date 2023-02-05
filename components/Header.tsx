@@ -54,10 +54,25 @@ function Header() {
                   </a>
                 </Link>
               </div>
-              <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}>
-                <div className={!mode ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/>
-              </button>
-              {/* <ReactSwitch checked={mode} onChange={toggleMode} /> */}
+              {/* hex color black: #0a0a0a */}
+              {/* hex color white: #f5f5f5 */}
+              {/* <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}> */}
+                {/* <div className={!mode ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/> */}
+              {/* </button> */}
+              <ReactSwitch
+                checked={mode}
+                onChange={toggleMode}
+                onColor="#86d3ff"
+                onHandleColor="#2693e6"
+                handleDiameter={30}
+                uncheckedIcon={false}
+                checkedIcon={false}
+                boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+                activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+                height={20}
+                width={48}
+                className={styles.switch}
+            />
           </div>
       </header>
     </ThemeContext.Provider>
