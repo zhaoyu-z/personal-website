@@ -6,7 +6,7 @@ function Projects() {
   const { mode } = useContext(ThemeContext)
   return (
     // <main className={styles.main}>
-    <main className={`${styles.main} ${mode === 'dark' ? styles.dark : styles.light}`}>
+    <main className={`${styles.main} ${mode ? styles.dark : styles.light}`}>
         <div className={styles.contentContainer}>
             <p className={styles.description}>
               What Obsessed Me <br/>

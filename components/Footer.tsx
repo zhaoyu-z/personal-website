@@ -9,7 +9,7 @@ function Footer({}: Props) {
 
   return (
     // <footer className={styles.footer}>
-    <footer className={`${styles.footer} ${mode === 'dark' ? styles.dark : styles.light}`}>
+    <footer className={`${styles.footer} ${mode ? styles.dark : styles.light}`}>
       <div className={styles.copyRight}>
         All Rights Reserved © Zhaoyu Zhang 2023
       </div>
