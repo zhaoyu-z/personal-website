@@ -1,4 +1,4 @@
-.header, .headerDark {
+.header_light, .header_dark {
   font-family: "Ibarra Real Nova", serif;
   position: fixed;
   
@@ -17,7 +17,7 @@
   z-index: 10;
 }
 
-.headerDark {
+.header_dark {
   background-color: black;
 }
 

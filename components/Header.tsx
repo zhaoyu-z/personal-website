@@ -15,9 +15,13 @@ function Header() {
     setMode(mode === 'light' ? 'dark' : 'light')
   }
 
+  const modeTogglerStyle = mode === "light" ? "styles.modeTogglerIcon" : "styles.modeTogglerIcon move";
+
   return (
     <ThemeContext.Provider value={{ mode, toggleMode }}>
-      <header className={styles.header}>
+      <header className={styles.header_light}>
+      {/* <header className={`${mode == "light" ? styles.header : styles.headerDark}`}> */}
+      {/* <header className={`${styles.header_mode}`}> */}
           <div className={styles.section_one}>
             <div className={styles.logoContainer}>
               <Link href="/" >
@@ -52,7 +56,7 @@ function Header() {
                 </Link>
               </div>
               <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}>
-                <div className={styles.modeTogglerIcon}/>
+                <div className={mode == "light" ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/>
               </button>
           </div>
       </header>
