@@ -6,10 +6,9 @@ type Props = {}
 
 function Footer({}: Props) {
   const { mode } = useContext(ThemeContext)
-
+  const theme = mode ? styles.dark : "";
   return (
-    // <footer className={styles.footer}>
-    <footer className={`${styles.footer} ${mode ? styles.dark : styles.light}`}>
+    <footer className={`${styles.footer} ${theme}`}>
       <div className={styles.copyRight}>
         All Rights Reserved © Zhaoyu Zhang 2023
       </div>

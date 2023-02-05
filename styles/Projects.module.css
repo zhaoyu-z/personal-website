@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.main.dark {
+    background-color: black;
+}
+
 .imageContainer {
     display: flex;
     padding: 2rem 0;

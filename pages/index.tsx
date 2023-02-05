@@ -6,7 +6,6 @@ import Projects from '../components/Projects'
 import Title from '../components/Title'
 
 const Home: NextPage = () => {
-
   return (
     <div className={styles.container}>
       <Title />

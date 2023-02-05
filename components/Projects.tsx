@@ -4,9 +4,9 @@ import { ThemeContext } from './Header'
 
 function Projects() {
   const { mode } = useContext(ThemeContext)
+  const theme = mode ? styles.dark : "";
   return (
-    // <main className={styles.main}>
-    <main className={`${styles.main} ${mode ? styles.dark : styles.light}`}>
+    <main className={`${styles.main} ${theme}`}>
         <div className={styles.contentContainer}>
             <p className={styles.description}>
               What Obsessed Me <br/>
