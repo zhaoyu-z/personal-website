@@ -15,15 +15,13 @@ function Header() {
     setMode(mode === 'light' ? 'dark' : 'light')
   }
 
-  const modeTogglerStyle = mode === "light" ? "styles.modeTogglerIcon" : "styles.modeTogglerIcon move";
+  const theme = mode === "light" ? "" : styles.dark;
 
   return (
     <ThemeContext.Provider value={{ mode, toggleMode }}>
-      <header className={styles.header_light}>
-      {/* <header className={`${mode == "light" ? styles.header : styles.headerDark}`}> */}
-      {/* <header className={`${styles.header_mode}`}> */}
+      <header className={`${styles.header} ${theme}`}>
           <div className={styles.section_one}>
-            <div className={styles.logoContainer}>
+            <div className={`${styles.logoContainer} ${theme}`}>
               <Link href="/" >
                 <a title="Back to Home">
                   Zhaoyu Zhang
@@ -33,7 +31,7 @@ function Header() {
           </div>
 
           <div className={styles.section_two}>
-              <div className={styles.linkContainer}>
+              <div className={`${styles.linkContainer} ${theme}`}>
                 <Link href="/" >
                   <a>
                     Projects
