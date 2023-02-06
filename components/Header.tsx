@@ -1,25 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 import ReactSwitch from 'react-switch'
-
-export const ThemeContext = React.createContext({
-  mode: false,
-  toggleMode: () => {}
-})
+import { ThemeContext } from '../components/Theme';
 
 function Header() {
 
-  const [mode, setMode] = useState(false)
-
-  const toggleMode = () => {
-    setMode(!mode)
-  }
+  const { mode, toggleMode } = useContext(ThemeContext);
 
   const theme = !mode ? "" : styles.dark;
 
   return (
-    <ThemeContext.Provider value={{ mode, toggleMode }}>
       <header className={`${styles.header} ${theme}`}>
           <div className={styles.section_one}>
             <div className={`${styles.logoContainer} ${theme}`}>
@@ -54,8 +45,6 @@ function Header() {
                   </a>
                 </Link>
               </div>
-              {/* hex color black: #0a0a0a */}
-              {/* hex color white: #f5f5f5 */}
               {/* <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}> */}
                 {/* <div className={!mode ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/> */}
               {/* </button> */}
@@ -75,7 +64,6 @@ function Header() {
             />
           </div>
       </header>
-    </ThemeContext.Provider>
   )
 }
 

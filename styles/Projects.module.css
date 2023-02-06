@@ -50,6 +50,10 @@
     color: black;
 }
 
+.description.dark {
+    color: white;
+}
+
 .title a {
     color: black;
     text-decoration: none;

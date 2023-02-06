@@ -7,6 +7,10 @@
   background-color: white;
   width: 100%;
 }
+
+.footer.dark {
+  background-color: black;
+}
   
 .copyRight {
   display: flex;
@@ -16,6 +20,10 @@
   color: black;
   font-weight: 700;
   width: 50%;
+}
+
+.copyRight.dark {
+  color: white;
 }
 
 .contactContainer {
@@ -29,6 +37,10 @@
 .contactContainer p{
   color: black;
   font-weight: 700;
+}
+
+.contactContainer.dark p {
+  color: white;
 }
 
 .contact {
@@ -64,26 +76,126 @@
   width: 40%;
 }
 
+
+/* dark icon colors: #0288D1 */
+
+/*
+  LinkedIn icons
+*/
+.contactItem img[alt="LinkedIn"] {
+  content: url('/icons/linkedin-normal.svg');
+}
+
 .contactItem img[alt="LinkedIn"]:hover {
   content: url('/icons/linkedin-hover.svg');
+}
+
+.contactItem.dark img[alt="LinkedIn"] {
+  content: url('/icons/linkedin-hover-dark.svg');
+  opacity: 0.5;
+}
+
+.contactItem.dark img[alt="LinkedIn"]:hover {
+  opacity: 1.0;
+}
+
+
+/*
+  Instagram icons
+*/
+.contactItem img[alt="Instagram"] {
+  content: url('/icons/instagram-normal.svg');
 }
 
 .contactItem img[alt="Instagram"]:hover {
   content: url('/icons/instagram-hover.svg');
 }
 
+.contactItem.dark img[alt="Instagram"] {
+  content: url('/icons/instagram-hover-dark.svg');
+  opacity: 0.5;
+}
+
+.contactItem.dark img[alt="Instagram"]:hover {
+  opacity: 1.0;
+}
+
+/*
+  Facebook icons
+*/
+.contactItem img[alt="Facebook"] {
+  content: url('/icons/facebook-normal.svg');
+}
+
 .contactItem img[alt="Facebook"]:hover {
   content: url('/icons/facebook-hover.svg');
+}
+
+.contactItem.dark img[alt="Facebook"] {
+  content: url('/icons/facebook-hover-dark.svg');
+  opacity: 0.5;
+}
+
+.contactItem.dark img[alt="Facebook"]:hover {
+  opacity: 1.0;
+}
+
+/*
+  Wechat icons
+*/
+.contactItem img[alt="Wechat"] {
+  content: url('/icons/wechat-normal.svg');
 }
 
 .contactItem img[alt="Wechat"]:hover {
   content: url('/icons/wechat-hover.svg');
 }
 
+.contactItem.dark img[alt="Wechat"] {
+  content: url('/icons/wechat-hover-dark.svg');
+  opacity: 0.5;
+}
+
+.contactItem.dark img[alt="Wechat"]:hover {
+  opacity: 1.0;
+}
+
+/*
+  Whatsapp icons #0FCA32
+*/
+.contactItem img[alt="Whatsapp"] {
+  content: url('/icons/whatsapp-normal.svg');
+}
+
 .contactItem img[alt="Whatsapp"]:hover {
   content: url('/icons/whatsapp-hover.svg');
 }
 
+.contactItem.dark img[alt="Whatsapp"] {
+  content: url('/icons/whatsapp-hover-dark.svg');
+  opacity: 0.5;
+}
+
+.contactItem.dark img[alt="Whatsapp"]:hover {
+  opacity: 1.0;
+}
+
+/*
+  Gmail icons
+*/
+.contactItem img[alt="Gmail"] {
+  content: url('/icons/gmail-normal.svg');
+}
+
 .contactItem img[alt="Gmail"]:hover {
   content: url('/icons/gmail-hover.svg');
+}
+
+.contactItem.dark img[alt="Gmail"] {
+  content: url('/icons/gmail-hover-dark.svg');
+  opacity: 0.5;
+}
+
+.contactItem.dark img[alt="Gmail"]:hover {
+  opacity: 1.0;
 }
