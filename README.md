@@ -4,9 +4,15 @@ Source Code for [zhaoyuzhangzzy.com](https://zhaoyuzhangzzy.com)
 
 You may see the contents being strange, that's fine! because I'm testing it :)
 
-Updated on 2023-1-12 
+Updated on 2023-2-6
 
-![Screenshot on 2023-1-12](https://github.com/Zhayu517/zhayu517.github.io/blob/main/public/images/screenshot-230112.png)
+Light version:
+
+![Screenshot on 2023-2-6 light version](https://github.com/Zhayu517/personal-website/blob/main/public/images/screenshot_230206_light.png)
+
+Dark version:
+
+![Screenshot on 2023-2-6 dark version](https://github.com/Zhayu517/personal-website/blob/main/public/images/screenshot_230206_dark.png)
 
 ## Deployment
 
