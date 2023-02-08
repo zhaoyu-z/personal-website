@@ -1,14 +1,17 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 import ReactSwitch from 'react-switch'
 import { ThemeContext } from '../components/Theme';
+import { usePage } from "./Page";
 
 function Header() {
 
   const { mode, toggleMode } = useContext(ThemeContext);
 
   const theme = !mode ? "" : styles.dark;
+
+  // const {currentPage, setCurrentPage} = usePage();
 
   return (
       <header className={`${styles.header} ${theme}`}>
@@ -24,27 +27,51 @@ function Header() {
 
           <div className={styles.section_two}>
               <div className={`${styles.linkContainer} ${theme}`}>
-                <Link href="/" >
+                <Link href="/">  
                   <a>
                     Projects
                   </a>
                 </Link>
-                <Link href="/cooking/" >
+                <Link href="/cooking/">
                   <a>
                     Cooking
                   </a>
                 </Link>
-                <Link href="/life/" >
+                <Link href="/life/">
                   <a>
                     Life
                   </a>
                 </Link> 
-                <Link href="/aboutme/" >
+                <Link href="/aboutme/">
                   <a>
                     About Me
                   </a>
                 </Link>
               </div>
+
+              {/* <div className={`${styles.linkContainer} ${theme}`}>
+                <Link href="/" onClick={() => setCurrentPage("projects")}>  
+                  <a className={currentPage === "projects" ? styles.active : ""}>
+                    Projects
+                  </a>
+                </Link>
+                <Link href="/cooking/" onClick={() => setCurrentPage("cooking")}>
+                  <a className={currentPage === "cooking" ? styles.active : ""}>
+                    Cooking
+                  </a>
+                </Link>
+                <Link href="/life/" onClick={() => setCurrentPage("life")}>
+                  <a className={currentPage === "life" ? styles.active : ""}>
+                    Life
+                  </a>
+                </Link> 
+                <Link href="/aboutme/" onClick={() => setCurrentPage("aboutme")}>
+                  <a className={currentPage === "aboutme" ? styles.active : ""}>
+                    About Me
+                  </a>
+                </Link>
+              </div> */}
+
               {/* <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}> */}
                 {/* <div className={!mode ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/> */}
               {/* </button> */}

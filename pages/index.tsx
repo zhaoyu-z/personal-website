@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import Projects from '../components/Projects'
 import Title from '../components/Title'
 import ThemeProvider from '../components/Theme';
+import {PageProvider} from "../components/Page";
 import React from 'react'
 
 const Home: NextPage = () => {
@@ -12,7 +13,10 @@ const Home: NextPage = () => {
     <ThemeProvider>
     <div className={styles.container}>
       <Title />
-      <Header />
+      {/* <Header /> */}
+      <PageProvider>
+        <Header />
+      </PageProvider>
       <Projects />
       <Footer />
     </div>
