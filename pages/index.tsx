@@ -12,13 +12,13 @@ const Home: NextPage = () => {
   return (
     <ThemeProvider>
     <div className={styles.container}>
-      <Title />
-      {/* <Header /> */}
-      <PageProvider>
-        <Header />
-      </PageProvider>
-      <Projects />
-      <Footer />
+        <Title />
+        {/* <Header /> */}
+        <PageProvider>
+          <Header />
+        </PageProvider>
+        <Projects />
+        <Footer />
     </div>
     </ThemeProvider>
   )

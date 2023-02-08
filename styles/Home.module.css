@@ -1,7 +1,3 @@
 .container {
   background-color: white;
 }
-
-.dark-mode .container {
-  background-color: black;
-}
