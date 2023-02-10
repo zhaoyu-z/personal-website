@@ -14,6 +14,22 @@ Dark version:
 
 ![Screenshot on 2023-2-6 dark version](https://github.com/Zhayu517/personal-website/blob/main/public/images/screenshot_230206_dark.png)
 
+## Milestones
+
+- [x] Personalised home page
+- [x] Darkmode
+- [x] Social media contact links.
+- [x] Automated integration using Github Actions and AWS S3.
+- [ ] HTML-version CV
+- [ ] HTML-version papers and reports
+- [ ] Timeline of my education and experience
+- [ ] Sample showcase of selected projects
+- [ ] Daily life record
+- [ ] Professional Developer Blog
+- [ ] Image-to-text conversion page
+
+
+
 ## Deployment
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
