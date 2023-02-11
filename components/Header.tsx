@@ -32,14 +32,14 @@ function Header() {
                     Projects
                   </a>
                 </Link>
-                <Link href="/cooking/">
+                <Link href="/cv/">
                   <a>
-                    Cooking
+                    CV
                   </a>
                 </Link>
-                <Link href="/life/">
+                <Link href="/reports/">
                   <a>
-                    Life
+                    Reports
                   </a>
                 </Link> 
                 <Link href="/aboutme/">

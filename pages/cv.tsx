@@ -1,5 +1,5 @@
 import Header from '../components/Header'
-import styles from '../styles/Cooking.module.css'
+import styles from '../styles/CV.module.css'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
 
