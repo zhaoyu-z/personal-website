@@ -3,7 +3,7 @@ import styles from '../styles/CV.module.css'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
 
-function Cooking({}) {
+function CV({}) {
     return (
         <div className={styles.container}>
             <Title />
@@ -16,4 +16,4 @@ function Cooking({}) {
     );
   }
   
-  export default Cooking;
+  export default CV;

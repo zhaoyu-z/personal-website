@@ -3,7 +3,7 @@ import styles from '../styles/Reports.module.css'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
 
-function Lifes({}) {
+function Reports({}) {
     return (
       <div className={styles.container}>
             <Title />
@@ -16,4 +16,4 @@ function Lifes({}) {
     );
   }
   
-  export default Lifes;
+  export default Reports;
