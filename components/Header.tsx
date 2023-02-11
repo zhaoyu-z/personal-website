@@ -3,15 +3,14 @@ import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 import ReactSwitch from 'react-switch'
 import { ThemeContext } from '../components/Theme';
-import { usePage } from "./Page";
+// import { usePage } from "./Page";
+import cookie from 'js-cookie'
 
 function Header() {
 
   const { mode, toggleMode } = useContext(ThemeContext);
 
   const theme = !mode ? "" : styles.dark;
-
-  // const {currentPage, setCurrentPage} = usePage();
 
   return (
       <header className={`${styles.header} ${theme}`}>
@@ -49,29 +48,6 @@ function Header() {
                 </Link>
               </div>
 
-              {/* <div className={`${styles.linkContainer} ${theme}`}>
-                <Link href="/" onClick={() => setCurrentPage("projects")}>  
-                  <a className={currentPage === "projects" ? styles.active : ""}>
-                    Projects
-                  </a>
-                </Link>
-                <Link href="/cooking/" onClick={() => setCurrentPage("cooking")}>
-                  <a className={currentPage === "cooking" ? styles.active : ""}>
-                    Cooking
-                  </a>
-                </Link>
-                <Link href="/life/" onClick={() => setCurrentPage("life")}>
-                  <a className={currentPage === "life" ? styles.active : ""}>
-                    Life
-                  </a>
-                </Link> 
-                <Link href="/aboutme/" onClick={() => setCurrentPage("aboutme")}>
-                  <a className={currentPage === "aboutme" ? styles.active : ""}>
-                    About Me
-                  </a>
-                </Link>
-              </div> */}
-
               {/* <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}> */}
                 {/* <div className={!mode ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/> */}
               {/* </button> */}
@@ -88,6 +64,7 @@ function Header() {
                 height={20}
                 width={48}
                 className={styles.switch}
+                title="Toggle Dark/Light Mode"
             />
           </div>
       </header>
