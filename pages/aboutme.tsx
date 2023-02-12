@@ -12,9 +12,6 @@ function Aboutme({}) {
         <div className={styles.container}>
             <Title />
             <Header />
-            {/* <main className={styles.main}>
-                <h1>This Site is Under Development</h1>
-            </main> */}
             <Unfinish />
             <Footer />
         </div>
