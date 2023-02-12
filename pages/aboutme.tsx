@@ -4,6 +4,7 @@ import styles from '../styles/Aboutme.module.css'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
 import ThemeProvider from '../components/Theme';
+import Unfinish from '../components/Unfinish';
 
 function Aboutme({}) {
     return (
@@ -11,9 +12,10 @@ function Aboutme({}) {
         <div className={styles.container}>
             <Title />
             <Header />
-            <main className={styles.main}>
+            {/* <main className={styles.main}>
                 <h1>This Site is Under Development</h1>
-            </main>
+            </main> */}
+            <Unfinish />
             <Footer />
         </div>
         </ThemeProvider>
