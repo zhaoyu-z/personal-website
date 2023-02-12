@@ -4,11 +4,19 @@ import Link from 'next/link'
 import ReactSwitch from 'react-switch'
 import { ThemeContext } from '../components/Theme';
 // import { usePage } from "./Page";
-import cookie from 'js-cookie'
+// import cookie from 'js-cookie'
+import { useCookies } from 'react-cookie';
 
 function Header() {
 
   const { mode, toggleMode } = useContext(ThemeContext);
+
+  // const [cookies, setCookie] = useCookies(['mode'])
+  // const [mode, setMode] = useState(cookies.mode === 'dark' ? true : false)
+  // const toggleMode = () => {
+  //   setMode(!mode)
+  //   setCookie('mode', !mode ? 'light' : 'dark', { path: '/' })
+  // }
 
   const theme = !mode ? "" : styles.dark;
 
