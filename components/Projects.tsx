@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styles from '../styles/Projects.module.css'
 import { ThemeContext } from '../components/Theme';
 
 function Projects() {
   const { mode } = useContext(ThemeContext)
-  const theme = mode ? styles.dark : "";
+
+  const theme = mode === "dark" ? styles.dark : "";
   return (
     <main className={`${styles.main} ${theme}`}>
         <div className={styles.contentContainer}>

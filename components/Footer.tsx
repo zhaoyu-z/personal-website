@@ -6,7 +6,7 @@ type Props = {}
 
 function Footer({}: Props) {
   const { mode } = useContext(ThemeContext)
-  const theme = mode ? styles.dark : "";
+  const theme = mode === "dark" ? styles.dark : "";
   return (
     <footer className={`${styles.footer} ${theme}`}>
       <div className={`${styles.copyRight} ${theme}`}>

@@ -3,22 +3,15 @@ import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 import ReactSwitch from 'react-switch'
 import { ThemeContext } from '../components/Theme';
-// import { usePage } from "./Page";
-// import cookie from 'js-cookie'
-import { useCookies } from 'react-cookie';
+// import cookie from 'js-cookie';
 
 function Header() {
 
   const { mode, toggleMode } = useContext(ThemeContext);
 
-  // const [cookies, setCookie] = useCookies(['mode'])
-  // const [mode, setMode] = useState(cookies.mode === 'dark' ? true : false)
-  // const toggleMode = () => {
-  //   setMode(!mode)
-  //   setCookie('mode', !mode ? 'light' : 'dark', { path: '/' })
-  // }
+  const theme = mode === "light" ? "" : styles.dark;
 
-  const theme = !mode ? "" : styles.dark;
+  // const modeCheck = cookie.get("mode") === "light";
 
   return (
       <header className={`${styles.header} ${theme}`}>
@@ -34,7 +27,7 @@ function Header() {
 
           <div className={styles.section_two}>
               <div className={`${styles.linkContainer} ${theme}`}>
-                <Link href="/">  
+                <Link href="/">
                   <a>
                     Projects
                   </a>
@@ -60,7 +53,8 @@ function Header() {
                 {/* <div className={!mode ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/> */}
               {/* </button> */}
               <ReactSwitch
-                checked={mode}
+                checked={mode === "dark"}
+                // checked={modeCheck}
                 onChange={toggleMode}
                 onColor="#86d3ff"
                 onHandleColor="#2693e6"

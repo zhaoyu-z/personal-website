@@ -2,11 +2,14 @@ import Header from '../components/Header'
 import styles from '../styles/CV.module.css'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
-import { useCookies } from 'react-cookie';
+// import { useCookies } from 'react-cookie';
+// import cookie from 'js-cookie'
 
 function CV({}) {
-    const [cookies, setCookie] = useCookies(['darkMode']);
-    const initialMode = cookies['darkMode'] !== undefined ? cookies['darkMode'] : false;
+    // const [cookies, setCookie] = useCookies(['darkMode']);
+    // const initialMode = cookies['darkMode'] !== undefined ? cookies['darkMode'] : false;
+    // const [mode, setMode] = useState(cookie.get("mode") || "light");
+
 
     return (
         <div className={styles.container}>
