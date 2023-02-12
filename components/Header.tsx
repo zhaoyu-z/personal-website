@@ -3,15 +3,12 @@ import styles from '../styles/Header.module.css'
 import Link from 'next/link'
 import ReactSwitch from 'react-switch'
 import { ThemeContext } from '../components/Theme';
-// import cookie from 'js-cookie';
 
 function Header() {
 
   const { mode, toggleMode } = useContext(ThemeContext);
 
   const theme = mode === "light" ? "" : styles.dark;
-
-  // const modeCheck = cookie.get("mode") === "light";
 
   return (
       <header className={`${styles.header} ${theme}`}>
@@ -54,7 +51,6 @@ function Header() {
               {/* </button> */}
               <ReactSwitch
                 checked={mode === "dark"}
-                // checked={modeCheck}
                 onChange={toggleMode}
                 onColor="#86d3ff"
                 onHandleColor="#2693e6"

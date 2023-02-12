@@ -2,10 +2,12 @@ import Header from '../components/Header'
 import styles from '../styles/Reports.module.css'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
+import ThemeProvider from '../components/Theme'
 
 function Reports({}) {
     return (
-      <div className={styles.container}>
+        <ThemeProvider>
+        <div className={styles.container}>
             <Title />
             <Header />
             <main className={styles.main}>
@@ -13,7 +15,8 @@ function Reports({}) {
             </main>
             <Footer />
         </div>
+        </ThemeProvider>
     );
-  }
+}
   
-  export default Reports;
+export default Reports;
