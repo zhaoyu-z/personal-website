@@ -12,7 +12,7 @@ function Header({ isActive }: Props) {
 
   const { mode, toggleMode } = useContext(ThemeContext);
 
-  const theme = mode === "light" ? "" : styles.dark;
+  const theme = mode === "dark" ? styles.dark : "";
 
   return (
       <header className={`${styles.header} ${theme}`}>
