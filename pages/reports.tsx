@@ -10,7 +10,7 @@ function Reports({}) {
         <ThemeProvider>
         <div className={styles.container}>
             <Title />
-            <Header />
+            <Header isActive='reports'/>
             <Unfinish />
             <Footer />
         </div>

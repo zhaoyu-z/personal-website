@@ -16,7 +16,7 @@ function CV({}) {
         <ThemeProvider>
         <div className={styles.container}>
             <Title />
-            <Header />
+            <Header isActive='cv'/>
             <Unfinish />
             <Footer />
         </div>

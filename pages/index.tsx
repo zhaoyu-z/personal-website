@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <ThemeProvider>
     <div className={styles.container}>
         <Title />
-        <Header />
+        <Header isActive='projects'/>
         <Projects />
         <Footer />
     </div>

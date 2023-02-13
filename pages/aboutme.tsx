@@ -11,7 +11,7 @@ function Aboutme({}) {
         <ThemeProvider>
         <div className={styles.container}>
             <Title />
-            <Header />
+            <Header isActive='aboutme'/>
             <Unfinish />
             <Footer />
         </div>

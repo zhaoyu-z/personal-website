@@ -4,7 +4,11 @@ import Link from 'next/link'
 import ReactSwitch from 'react-switch'
 import { ThemeContext } from '../components/Theme';
 
-function Header() {
+interface Props {
+  isActive: string;
+}
+
+function Header({ isActive }: Props) {
 
   const { mode, toggleMode } = useContext(ThemeContext);
 
@@ -25,22 +29,22 @@ function Header() {
           <div className={styles.section_two}>
               <div className={`${styles.linkContainer} ${theme}`}>
                 <Link href="/">
-                  <a>
+                  <a className={isActive === "projects" ? styles.active : ""}>
                     Projects
                   </a>
                 </Link>
                 <Link href="/cv/">
-                  <a>
+                  <a className={isActive === "cv" ? styles.active : ""}>
                     CV
                   </a>
                 </Link>
                 <Link href="/reports/">
-                  <a>
+                  <a className={isActive === "reports" ? styles.active : ""}>
                     Reports
                   </a>
                 </Link> 
                 <Link href="/aboutme/">
-                  <a>
+                  <a className={isActive === "aboutme" ? styles.active : ""}>
                     About Me
                   </a>
                 </Link>
