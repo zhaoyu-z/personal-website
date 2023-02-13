@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Title from '../components/Title'
 import ThemeProvider from '../components/Theme'
 import Unfinish from '../components/Unfinish'
+import Resume from '../components/Resume'
 
 import React, { useContext } from 'react';
 import { ThemeContext } from '../components/Theme';
@@ -17,7 +18,8 @@ function CV({}) {
         <div className={styles.container}>
             <Title />
             <Header isActive='cv'/>
-            <Unfinish />
+            {/* <Unfinish /> */}
+            <Resume />
             <Footer />
         </div>
         </ ThemeProvider>

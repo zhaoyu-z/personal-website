@@ -5,6 +5,23 @@ import { ThemeContext } from '../components/Theme';
 function Projects() {
   const { mode } = useContext(ThemeContext)
 
+  // const [scrollPos, setScrollPos] = useState(0);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrollPos(window.scrollY);
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   window.scrollTo(0, scrollPos);
+  // }, [scrollPos]);
+
   const theme = mode === "dark" ? styles.dark : "";
   return (
     <main className={`${styles.main} ${theme}`}>
