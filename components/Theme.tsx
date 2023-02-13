@@ -1,10 +1,10 @@
 import React, { createContext, useState, useEffect } from 'react';
 import cookie from 'js-cookie';
 
-const storedMode = cookie.get('mode');
+const expiryDays = 365;
 
 export const ThemeContext = createContext({
-    mode: storedMode,
+    mode: "",
     toggleMode: () => {}
 });
 
@@ -14,12 +14,12 @@ interface Props {
 
 const ThemeProvider = ({ children } : Props) => {
 
-  const [mode, setMode] = useState(storedMode);
+  const [mode, setMode] = useState<string>("");
 
   useEffect(() => {
     const initialMode = cookie.get("mode") || "light";
     setMode(initialMode);
-    cookie.set("mode", initialMode, { expires: 365, path:'/' });
+    cookie.set("mode", initialMode, { expires: expiryDays, path:'/' });
   }, []);
 
 
