@@ -1,25 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Document, Page } from 'react-pdf';
 import styles from '../styles/Resume.module.css';
 // @ts-ignore
 import * as pdfjs from 'pdfjs-dist/build/pdf.js';
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@3.3.122/build/pdf.worker.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.worker.js`;
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-// import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { ThemeContext } from './Theme';
+import ResumePanel from './ResumePanel';
 
 function Resume() {
 
     const JavaCVURL = "https://raw.githubusercontent.com/Zhayu517/Resume/main/CV_Java/Zhaoyu%20Zhang%20CV.pdf";
     const PythonCVURL = "https://raw.githubusercontent.com/Zhayu517/Resume/main/CV_Python/Zhaoyu%20Zhang%20CV.pdf";
 
+    const CVData = [
+        ['Java CV', JavaCVURL],
+        ['Python CV', PythonCVURL],
+    ];
+
     const { mode } = React.useContext(ThemeContext)
     const theme = mode === "dark" ? styles.dark : "";
 
+    const [currentCV, setCurrentCV] = useState(PythonCVURL);
+
+    const handleButtonClick = (url: string) => {
+        setCurrentCV(url);
+    };
+
     return (
-        <Document file={PythonCVURL} renderMode='svg' className={`${styles.main} ${theme}`}>
+        <div>
+        {/* <ResumePanel data={CVData} handleButtonClick={handleButtonClick} /> */}
+        <Document file={currentCV} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error}>
             <Page pageNumber={1} renderTextLayer={false} className={styles.page}/>
         </Document>
+        </div>
     );
 }
 
