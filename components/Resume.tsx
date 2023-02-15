@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
+// import { Document, Page } from 'react-pdf';
 import styles from '../styles/Resume.module.css';
-// @ts-ignore
-import * as pdfjs from 'pdfjs-dist/build/pdf.js';
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.worker.js`;
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+// import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import { ThemeContext } from './Theme';
 import ResumePanel from './ResumePanel';
+
+// @ts-ignore
 
 function Resume() {
 
@@ -30,9 +29,9 @@ function Resume() {
     return (
         <div>
         {/* <ResumePanel data={CVData} handleButtonClick={handleButtonClick} /> */}
-        <Document file={currentCV} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error}>
-            <Page pageNumber={1} renderTextLayer={false} className={styles.page}/>
-        </Document>
+        {/* <Document file={currentCV} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error}>
+            <Page pageNumber={1} renderTextLayer={false} className={styles.page} onLoadError={console.error}/>
+        </Document> */}
         </div>
     );
 }
