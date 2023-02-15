@@ -1,9 +1,10 @@
 import Header from '../components/Header'
-import styles from '../styles/Reports.module.css'
+import styles from '../styles/Papers.module.css'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
 import ThemeProvider from '../components/Theme'
 import Unfinish from '../components/Unfinish'
+import Papers from '../components/Papers'
 
 function Reports({}) {
     return (
@@ -11,7 +12,8 @@ function Reports({}) {
         <div className={styles.container}>
             <Title />
             <Header isActive='reports'/>
-            <Unfinish />
+            {/* <Unfinish /> */}
+            <Papers />
             <Footer />
         </div>
         </ThemeProvider>
