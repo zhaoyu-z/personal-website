@@ -6,7 +6,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import styles from '../styles/Resume.module.css';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import { ThemeContext } from './Theme';
-import ResumePanel from './ResumePanel';
+import Panel from './Panel';
 
 // import { GlobalWorkerOptions } from 'pdfjs-dist/legacy/build/pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = '//unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js';
@@ -36,7 +36,7 @@ function Resume() {
 
     return (
         <div>
-        <ResumePanel data={CVData} handleButtonClick={handleButtonClick} />
+        <Panel data={CVData} handleButtonClick={handleButtonClick} />
         <Document file={currentCV} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error}>
             <Page pageNumber={1} renderTextLayer={false} className={styles.page} onLoadError={console.error}/>
         </Document>

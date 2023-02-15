@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/ResumePanel.module.css';
+import styles from '../styles/Panel.module.css';
 
 type PanelProps = {
     data: string[][];
