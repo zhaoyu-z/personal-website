@@ -28,7 +28,7 @@ function Resume() {
     const { mode } = React.useContext(ThemeContext)
     const theme = mode === "dark" ? styles.dark : "";
 
-    const [currentCV, setCurrentCV] = useState(PythonCVURL);
+    const [currentCV, setCurrentCV] = useState(JavaCVURL);
 
     const handleButtonClick = (url: string) => {
         setCurrentCV(url);
