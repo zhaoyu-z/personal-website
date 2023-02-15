@@ -16,13 +16,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = '//unpkg.com/pdfjs-dist@2.16.105/build/pdf
 // pdfjs.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
 
 function Papers() {
-
-    // const ThirdYP = "https://github.com/Zhayu517/Reports-and-Presentations/blob/main/3rd_Year_Project_Report.pdf?raw=true";
     const ThirdYP = "https://raw.githubusercontent.com/Zhayu517/Reports-and-Presentations/main/3rd_Year_Project_Report.pdf";
-    const LeaderF = "https://github.com/Zhayu517/Reports-and-Presentations/blob/main/Leader%20Follower.pdf";
-    const OptimizingMC = "https://github.com/Zhayu517/Reports-and-Presentations/blob/main/Optimizing%20minimal%20counterexamples.pdf";
-    const QuestionC = "https://github.com/Zhayu517/Reports-and-Presentations/blob/main/Question%20Classifier.pdf";
-    const SMATM = "https://github.com/Zhayu517/Reports-and-Presentations/blob/main/SMA-Text-Mining.pdf";
+    const LeaderF = "https://raw.githubusercontent.com/Zhayu517/Reports-and-Presentations/main/Leader%20Follower.pdf";
+    const OptimizingMC = "https://raw.githubusercontent.com/Zhayu517/Reports-and-Presentations/main/Optimizing%20minimal%20counterexamples.pdf";
+    const QuestionC = "https://raw.githubusercontent.com/Zhayu517/Reports-and-Presentations/main/Question%20Classifier.pdf";
+    const SMATM = "https://raw.githubusercontent.com/Zhayu517/Reports-and-Presentations/main/SMA-Text-Mining.pdf";
 
     const ReportData = [
         ['Uni 3rd Year Project Report', ThirdYP],
