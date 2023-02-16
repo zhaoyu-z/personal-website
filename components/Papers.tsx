@@ -42,7 +42,7 @@ function Papers() {
     const [numPages, setNumPages] = useState<number>(1);
 
     return (
-        <div className={styles.componentWrapper}>
+        <div className={`${styles.componentWrapper} ${theme}`}>
         <Panel data={ReportData} handleButtonClick={handleButtonClick} />
         <Document file={currentReport} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error} onLoadSuccess={({ numPages })=>setNumPages(numPages)}>
             {Array.apply(null, Array(numPages))

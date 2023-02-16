@@ -13,6 +13,10 @@
   width: max-content;
   height: 80%;
 }
+
+.panel.dark {
+  background-color: black;
+}
   
 .buttonContainer {
   display: flex;
