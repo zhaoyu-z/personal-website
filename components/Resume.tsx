@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
-// import { Document, Page } from 'react-pdf';
 import { Document, Page, pdfjs } from 'react-pdf';
 
 import styles from '../styles/Resume.module.css';
@@ -8,12 +6,7 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import { ThemeContext } from './Theme';
 import Panel from './Panel';
 
-// import { GlobalWorkerOptions } from 'pdfjs-dist/legacy/build/pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = '//unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js';
-
-// import pdfjs from 'react-pdf';
-// // @ts-ignore
-// pdfjs.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
 
 function Resume() {
 
