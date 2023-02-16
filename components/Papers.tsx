@@ -48,7 +48,14 @@ function Papers() {
             {Array.apply(null, Array(numPages))
             .map((x, i)=>i+1)
             .map(page => 
-                <Page pageNumber={page} renderTextLayer={false} className={styles.page} onLoadError={console.error}/>
+                <div key={page}>
+                    <Page 
+                        pageNumber={page}
+                        renderTextLayer={false}
+                        className={styles.page}
+                        onLoadError={console.error}
+                    />
+                </div>
             )}
         </Document>
         </div>
