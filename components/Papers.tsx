@@ -39,7 +39,7 @@ function Papers() {
         <Panel data={ReportData} handleButtonClick={handleButtonClick} />
         <Document file={currentReport} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error} onLoadSuccess={({ numPages })=>setNumPages(numPages)}>
             {Array.apply(null, Array(numPages))
-            .map((x, i)=>i+1)
+            .map((x, i) => i+1)
             .map(page => 
                 <div key={page}>
                     <Page 

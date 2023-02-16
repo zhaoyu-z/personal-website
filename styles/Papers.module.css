@@ -35,5 +35,7 @@
 }
 
 .page {
-    scale: 1;
+    margin-top: 14rem;
+    margin-bottom: 14rem;
+    scale: 1.5;
 }
