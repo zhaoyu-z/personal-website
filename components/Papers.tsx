@@ -12,7 +12,7 @@ import Panel from './Panel';
 pdfjs.GlobalWorkerOptions.workerSrc = '//unpkg.com/pdfjs-dist@2.16.105/build/pdf.worker.min.js';
 
 // import pdfjs from 'react-pdf';
-// // @ts-ignore
+// @ts-ignore
 // pdfjs.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
 
 function Papers() {
@@ -39,11 +39,17 @@ function Papers() {
         setCurrentReport(url);
     };
 
+    const [numPages, setNumPages] = useState<number>(1);
+
     return (
-        <div>
+        <div className={styles.componentWrapper}>
         <Panel data={ReportData} handleButtonClick={handleButtonClick} />
-        <Document file={currentReport} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error}>
-            <Page pageNumber={1} renderTextLayer={false} className={styles.page} onLoadError={console.error}/>
+        <Document file={currentReport} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error} onLoadSuccess={({ numPages })=>setNumPages(numPages)}>
+            {Array.apply(null, Array(numPages))
+            .map((x, i)=>i+1)
+            .map(page => 
+                <Page pageNumber={page} renderTextLayer={false} className={styles.page} onLoadError={console.error}/>
+            )}
         </Document>
         </div>
     );

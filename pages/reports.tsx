@@ -9,8 +9,8 @@ import Papers from '../components/Papers'
 function Reports({}) {
     return (
         <ThemeProvider>
-        <div className={styles.container}>
-            <Title />
+        <Title />
+        <div className={styles.componentWrapper}>
             <Header isActive='reports'/>
             {/* <Unfinish /> */}
             <Papers />

@@ -1,14 +1,15 @@
-.contentContainer {
-    width: 80%;
+.componentWrapper {
+    justify-content: center;
+    background-color: white;
 }
 
 .main {
-    min-height: 120vh;
     display: flex;
+    margin-top: 5rem;
+    margin-left: 20rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* color: black; */
     background-color: white;
 }
 
@@ -23,7 +24,6 @@
     line-height: 1.5;
     font-size: 9.0rem;
     line-height: 140px;
-    /* color: black; */
 }
 
 .description.dark {
@@ -31,5 +31,5 @@
 }
 
 .page {
-    scale: 1.8;
+    scale: 1;
 }
