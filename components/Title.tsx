@@ -8,7 +8,7 @@ function Title({}: Props) {
     <Head>
         <title className={styles.not_in_use}>Zhaoyu Zhang</title>
         <meta name="description" content="Zhaoyu Zhang's personal website" />
-        <link rel="icon" href="/Images/me.jpg" />
+        <link rel="icon" href="/images/me.jpg" />
     </Head>
   )
 }
