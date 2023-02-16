@@ -20,10 +20,11 @@ Dark version:
 - [x] Darkmode
 - [x] Social media contact links.
 - [x] Automated integration using Github Actions and AWS S3.
-- [ ] HTML-version CV
-- [ ] HTML-version papers and reports
+- [x] HTML-version CV
+- [x] HTML-version papers and reports
 - [ ] Timeline of my education and experience
 - [ ] Sample showcase of selected projects
+- [ ] Mobile Compatibility - Responsive Design 
 - [ ] Daily life record
 - [ ] Professional Developer Blog
 - [ ] Image-to-text conversion page
