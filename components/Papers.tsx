@@ -15,21 +15,29 @@ function Papers() {
     const QuestionC = "https://raw.githubusercontent.com/Zhayu517/Reports-and-Presentations/main/Question%20Classifier.pdf";
     const SMATM = "https://raw.githubusercontent.com/Zhayu517/Reports-and-Presentations/main/SMA-Text-Mining.pdf";
 
-    const ReportData = [
-        ['Uni 3rd Year Project Report', ThirdYP],
-        ['Leader Follower', LeaderF],
-        ['Optimizing Minimal Counterexamples', OptimizingMC],
-        ['Question Classifier', QuestionC],
-        ['SMA Text Mining', SMATM],
-    ];
+    // const ReportData = [
+    //     ['Uni 3rd Year Project Report', ThirdYP],
+    //     ['Leader Follower', LeaderF],
+    //     ['Optimizing Minimal Counterexamples', OptimizingMC],
+    //     ['Question Classifier', QuestionC],
+    //     ['SMA Text Mining', SMATM],
+    // ];
+
+    const ReportData: {[key: string]: string} = {
+        "Uni 3rd Year Project Report": ThirdYP,
+        "Leader Follower": LeaderF,
+        "Optimizing Minimal Counterexamples": OptimizingMC,
+        "Question Classifier": QuestionC,
+        "SMA Text Mining": SMATM,
+    }
 
     const { mode } = React.useContext(ThemeContext)
     const theme = mode === "dark" ? styles.dark : "";
 
-    const [currentReport, setCurrentReport] = useState(ThirdYP);
+    const [currentFile, setCurrentFile] = useState<string>("Uni 3rd Year Project Report");
 
-    const handleButtonClick = (url: string) => {
-        setCurrentReport(url);
+    const handleButtonClick = (filename: string) => {
+        setCurrentFile(filename);
     };
 
     const [numPages, setNumPages] = useState<number>(1);
@@ -37,7 +45,7 @@ function Papers() {
     return (
         <div className={`${styles.componentWrapper} ${theme}`}>
         <Panel data={ReportData} handleButtonClick={handleButtonClick} />
-        <Document file={currentReport} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error} onLoadSuccess={({ numPages })=>setNumPages(numPages)}>
+        <Document file={ReportData[currentFile]} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error} onLoadSuccess={({ numPages })=>setNumPages(numPages)}>
             {Array.apply(null, Array(numPages))
             .map((x, i) => i+1)
             .map(page => 
