@@ -13,12 +13,7 @@ function Resume() {
     const JavaCVURL = "https://raw.githubusercontent.com/Zhayu517/Resume/main/CV_Java/Zhaoyu%20Zhang%20CV.pdf";
     const PythonCVURL = "https://raw.githubusercontent.com/Zhayu517/Resume/main/CV_Python/Zhaoyu%20Zhang%20CV.pdf";
 
-    // const CVData = [
-    //     ['Java CV', JavaCVURL],
-    //     ['Python CV', PythonCVURL],
-    // ];
-
-    const CVData = {
+    const CVData: {[key: string]: string} = {
         "Java CV": JavaCVURL,
         "Python CV": PythonCVURL,
     }
@@ -26,17 +21,16 @@ function Resume() {
     const { mode } = React.useContext(ThemeContext)
     const theme = mode === "dark" ? styles.dark : "";
 
-    // const [currentCV, setCurrentCV] = useState(JavaCVURL);
-    const [currentCV, setCurrentCV] = useState(CVData["Java CV"]);
+    const [currentFile, setCurrentFile] = useState<string>("Java CV");
 
-    const handleButtonClick = (url: string) => {
-        setCurrentCV(url);
+    const handleButtonClick = (filename: string) => {
+        setCurrentFile(filename);
     };
 
     return (
         <div>
         <Panel data={CVData} handleButtonClick={handleButtonClick} />
-        <Document file={currentCV} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error}>
+        <Document file={CVData[currentFile]} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error}>
             <Page pageNumber={1} renderTextLayer={false} className={styles.page} onLoadError={console.error}/>
         </Document>
         </div>

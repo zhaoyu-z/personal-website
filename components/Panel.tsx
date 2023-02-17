@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from '../styles/Panel.module.css';
 import { ThemeContext } from './Theme';
-import currentCV from './Resume';
+import currentFile from './Resume';
 
 type PanelProps = {
     data: Record<string, string>;
@@ -17,7 +17,7 @@ function Panel({ data, handleButtonClick }: PanelProps) {
         <div className={`${styles.panel} ${theme}`}>
             <div className={styles.buttonContainer}>
                 {Object.entries(data).map(([key, value]) => (
-                    <button key={key} onClick={() => handleButtonClick(value)} className={styles.button}>
+                    <button key={key} onClick={() => handleButtonClick(key)} className={styles.button}>
                         {key}
                     </button>
                 ))}
