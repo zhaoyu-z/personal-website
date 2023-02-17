@@ -13,15 +13,21 @@ function Resume() {
     const JavaCVURL = "https://raw.githubusercontent.com/Zhayu517/Resume/main/CV_Java/Zhaoyu%20Zhang%20CV.pdf";
     const PythonCVURL = "https://raw.githubusercontent.com/Zhayu517/Resume/main/CV_Python/Zhaoyu%20Zhang%20CV.pdf";
 
-    const CVData = [
-        ['Java CV', JavaCVURL],
-        ['Python CV', PythonCVURL],
-    ];
+    // const CVData = [
+    //     ['Java CV', JavaCVURL],
+    //     ['Python CV', PythonCVURL],
+    // ];
+
+    const CVData = {
+        "Java CV": JavaCVURL,
+        "Python CV": PythonCVURL,
+    }
 
     const { mode } = React.useContext(ThemeContext)
     const theme = mode === "dark" ? styles.dark : "";
 
-    const [currentCV, setCurrentCV] = useState(JavaCVURL);
+    // const [currentCV, setCurrentCV] = useState(JavaCVURL);
+    const [currentCV, setCurrentCV] = useState(CVData["Java CV"]);
 
     const handleButtonClick = (url: string) => {
         setCurrentCV(url);

@@ -1,9 +1,11 @@
+import Link from 'next/link';
 import React from 'react';
 import styles from '../styles/Panel.module.css';
 import { ThemeContext } from './Theme';
+import currentCV from './Resume';
 
 type PanelProps = {
-    data: string[][];
+    data: Record<string, string>;
     handleButtonClick: (url: string) => void;
 };
 
@@ -14,11 +16,23 @@ function Panel({ data, handleButtonClick }: PanelProps) {
     return (
         <div className={`${styles.panel} ${theme}`}>
             <div className={styles.buttonContainer}>
-                {data.map((item) => (
-                    <button key={item[0]} onClick={() => handleButtonClick(item[1])} className={styles.button}>
-                        {item[0]}
+                {Object.entries(data).map(([key, value]) => (
+                    <button key={key} onClick={() => handleButtonClick(value)} className={styles.button}>
+                        {key}
                     </button>
                 ))}
+            </div>
+            <div className={styles.downloadContainer}>
+                <Link href="">
+                    <a className={styles.downloadButton}>
+                        Download
+                    </a>
+                </Link>
+                <Link href="">
+                    <a className={styles.downloadButton}>
+                        Source
+                    </a>
+                </Link>
             </div>
         </div>
     );
