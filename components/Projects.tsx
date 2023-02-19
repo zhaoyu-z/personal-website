@@ -27,8 +27,7 @@ function Projects() {
     <main className={`${styles.main} ${theme}`}>
         <div className={styles.contentContainer}>
             <p className={`${styles.description} ${theme}`}>
-              What Obsessed Me <br/>
-              Shapes My Future.
+              What Obsessed Me Shapes My Future.
             </p>
         </div>
     </main>

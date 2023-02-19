@@ -1,21 +1,22 @@
 .header {
-  font-family: "Ibarra Real Nova", serif;
+  /*
+  defines that header is fixed to the top of the page, with no
+  space between the top of the page and the header, and no space between
+  left and right of the page and the header
+  */
   position: fixed;
-  
-  padding: 0 24px;
-  margin: 0px auto;
-  max-height: 80px;
-  display: flex;
-
   top: 0px;
   left: 0px;
   right: 0px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  
+  /* top&bottom: 0.5 viewport height; left&right: 25%viewport width */
+  padding: 0.5vh 25vw;
+
+  /* the display mode: inline, in a row */
+  display: inline-flex;
+
 
   z-index: 10;
-
   background-color: white;
 }
 
