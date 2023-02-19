@@ -12,12 +12,18 @@
   /* top&bottom: 0.5 viewport height; left&right: 25%viewport width */
   padding: 0.5vh 25vw;
 
-  /* the display mode: inline, in a row */
-  display: inline-flex;
+  /* in case section two go out of box*/
+  min-width: max-content;
 
+  /* the display mode: inline, in a row, where section one is on leftmost side,
+  and section two is on rightmost side */
+  display: inline-flex;
+  justify-content: space-between;
 
   z-index: 10;
   background-color: white;
+
+  min-height: 7vh;
 }
 
 .header.dark {
@@ -25,11 +31,7 @@
 }
 
 .section_one {
-  margin: auto;
-  font-size: 30px;
-  justify-items: flex-start;
-  flex: 1 1 0%;
-  font-family: "Zen Tokyo Zoo", cursive;
+  display: flex;
 }
 
 @font-face {
@@ -38,19 +40,19 @@
 }
 
 .logoContainer {
-  font-family: "Zen Tokyo Zoo", cursive;
-  margin: 30px 0px 0px 30px; /* top right bottom left*/
-  padding: 0;
-  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  top: 25%;
+  height: 50%;
+  min-width: fit-content;
 }
 
 .logoContainer a {
-  padding: 0px 20px;
-  text-decoration: none;
-  font-weight: 500;
   font-family: "Zen Tokyo Zoo", cursive;
   text-transform: uppercase;
   color: black;
+  font-size: 3vmin;
+
 }
 
 .logoContainer.dark a{
@@ -58,21 +60,21 @@
 }
 
 .section_two {
-  margin: inherit;
   display: flex;
-  justify-content: flex-end;
 }
 
 .section_two a {
+  top: 25%;
+  max-height: 40%;
+
   color: black;
-  font-size: 10px;
-  padding: 0px 16px;
-  margin: 16px 0px;
-  text-decoration: none;
+
+  padding: 0 0.8vw;
+
   cursor: pointer;
-  position: relative;
+
   font-weight: 600;
-  font-size: 18px;
+  font-size: 2vmin;
   letter-spacing: -1px;
   font-family: "Baskerville";
 }
@@ -80,7 +82,7 @@
 .linkContainer {
   display: flex;
   position: relative;
-  margin: 30px 0px 0px 0px;
+  padding-right: 0.8vw;
 }
 
 .linkContainer a {
@@ -98,12 +100,14 @@
 
 .linkContainer a:before {
   content: "";
+
   position: absolute;
+  left: 10%;
+
   width: 0;
   height: 2px;
   bottom: -4px;
-  left: 10%;
-  visibility: hidden;
+  
   transition: all 0.3s ease-in-out;
 }
 
@@ -121,18 +125,15 @@
 }
 
 .modeToggler {
-  margin: 47px 0px 0px 0px;
+  position: relative;
+  top: 30%;
+
   width: 40px;
   height: 20px;
   border-radius: 12px;
   border: 1px solid black;
   cursor: pointer;
-  border-width: all;
-  display: flex;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
+
   padding: 2px;
   background-color: white;
 }
@@ -152,5 +153,7 @@
 }
 
 .switch {
-  margin: 42px 0px 0px 0px;
+  top: 25%;
+  height: min-content;
+  padding-left: 0.8vw;
 }

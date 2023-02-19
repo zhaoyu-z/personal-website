@@ -45,14 +45,14 @@ function Header({ isActive }: Props) {
                 </Link> 
                 <Link href="/aboutme/">
                   <a className={isActive === "aboutme" ? styles.active : ""}>
-                    About Me
+                    About
                   </a>
                 </Link>
               </div>
 
-              {/* <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}> */}
-                {/* <div className={!mode ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/> */}
-              {/* </button> */}
+              {/* <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}>
+                <div className={mode === "dark" ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/>
+              </button> */}
               <ReactSwitch
                 checked={mode === "dark"}
                 onChange={toggleMode}
@@ -67,7 +67,7 @@ function Header({ isActive }: Props) {
                 width={48}
                 className={styles.switch}
                 title="Toggle Dark/Light Mode"
-            />
+              />
           </div>
       </header>
   )
