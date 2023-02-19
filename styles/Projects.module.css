@@ -1,14 +1,16 @@
+.main {
+    /* min-height: 100vh; */
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+}
+
 .contentContainer {
     width: 80%;
 }
 
-.main {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .main.dark {
     background-color: black;
@@ -20,10 +22,10 @@
 
 .description {
     font-family: Sequel, sans-serif;
-    margin: 4rem 0;
-    line-height: 1.5;
-    font-size: 9.0rem;
-    line-height: 140px;
+    /* margin: 4rem 0; */
+    /* line-height: 1.5; */
+    font-size: 10vw;
+    /* line-height: 140px; */
     color: black;
 }
 

@@ -10,7 +10,7 @@
   right: 0px;
   
   /* top&bottom: 0.5 viewport height; left&right: 25%viewport width */
-  padding: 0.5vh 25vw;
+  padding: 0.5vh 15vw;
 
   /* in case section two go out of box*/
   min-width: max-content;
@@ -19,6 +19,7 @@
   and section two is on rightmost side */
   display: inline-flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   z-index: 10;
   background-color: white;
@@ -40,11 +41,12 @@
 }
 
 .logoContainer {
-  display: flex;
+  /* display: flex; */
   position: relative;
   top: 25%;
   height: 50%;
-  min-width: fit-content;
+  /* min-width: fit-content; */
+  /* align-items: stretch; */
 }
 
 .logoContainer a {
@@ -52,7 +54,7 @@
   text-transform: uppercase;
   color: black;
   font-size: 3vmin;
-
+  /* display: flex; */
 }
 
 .logoContainer.dark a{
