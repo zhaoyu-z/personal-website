@@ -83,7 +83,7 @@
 
 .linkContainer {
   display: flex;
-  position: relative;
+  /* position: relative; */
   padding-right: 0.8vw;
 }
 

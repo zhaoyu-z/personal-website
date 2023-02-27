@@ -50,10 +50,10 @@ function Header({ isActive }: Props) {
                 </Link>
               </div>
 
-              <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}>
+              {/* <button className={styles.modeToggler} title="Darkmode Toggler" onClick={toggleMode}>
                 <div className={mode === "dark" ? styles.modeTogglerIcon : `${styles.modeTogglerIcon} ${styles.move}`}/>
-              </button>
-              {/* <ReactSwitch
+              </button> */}
+              <ReactSwitch
                 checked={mode === "dark"}
                 onChange={toggleMode}
                 onColor="#86d3ff"
@@ -67,7 +67,7 @@ function Header({ isActive }: Props) {
                 width={48}
                 className={styles.switch}
                 title="Toggle Dark/Light Mode"
-              /> */}
+              />
           </div>
       </header>
   )
