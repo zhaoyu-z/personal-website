@@ -44,7 +44,7 @@ function Papers() {
 
     return (
         <div className={`${styles.componentWrapper} ${theme}`}>
-        <Panel data={ReportData} handleButtonClick={handleButtonClick} />
+        <Panel filename={currentFile} data={ReportData} handleButtonClick={handleButtonClick} />
         <Document file={ReportData[currentFile]} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error} onLoadSuccess={({ numPages })=>setNumPages(numPages)}>
             {Array.apply(null, Array(numPages))
             .map((x, i) => i+1)

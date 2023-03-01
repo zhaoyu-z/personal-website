@@ -5,14 +5,14 @@ import { ThemeContext } from './Theme';
 import currentFile from './Resume';
 
 type PanelProps = {
+    filename: string;
     data: Record<string, string>;
     handleButtonClick: (url: string) => void;
 };
 
-function Panel({ data, handleButtonClick }: PanelProps) {
+function Panel({ filename, data, handleButtonClick }: PanelProps) {
     const { mode } = React.useContext(ThemeContext)
     const theme = mode === "dark" ? styles.dark : "";
-
     return (
         <div className={`${styles.panel} ${theme}`}>
             <div className={styles.buttonContainer}>
@@ -23,14 +23,9 @@ function Panel({ data, handleButtonClick }: PanelProps) {
                 ))}
             </div>
             <div className={styles.downloadContainer}>
-                <Link href="">
-                    <a className={styles.downloadButton}>
+                <Link href={data[filename]}>
+                    <a className={styles.downloadButton} download>
                         Download
-                    </a>
-                </Link>
-                <Link href="">
-                    <a className={styles.downloadButton}>
-                        Source
                     </a>
                 </Link>
             </div>
