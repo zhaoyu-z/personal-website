@@ -3,15 +3,15 @@
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  background-color: #f8f8f8;
+  /* right: 0; */
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   z-index: 1;
   width: max-content;
-  height: 80%;
+  /* height: 80%; */
 }
 
 .panel.dark {

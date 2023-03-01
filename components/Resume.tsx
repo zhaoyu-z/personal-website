@@ -28,7 +28,7 @@ function Resume() {
     };
 
     return (
-        <div>
+        <div className={styles.contentContainer}>
         <Panel filename={currentFile} data={CVData} handleButtonClick={handleButtonClick} />
         <Document file={CVData[currentFile]} renderMode='svg' className={`${styles.main} ${theme}`} onLoadError={console.error}>
             <Page pageNumber={1} renderTextLayer={false} className={styles.page} onLoadError={console.error}/>
