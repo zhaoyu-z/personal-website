@@ -41,12 +41,9 @@
 }
 
 .logoContainer {
-  /* display: flex; */
   position: relative;
   top: 25%;
   height: 50%;
-  /* min-width: fit-content; */
-  /* align-items: stretch; */
 }
 
 .logoContainer a {
@@ -54,7 +51,6 @@
   text-transform: uppercase;
   color: black;
   font-size: 3vmin;
-  /* display: flex; */
 }
 
 .logoContainer.dark a{
@@ -64,22 +60,6 @@
 .section_two {
   display: flex;
 }
-
-/* .section_two a {
-  top: 25%;
-  max-height: 40%;
-
-  color: black;
-
-  padding: 0 0.8vw;
-
-  cursor: pointer;
-
-  font-weight: 600;
-  font-size: 2vmin;
-  letter-spacing: -1px;
-  font-family: "Baskerville";
-} */
 
 .linkContainer a {
   top: 25%;
@@ -99,7 +79,6 @@
 
 .linkContainer {
   display: flex;
-  /* position: relative; */
   padding-right: 0.8vw;
 }
 
@@ -176,100 +155,20 @@
   padding-left: 0.8vw;
 }
 
-/* .menuButton {
-  background-color: transparent;
-  border: none;
-  color: #333;
-  cursor: pointer;
-  display: none;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-}
-
-.menuIcon {
-  border: solid #333;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  margin-right: 0.5rem;
-} */
-
 @media screen and (max-width: 750px) {
-  /* .linkContainer.closed {
-    display: none;
-  }
-
-  .linkContainer.open {
-    flex-direction: column;
-  }
-
-  .menuButton {
-    display: block;
-  } */
-
   .linkContainer {
     display: none;
   }
-}
 
-/* @media screen and (min-width: 750px) {
-  .buttonContainer {
-    display: block;
-  }
-} */
-
-@media screen and (max-width: 750px) {
   .buttonWrapper {
     display: block !important;
   }
 }
 
-/* .menuButton {
-  background-color: transparent;
-  border: none;
-  color: #333;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-}
-
-.menuIcon {
-  display: inline-block;
-  height: 2px;
-  width: 1.8rem;
-  margin-right: 0.5rem;
-  background-color: #333;
-  transition: transform 0.3s ease-out;
-}
-
-.menuIcon:nth-of-type(2) {
-  margin: 0.3rem 0;
-}
-
-.menuIcon.active:nth-of-type(1) {
-  transform: rotate(45deg);
-}
-
-.menuIcon.active:nth-of-type(2) {
-  transform: scale(0);
-}
-
-.menuIcon.active:nth-of-type(3) {
-  transform: rotate(-45deg);
-} */
-
 .buttonContainer {
   transition: background 0.35s ease-in-out 0s;
   padding-left: 75%;
-  /* width: 60px;
-  height: 60px; */
-  /* display: none; */
   background: #ffed00;
-  /* position: relative; */
 }
 
 

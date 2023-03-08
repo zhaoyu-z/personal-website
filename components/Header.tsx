@@ -31,22 +31,6 @@ function Header({ isActive }: Props) {
           </div>
 
           <div className={styles.section_two}>
-            {/* <button
-              className={styles.menuButton}
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-expanded={menuOpen}
-              aria-controls="menu"
-            >
-              <span className={styles.menuIcon} />
-            </button> */}
-            {/* <button className={styles.menuButton}>
-              <span className={styles.menuIcon}></span>
-              <span className={styles.menuIcon}></span>
-              <span className={styles.menuIcon}></span>
-              <span className={styles.menuIcon}></span>
-            </button> */}
-
-            {/* <div className={`${styles.linkContainer} ${theme} ${menu}`}> */}
             
             <div className={styles.buttonWrapper}>
               <Link href="#">
