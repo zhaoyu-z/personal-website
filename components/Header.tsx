@@ -42,7 +42,6 @@ function Header({ isActive }: Props) {
               </Link>
             </div>
             
-
             <div className={`${styles.linkContainer} ${theme}`}>
               <Link href="/">
                 <a className={isActive === "projects" ? styles.active : ""}>

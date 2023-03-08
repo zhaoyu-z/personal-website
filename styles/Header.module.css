@@ -160,9 +160,9 @@
     display: none;
   }
 
-  .buttonWrapper {
+  /* .buttonWrapper {
     display: block !important;
-  }
+  } */
 }
 
 .buttonContainer {
