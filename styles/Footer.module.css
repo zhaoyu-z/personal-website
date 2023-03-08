@@ -10,6 +10,14 @@
   align-items: center;
   background-color: white;
   /* width: 100%; */
+
+  border-top: 2px solid gray;
+}
+
+@media screen and (max-width: 750px) {
+  .footer {
+    flex-direction: column !important;
+  }
 }
 
 .footer.dark {
