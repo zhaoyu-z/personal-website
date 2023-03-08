@@ -1,6 +1,7 @@
 .componentWrapper {
     /* justify-content: center; */
     background-color: white;
+    position: relative;
 }
 
 .componentWrapper.dark {
