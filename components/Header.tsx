@@ -16,7 +16,13 @@ function Header({ isActive }: Props) {
   
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const menu = menuOpen ? styles.open : styles.closed;
+  const [buttonActive, setButtonActive] = useState(false);
+
+  const handleButtonClick = () => {
+    setButtonActive(!buttonActive);
+  };
+
+  const buttonOn = buttonActive ? styles.active : "";
 
   return (
       <header className={`${styles.header} ${theme}`}>
@@ -33,14 +39,14 @@ function Header({ isActive }: Props) {
           <div className={styles.section_two}>
             
             <Link href="#">
-              <a className={styles.buttonContainer}>
+              <a className={styles.buttonContainer} onClick={handleButtonClick}>
                 <span className={styles.bar}></span>
                 <span className={styles.bar}></span>
                 <span className={styles.bar}></span>
               </a>
             </Link>
             
-            <div className={`${styles.linkContainer} ${theme}`}>
+            <div className={`${styles.linkContainer} ${theme} ${buttonOn}`}>
               <Link href="/">
                 <a className={isActive === "projects" ? styles.active : ""}>
                   Projects
