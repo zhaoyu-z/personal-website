@@ -17,7 +17,7 @@
 
   /* the display mode: inline, in a row, where section one is on leftmost side,
   and section two is on rightmost side */
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
@@ -79,7 +79,7 @@
 
 .linkContainer {
   display: flex;
-  padding-right: 0.8vw;
+  /* padding-right: 0.8vw; */
 }
 
 .linkContainer a {
@@ -160,24 +160,63 @@
     display: none;
   }
 
-  /* .buttonWrapper {
-    display: block !important;
-  } */
+  .buttonContainer {
+    display: flex !important;
+  }
+
+  .linkContainer {
+    flex-direction: column;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .linkContainer a {
+    top: 0;
+    padding: 1rem 0;
+    width: 100%;
+  }
+  
+  .linkContainer {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section_two {
+    background-color: lightgray;
+  }
+
+  .switch {
+    padding-left: 0;
+    position: absolute !important;
+    right: 0.5rem;
+    top: 0.8rem;
+  }
+
+  .section_one {
+    height: 3rem;
+  }
+
+  .linkContainer.active {
+    display: flex;
+  }
 }
 
 .buttonContainer {
-  transition: background 0.35s ease-in-out 0s;
-  padding-left: 75%;
-  background: #ffed00;
-}
-
-
-.buttonContainer:hover {
-  background: #1b002e;;
-}
-
-.buttonWrapper {
-  height: 100%;
-  padding-left: 75%;
+  position: absolute;
+  top: 1rem;
+  right: 5rem;
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+}
+
+.buttonContainer .bar{
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 10px;
 }

@@ -32,15 +32,13 @@ function Header({ isActive }: Props) {
 
           <div className={styles.section_two}>
             
-            <div className={styles.buttonWrapper}>
-              <Link href="#">
-                <a className={styles.buttonContainer}>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </a>
-              </Link>
-            </div>
+            <Link href="#">
+              <a className={styles.buttonContainer}>
+                <span className={styles.bar}></span>
+                <span className={styles.bar}></span>
+                <span className={styles.bar}></span>
+              </a>
+            </Link>
             
             <div className={`${styles.linkContainer} ${theme}`}>
               <Link href="/">
