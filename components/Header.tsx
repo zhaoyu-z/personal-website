@@ -14,7 +14,7 @@ function Header({ isActive }: Props) {
 
   const theme = mode === "dark" ? styles.dark : "";
   
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
 
   const [buttonActive, setButtonActive] = useState(false);
 
@@ -36,13 +36,13 @@ function Header({ isActive }: Props) {
             </div>
           </div>
 
-          <div className={styles.section_two}>
+          <div className={`${styles.section_two} ${theme}`}>
             
             <Link href="#">
-              <a className={styles.buttonContainer} onClick={handleButtonClick}>
-                <span className={styles.bar}></span>
-                <span className={styles.bar}></span>
-                <span className={styles.bar}></span>
+              <a className={`${styles.buttonContainer}`} onClick={handleButtonClick}>
+                <span className={`${styles.bar}  ${theme}`}></span>
+                <span className={`${styles.bar}  ${theme}`}></span>
+                <span className={`${styles.bar}  ${theme}`}></span>
               </a>
             </Link>
             

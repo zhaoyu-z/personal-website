@@ -187,6 +187,10 @@
     background-color: lightgray;
   }
 
+  .section_two.dark {
+    background-color: #302e2e;
+  }
+
   .switch {
     padding-left: 0;
     position: absolute !important;
@@ -219,4 +223,8 @@
   width: 100%;
   background-color: black;
   border-radius: 10px;
+}
+
+.buttonContainer .bar.dark {
+  background-color: white;
 }
