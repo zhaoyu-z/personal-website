@@ -13,7 +13,7 @@
   padding: 0.5vh 15vw;
 
   /* in case section two go out of box*/
-  min-width: max-content;
+  /* min-width: max-content; */
 
   /* the display mode: inline, in a row, where section one is on leftmost side,
   and section two is on rightmost side */
@@ -31,8 +31,13 @@
   background-color: black;
 }
 
+.link a {
+  text-decoration: none;
+}
+
 .section_one {
   display: flex;
+  align-items: center;
 }
 
 @font-face {
@@ -41,16 +46,16 @@
 }
 
 .logoContainer {
-  position: relative;
+  /* position: relative;
   top: 25%;
-  height: 50%;
+  height: 50%; */
 }
 
 .logoContainer a {
   font-family: "Zen Tokyo Zoo", cursive;
   text-transform: uppercase;
-  color: black;
-  font-size: 3vmin;
+  /* color: black; */
+  font-size: 30px;
 }
 
 .logoContainer.dark a{
@@ -74,7 +79,7 @@
   font-weight: 600;
   font-size: 2vmin;
   letter-spacing: -1px;
-  font-family: "Baskerville";
+  /* font-family: "Baskerville"; */
 }
 
 .linkContainer {
@@ -156,6 +161,10 @@
 }
 
 @media screen and (max-width: 750px) {
+  .logoContainer a {
+    font-size: 20px;
+  }
+
   .linkContainer {
     display: none;
   }
@@ -168,9 +177,9 @@
     flex-direction: column;
   }
 
-  .header {
+  /* .header {
     flex-direction: column;
-  }
+  } */
 
   .linkContainer a {
     top: 0;
@@ -184,7 +193,8 @@
   }
 
   .section_two {
-    background-color: lightgray;
+    /* background-color: white; */
+    align-items: center;
   }
 
   .section_two.dark {
@@ -192,11 +202,15 @@
   }
 
   .switch {
-    padding-left: 0;
-    position: absolute !important;
-    right: 0.5rem;
-    top: 0.8rem;
+    padding-left: 10px;
+    position: static !important;
+    /* right: 0.5rem;
+    top: 0.8rem; */ 
   }
+
+  /* .switch .react-switch-handle {
+    top:25%;
+  } */
 
   .section_one {
     height: 3rem;
@@ -208,9 +222,9 @@
 }
 
 .buttonContainer {
-  position: absolute;
+  /* position: absolute;
   top: 1rem;
-  right: 5rem;
+  right: 5rem; */
   display: none;
   flex-direction: column;
   justify-content: space-between;

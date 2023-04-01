@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styles from '../styles/Header.module.css'
-import Link from 'next/link'
+import Link from 'next/link.js'
 import ReactSwitch from 'react-switch'
 import { ThemeContext } from '../components/Theme';
 
@@ -28,8 +28,8 @@ function Header({ isActive }: Props) {
       <header className={`${styles.header} ${theme}`}>
           <div className={styles.section_one}>
             <div className={`${styles.logoContainer} ${theme}`}>
-              <Link href="/" >
-                <a title="Back to Home">
+              <Link href="/">
+                <a title="Back to Home" style={{ textDecoration: "none"}}>
                   Zhaoyu Zhang
                 </a>
                </Link>
@@ -39,7 +39,9 @@ function Header({ isActive }: Props) {
           <div className={`${styles.section_two} ${theme}`}>
             
             <Link href="#">
-              <a className={`${styles.buttonContainer}`} onClick={handleButtonClick}>
+              <a className={`${styles.buttonContainer}`} 
+                onClick={handleButtonClick}
+                style={{ textDecoration: "none"}}>
                 <span className={`${styles.bar}  ${theme}`}></span>
                 <span className={`${styles.bar}  ${theme}`}></span>
                 <span className={`${styles.bar}  ${theme}`}></span>
@@ -48,22 +50,26 @@ function Header({ isActive }: Props) {
             
             <div className={`${styles.linkContainer} ${theme} ${buttonOn}`}>
               <Link href="/">
-                <a className={isActive === "projects" ? styles.active : ""}>
+                <a className={isActive === "projects" ? styles.active : ""}
+                  style={{ textDecoration: "none"}}>
                   Projects
                 </a>
               </Link>
               <Link href="/cv/">
-                <a className={isActive === "cv" ? styles.active : ""}>
+                <a className={isActive === "cv" ? styles.active : ""}
+                  style={{ textDecoration: "none"}}>
                   CV
                 </a>
               </Link>
               <Link href="/reports/">
-                <a className={isActive === "reports" ? styles.active : ""}>
+                <a className={isActive === "reports" ? styles.active : ""}
+                  style={{ textDecoration: "none"}}>
                   Reports
                 </a>
               </Link> 
               <Link href="/aboutme/">
-                <a className={isActive === "aboutme" ? styles.active : ""}>
+                <a className={isActive === "aboutme" ? styles.active : ""}
+                  style={{ textDecoration: "none"}}>
                   About
                 </a>
               </Link>
