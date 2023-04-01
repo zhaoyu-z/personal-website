@@ -31,10 +31,6 @@
   background-color: black;
 }
 
-.link a {
-  text-decoration: none;
-}
-
 .section_one {
   display: flex;
   align-items: center;
@@ -76,10 +72,10 @@
 
   cursor: pointer;
 
-  font-weight: 600;
-  font-size: 2vmin;
+  /* font-weight: 550; */
+  font-size: 1.5rem;
   letter-spacing: -1px;
-  /* font-family: "Baskerville"; */
+  font-family: Sequel, sans-serif;
 }
 
 .linkContainer {
