@@ -7,7 +7,7 @@ Updated on 2023-2-6
 ## Milestones
 
 - [ ] Personalised home page
-- [ ] Darkmode
+- [x] Darkmode
 - [ ] Social media contact links.
 - [ ] Automated integration using Github Actions and AWS S3.
 - [ ] HTML-version CV
