@@ -1,9 +1,10 @@
 import * as React from 'react'
 import type { NextPage } from 'next'
-import Temp from '../components/temp'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import Temp from '../components/temp'
+import Header from '../components/Header'
 
 const Home: NextPage = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -21,7 +22,8 @@ const Home: NextPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Temp />
+      {/* <Temp /> */}
+      <Header />
     </ThemeProvider>
   )
 }
