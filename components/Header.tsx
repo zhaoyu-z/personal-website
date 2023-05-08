@@ -90,7 +90,8 @@ function Header(props: Props) {
                 <Typography
                     variant="h6"
                     component="div"
-                    sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, ml: 2}}
+                    sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' },
+                        ml: 2, textTransform: 'uppercase'}}
                 >
                     Zhaoyu Zhang
                 </Typography>
@@ -122,9 +123,6 @@ function Header(props: Props) {
             </Box>
             <Box component="main" sx={{ p: 3 }}>
                 <Toolbar />
-                <Typography>
-                    Some Random Texts Here
-                </Typography>
             </Box>
         </Box>
     )
