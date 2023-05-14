@@ -1,0 +1,11 @@
+.background {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-image: url("../public/Homepage Background.png");
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
