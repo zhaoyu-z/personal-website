@@ -1,7 +1,9 @@
 import * as React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
+// import { useTheme } from '@mui/material/styles'
 // import Link from '@mui/material/Link'
+import { useMediaQuery } from 'react-responsive'
 import Image from 'next/image'
 import {
     Timeline,
@@ -123,9 +125,13 @@ events.sort((a, b) => b.time.valueOf() - a.time.valueOf())
 function TimeLine() {
 
     const e = events[0]
+    const isMobile = useMediaQuery({ query: '(max-width: 600px)' })
 
     return (
-        <Box sx={{paddingLeft: "20vw", paddingRight: "20vw"}}>
+        <Box sx={{
+          paddingLeft: isMobile ? "0" : "20vw", 
+          paddingRight: isMobile ? "0" : "20vw"
+        }}>
             <Box>
                 <Typography textAlign='center' fontSize="3vw">
                     {"Zhaoyu's Timeline"}

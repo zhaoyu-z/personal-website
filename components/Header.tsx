@@ -71,7 +71,6 @@ const DarkModeSwitch = styled(Switch)(({ theme }) => ({
         },
     },
     '& .MuiSwitch-thumb': {
-    //   backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
         backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#FDB813',
         width: 32,
         height: 32,
@@ -100,7 +99,7 @@ function Header(props: Props) {
     const { window, onToggleTheme, isDarkMode } = props
     const [navBarOpen, setNavBarOpen] = React.useState(false)
     const theme = useTheme()
-    const isExtraSmallWindow = theme.breakpoints.down('xs');
+    const isExtraSmallWindow = theme.breakpoints.down('xs')
 
     const handleNavBar = () => {
         setNavBarOpen((prevState) => !prevState)
@@ -162,13 +161,13 @@ function Header(props: Props) {
                     ))}
                     <FormControlLabel
                         control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                        label="Go Dark"
+                        label={isDarkMode ? "Go Light" : "Go Dark"}
                     />
                 </Box>
                 <Box sx={{display: {xs: 'block', sm: 'none'}}}>
                     <FormControlLabel
                         control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                        label="Go Dark"
+                        label={isDarkMode ? "Go Light" : "Go Dark"}
                     />
                 </Box>
                 </Toolbar>
