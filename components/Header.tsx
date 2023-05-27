@@ -18,9 +18,11 @@ import {
     styled,
     FormControlLabel,
     Link,
-    Tooltip
+    Tooltip,
+    Avatar
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import { useMediaQuery } from 'react-responsive'
 import styles from '../styles/Header.module.css'
 
 interface Props {
@@ -99,8 +101,7 @@ const DarkModeSwitch = styled(Switch)(({ theme }) => ({
 function Header(props: Props) {
     const { window, onToggleTheme, isDarkMode } = props
     const [navBarOpen, setNavBarOpen] = React.useState(false)
-    const theme = useTheme()
-    const isExtraSmallWindow = theme.breakpoints.down('xs')
+    const isMobile = useMediaQuery({ query: '(max-width: 900px)' })
 
     const handleNavBar = () => {
         setNavBarOpen((prevState) => !prevState)
@@ -129,57 +130,80 @@ function Header(props: Props) {
     return (
         <Box sx={{ display: 'flex', position: "fixed", zIndex: "100" }}>
             <CssBaseline />
-            <AppBar component="nav" sx={{ justifyContent: 'space-around'}}>
-                <Toolbar sx={{ justifyContent: isExtraSmallWindow ? 'space-between' : ''}}>
-                <IconButton
-                    color="inherit"
-                    edge="start"
-                    onClick={handleNavBar}
-                    /*
-                     * margin-right: 2 spaces (1 space = 8 px)
-                     * sm: none (this component will not display in small screens)
-                    */
-                    sx={{ mr: 2, display: { sm: 'none' } }}
-                >
-                    <MenuIcon />
-                </IconButton>
-                {/* TODO */}
-                <Link href='./' component="button" underline='none' color="inherit">
-                    <Tooltip title="Back to Home">
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: isExtraSmallWindow ? '1' : '0', display: { xs: 'none', sm: 'block' },
-                            ml: 2}}
+            <AppBar component="nav" sx={{ 
+                justifyContent: isMobile ? 'space-between' :'space-around',
+                flexDirection: isMobile ? 'row' : 'column'
+            }}>
+                <Toolbar sx={{ justifyContent: isMobile ? 'flex-start' : 'space-between'}}>
+                    <IconButton
+                        color="inherit"
+                        edge="start"
+                        onClick={handleNavBar}
+                        sx={{ mr: 2, display: isMobile ? 'block' : 'none' }}
                     >
-                        Zhaoyu Zhang
-                    </Typography>
+                        <MenuIcon />
+                    </IconButton>
+                    {/* TODO */}
+                    <Tooltip title="Back to Home">
+                        <Button 
+                            component={Link} 
+                            href="./" 
+                            underline="none" 
+                            color="inherit" 
+                            startIcon={
+                                <Avatar 
+                                    src={isDarkMode ? "../ZZY_LOGO_WHITE.svg" : "../ZZY_LOGO.svg"} 
+                                    alt="Image Alt Text" 
+                                />
+                            }
+                            sx={{
+                                '&:hover': {
+                                    backgroundColor: 'transparent',
+                                },
+                                '&:active': {
+                                    backgroundColor: 'transparent',
+                                },
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                component="div"
+                                sx={{
+                                    flexGrow: isMobile ? '1' : '0',
+                                    display: isMobile ? 'none' : 'block',
+                                    ml: 2
+                                }}
+                            >
+                                Zhaoyu Zhang
+                            </Typography>
+                        </Button>
                     </Tooltip>
-                </Link>
-                <Box sx={{ display: { xs: 'none', sm: 'block' }, mr: 2 }}>
-                    {navItems.map((item) => (
-                    <Button key={item} sx={{ 
-                        color: '#fff', textTransform: 'none',
-                        fontWeight: '400', fontSize: '1rem'
-                    }}>
-                        {item}
-                    </Button>
-                    ))}
-                    <Tooltip title={"Change Background Mode"}>
-                        <FormControlLabel
-                            control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                            label={isDarkMode ? "Go Light" : "Go Dark"}
-                        />
-                    </Tooltip>
-                </Box>
-                <Box sx={{display: {xs: 'block', sm: 'none'}}}>
-                    <Tooltip title={"Change Background Mode"}>
-                        <FormControlLabel
-                            control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                            label={isDarkMode ? "Go Light" : "Go Dark"}
-                        />
-                    </Tooltip>
-                </Box>
+                    <Box sx={{ display: isMobile ? 'none' : 'block', mr: 2 }}>
+                        {navItems.map((item) => (
+                        <Button key={item} sx={{ 
+                            color: '#fff', textTransform: 'none',
+                            fontWeight: '400', fontSize: '1rem'
+                        }}>
+                            {item}
+                        </Button>
+                        ))}
+                        <Tooltip title={"Change Background Mode"}>
+                            <FormControlLabel
+                                control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
+                                label={isDarkMode ? "Go Light" : "Go Dark"}
+                            />
+                        </Tooltip>
+                    </Box>
+                </Toolbar>
+                <Toolbar sx={{ display: isMobile ? 'flex' : 'none', alignItems: 'center' }}>
+                    <Box>
+                        <Tooltip title={"Change Background Mode"}>
+                            <FormControlLabel
+                                control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
+                                label={isDarkMode ? "Go Light" : "Go Dark"}
+                            />
+                        </Tooltip>
+                    </Box>
                 </Toolbar>
             </AppBar>
             <Box component="nav">
@@ -192,7 +216,7 @@ function Header(props: Props) {
                         keepMounted: true, // Better open performance on mobile.
                     }}
                     sx={{
-                        display: { xs: 'block', sm: 'none' },
+                        display: isMobile ? 'block' : 'none',
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                     }}
                 >

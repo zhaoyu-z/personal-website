@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           mode: isDarkMode ? 'dark' : 'light',
         },
         transitions: {
-          create: () => 'all 1s ease',
+          create: () => 'all 0.5s ease',
         },
       }),
     [isDarkMode],
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Title isDarkMode={isDarkMode} />
-      <Box sx={{ transition: "all 1s ease" }}>
+      <Box sx={{ transition: "all 0.5s ease" }}>
         <StyledEngineProvider injectFirst>
           <Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
           <Intro />
