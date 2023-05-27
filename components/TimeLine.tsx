@@ -125,7 +125,7 @@ events.sort((a, b) => b.time.valueOf() - a.time.valueOf())
 function TimeLine() {
 
     const e = events[0]
-    const isMobile = useMediaQuery({ query: '(max-width: 600px)' })
+    const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
 
     return (
         <Box sx={{
@@ -133,8 +133,8 @@ function TimeLine() {
           paddingRight: isMobile ? "0" : "20vw"
         }}>
             <Box>
-                <Typography textAlign='center' fontSize="3vw">
-                    {"Zhaoyu's Timeline"}
+                <Typography textAlign='center' fontSize="2vw">
+                    {"Until ..."}
                 </Typography>
             </Box>
             <Timeline position='alternate'>
