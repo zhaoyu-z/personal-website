@@ -1,8 +1,7 @@
 import * as React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-// import { useTheme } from '@mui/material/styles'
-// import Link from '@mui/material/Link'
+import { CssBaseline } from '@mui/material'
 import { useMediaQuery } from 'react-responsive'
 import Image from 'next/image'
 import {
@@ -15,9 +14,6 @@ import {
     TimelineDot
 } from '@mui/lab' 
 import FastfoodIcon from '@mui/icons-material/Fastfood'
-// import LaptopMacIcon from '@mui/icons-material/LaptopMac'
-// import HotelIcon from '@mui/icons-material/Hotel'
-// import RepeatIcon from '@mui/icons-material/Repeat'
 
 type MonthDict = {
   [index: number]: string
@@ -132,6 +128,7 @@ function TimeLine() {
           paddingLeft: isMobile ? "0" : "20vw", 
           paddingRight: isMobile ? "0" : "20vw"
         }}>
+            <CssBaseline />
             <Box>
                 <Typography textAlign='center' fontSize="2vw">
                     {"Until ..."}

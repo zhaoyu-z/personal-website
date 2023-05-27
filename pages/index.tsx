@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { StyledEngineProvider } from '@mui/material/styles'
-import Temp from '../components/temp'
+import Box from '@mui/material/Box'
 import Header from '../components/Header'
 import TimeLine from '../components/TimeLine'
 import Intro from '../components/Intro'
@@ -27,6 +27,9 @@ const Home: NextPage = () => {
         palette: {
           mode: isDarkMode ? 'dark' : 'light',
         },
+        transitions: {
+          create: () => 'all 1s ease',
+        },
       }),
     [isDarkMode],
   )
@@ -34,12 +37,13 @@ const Home: NextPage = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/* <Temp /> */}
-      <StyledEngineProvider injectFirst>
-        <Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-        <Intro />
-        <TimeLine />
-      </StyledEngineProvider>
+      <Box sx={{ transition: "all 1s ease" }}>
+        <StyledEngineProvider injectFirst>
+          <Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+          <Intro />
+          <TimeLine />
+        </StyledEngineProvider>
+      </Box>
     </ThemeProvider>
   )
 }

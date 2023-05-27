@@ -16,7 +16,9 @@ import {
     Switch,
     useTheme,
     styled,
-    FormControlLabel
+    FormControlLabel,
+    Link,
+    Tooltip
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import styles from '../styles/Header.module.css'
@@ -24,7 +26,6 @@ import styles from '../styles/Header.module.css'
 interface Props {
     /**
      * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
      */
     window?: () => Window
     onToggleTheme: () => void
@@ -142,14 +143,19 @@ function Header(props: Props) {
                 >
                     <MenuIcon />
                 </IconButton>
-                <Typography
-                    variant="h6"
-                    component="div"
-                    sx={{ flexGrow: isExtraSmallWindow ? '1' : '0', display: { xs: 'none', sm: 'block' },
-                        ml: 2}}
-                >
-                    Zhaoyu Zhang
-                </Typography>
+                {/* TODO */}
+                <Link href='./' component="button" underline='none' color="inherit">
+                    <Tooltip title="Back to Home">
+                    <Typography
+                        variant="h6"
+                        component="div"
+                        sx={{ flexGrow: isExtraSmallWindow ? '1' : '0', display: { xs: 'none', sm: 'block' },
+                            ml: 2}}
+                    >
+                        Zhaoyu Zhang
+                    </Typography>
+                    </Tooltip>
+                </Link>
                 <Box sx={{ display: { xs: 'none', sm: 'block' }, mr: 2 }}>
                     {navItems.map((item) => (
                     <Button key={item} sx={{ 
@@ -159,16 +165,20 @@ function Header(props: Props) {
                         {item}
                     </Button>
                     ))}
-                    <FormControlLabel
-                        control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                        label={isDarkMode ? "Go Light" : "Go Dark"}
-                    />
+                    <Tooltip title={"Change Background Mode"}>
+                        <FormControlLabel
+                            control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
+                            label={isDarkMode ? "Go Light" : "Go Dark"}
+                        />
+                    </Tooltip>
                 </Box>
                 <Box sx={{display: {xs: 'block', sm: 'none'}}}>
-                    <FormControlLabel
-                        control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                        label={isDarkMode ? "Go Light" : "Go Dark"}
-                    />
+                    <Tooltip title={"Change Background Mode"}>
+                        <FormControlLabel
+                            control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
+                            label={isDarkMode ? "Go Light" : "Go Dark"}
+                        />
+                    </Tooltip>
                 </Box>
                 </Toolbar>
             </AppBar>
