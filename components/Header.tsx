@@ -153,7 +153,7 @@ function Header(props: Props) {
                             startIcon={
                                 <Avatar 
                                     src={isDarkMode ? "../ZZY_LOGO_WHITE.svg" : "../ZZY_LOGO.svg"} 
-                                    alt="Image Alt Text" 
+                                    alt="ZZY LOGO" 
                                 />
                             }
                             sx={{
