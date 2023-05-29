@@ -1,6 +1,6 @@
 # My Personal Website (Under Development)
 
-Source Code for [zhaoyuzhangzzy.com](https://zhaoyuzhangzzy.com)
+Source Code for [iamzzy.com](https://iamzzy.com)
 
 You may see the contents being strange, that's fine! because I'm testing it :)
 
