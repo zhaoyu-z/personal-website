@@ -1,6 +1,6 @@
 # My Personal Website (Version 2)
 
-Source Code for [zha0yu.com](https://zha0yu.com)
+Source Code for [iamzzy.com](https://iamzzy.com)
 
 Updated on 2023-2-6
 
