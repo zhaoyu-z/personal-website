@@ -44,15 +44,15 @@ function Intro(props?: IntroProps) {
         let totalIterations = Math.max(leftMovement, rightMovement)
       
         timerRef.current = setInterval(() => {
-          setLeftMovement((prevLeftMovement) => Math.max(prevLeftMovement - 1, 0))
-          setRightMovement((prevRightMovement) => Math.max(prevRightMovement - 1, 0))
-      
-          totalIterations--
-      
-          if (totalIterations === 0) {
-            clearInterval(timerRef.current)
-            prevMouseXRef.current = null
-          }
+            setLeftMovement((prevLeftMovement) => Math.max(prevLeftMovement - 1, 0))
+            setRightMovement((prevRightMovement) => Math.max(prevRightMovement - 1, 0))
+        
+            totalIterations--
+        
+            if (totalIterations === 0) {
+                clearInterval(timerRef.current)
+                prevMouseXRef.current = null
+            }
         }, resetBackgroundImageIntervalInMilliSeconds / totalIterations)
     }
 
