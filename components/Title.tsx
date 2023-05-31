@@ -14,7 +14,7 @@ function Title(props: Props) {
     <Head>
         <title >Zhaoyu Zhang</title>
         <meta name="description" content="Zhaoyu Zhang's Personal Website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="keywords" content="zhaoyu zhang, Zhaoyu Zhang, personal website" />
         <link rel="icon" href={logo} type="image/x-icon" />
     </Head>
