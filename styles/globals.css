@@ -1,19 +1,19 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Zen Tokyo Zoo", cursive;
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela Round';
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .MuiTypography-root, .MuiButton-root {
-  font-family: "Zen Tokyo Zoo", cursive;
+	font-family: 'Varela Round';
 }
