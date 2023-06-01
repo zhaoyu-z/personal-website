@@ -3,10 +3,42 @@
     padding-right: 20vw;
 }
 
+.timeLineHeader {
+    font-size: 2vw;
+}
+
+.timeLineOppositeContent {
+    font-size: 1.5vw;
+}
+
+.primary {
+    font-size: 1.5vw;
+}
+
+.secondary {
+    font-size: 0.75vw;
+}
+
 /* styles for mobile devices */
 @media (max-width: 900px) {
     .timeLine {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .timeLineHeader {
+        font-size: 50px;
+    }
+
+    .timeLineOppositeContent {
+        font-size: 25px;
+    }
+
+    .primary {
+        font-size: 35px;
+    }
+
+    .secondary {
+        font-size: 25px;
     }
 }
