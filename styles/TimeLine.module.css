@@ -1,0 +1,12 @@
+.timeLine {
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+/* styles for mobile devices */
+@media (max-width: 900px) {
+    .timeLine {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

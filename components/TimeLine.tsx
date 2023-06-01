@@ -2,7 +2,6 @@ import * as React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { CssBaseline } from '@mui/material'
-import { useMediaQuery } from 'react-responsive'
 import Image from 'next/image'
 import {
     Timeline,
@@ -14,13 +13,7 @@ import {
     TimelineDot
 } from '@mui/lab' 
 import FastfoodIcon from '@mui/icons-material/Fastfood'
-
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   */
-  window?: () => Window
-}
+import styles from '../styles/TimeLine.module.css'
 
 type MonthDict = {
   [index: number]: string
@@ -125,37 +118,10 @@ const events = [
 
 events.sort((a, b) => b.time.valueOf() - a.time.valueOf())
 
-function TimeLine(props: Props) {
-    const { window } = props
-    const e = events[0]
-    // const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
-    const [isMobile, setIsMobile] = React.useState(
-      window !== undefined
-      ? window().innerWidth <= 900
-      : undefined
-  )
-
-  React.useEffect(() => {
-      if (window !== undefined) {
-          const handleResize = () => {
-              setIsMobile(window().innerWidth <= 900);
-          };
-  
-          // Add event listener to update `isMobile` on window resize
-          window().addEventListener('resize', handleResize);
-  
-          // Cleanup the event listener on component unmount
-          return () => {
-              window().removeEventListener('resize', handleResize);
-          };
-      }
-  }, []);
+function TimeLine() {
 
     return (
-        <Box sx={{
-          paddingLeft: isMobile ? "0" : "20vw", 
-          paddingRight: isMobile ? "0" : "20vw"
-        }}>
+        <Box className={styles.timeLine}>
             <CssBaseline />
             <Box>
                 <Typography textAlign='center' fontSize="2vw">
