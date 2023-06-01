@@ -1,0 +1,62 @@
+.appBar {
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.toolBar {
+    justify-content: space-between;
+}
+
+.iconButton {
+    display: none;
+}
+
+.name {
+    flex-grow: 0;
+    display: block;
+}
+
+.navItems {
+    display: block;
+}
+
+.darkModeToggler {
+    display: none;
+}
+
+.drawer {
+    display: none;
+}
+
+/* styles for mobile devices */
+@media (max-width: 900px) {
+    .appBar {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .toolBar {
+        justify-content: flex-start;
+    }
+
+    .iconButton {
+        display: block;
+    }
+
+    .name {
+        flex-grow: 1;
+        display: none;
+    }
+
+    .navItems {
+        display: none;
+    }
+
+    .darkModeToggler {
+        display: flex;
+    }
+
+    .drawer {
+        display: block;
+    }
+}

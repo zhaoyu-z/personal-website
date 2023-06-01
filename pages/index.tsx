@@ -36,17 +36,17 @@ const Home: NextPage = () => {
   )
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Title isDarkMode={isDarkMode} />
-      <Box sx={{ transition: "all 0.5s ease" }}>
-        <StyledEngineProvider injectFirst>
-          <Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-          <Intro />
-          <TimeLine />
-        </StyledEngineProvider>
-      </Box>
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Title isDarkMode={isDarkMode} />
+        <Box sx={{ transition: "all 0.5s ease" }}>
+            <Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+            <Intro />
+            <TimeLine />
+        </Box>
+      </ThemeProvider>
+    </StyledEngineProvider>
   )
 }
 

@@ -12,9 +12,10 @@ function Title(props: Props) {
 
     return (
     <Head>
-        <title >Zhaoyu Zhang</title>
+        <title>Zhaoyu Zhang</title>
+        <meta charSet="utf-8" />
         <meta name="description" content="Zhaoyu Zhang's Personal Website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content="zhaoyu zhang, Zhaoyu Zhang, personal website" />
         <link rel="icon" href={logo} type="image/x-icon" />
     </Head>

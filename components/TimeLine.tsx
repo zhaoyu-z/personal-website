@@ -15,6 +15,13 @@ import {
 } from '@mui/lab' 
 import FastfoodIcon from '@mui/icons-material/Fastfood'
 
+interface Props {
+  /**
+   * Injected by the documentation to work in an iframe.
+   */
+  window?: () => Window
+}
+
 type MonthDict = {
   [index: number]: string
 }
@@ -118,10 +125,31 @@ const events = [
 
 events.sort((a, b) => b.time.valueOf() - a.time.valueOf())
 
-function TimeLine() {
-
+function TimeLine(props: Props) {
+    const { window } = props
     const e = events[0]
-    const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
+    // const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
+    const [isMobile, setIsMobile] = React.useState(
+      window !== undefined
+      ? window().innerWidth <= 900
+      : undefined
+  )
+
+  React.useEffect(() => {
+      if (window !== undefined) {
+          const handleResize = () => {
+              setIsMobile(window().innerWidth <= 900);
+          };
+  
+          // Add event listener to update `isMobile` on window resize
+          window().addEventListener('resize', handleResize);
+  
+          // Cleanup the event listener on component unmount
+          return () => {
+              window().removeEventListener('resize', handleResize);
+          };
+      }
+  }, []);
 
     return (
         <Box sx={{

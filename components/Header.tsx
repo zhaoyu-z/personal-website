@@ -22,7 +22,6 @@ import {
     Avatar
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
-import { useMediaQuery } from 'react-responsive'
 import styles from '../styles/Header.module.css'
 
 interface Props {
@@ -101,7 +100,6 @@ const DarkModeSwitch = styled(Switch)(({ theme }) => ({
 function Header(props: Props) {
     const { window, onToggleTheme, isDarkMode } = props
     const [navBarOpen, setNavBarOpen] = React.useState(false)
-    const isMobile = useMediaQuery({ query: '(max-width: 900px)' })
 
     const handleNavBar = () => {
         setNavBarOpen((prevState) => !prevState)
@@ -109,7 +107,7 @@ function Header(props: Props) {
 
     const navBar = (
         <Box onClick={handleNavBar} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" className={styles.logo} sx={{ my: 2 }}>
+            <Typography variant="h6" sx={{ my: 2 }}>
                 Zhaoyu Zhang
             </Typography>
             <Divider />
@@ -130,16 +128,16 @@ function Header(props: Props) {
     return (
         <Box sx={{ display: 'flex', position: "fixed", zIndex: "100" }}>
             <CssBaseline />
-            <AppBar component="nav" sx={{ 
-                justifyContent: isMobile ? 'space-between' :'space-around',
-                flexDirection: isMobile ? 'row' : 'column'
-            }}>
-                <Toolbar sx={{ justifyContent: isMobile ? 'flex-start' : 'space-between'}}>
+            <AppBar component="nav" className={styles.appBar}>
+                <Toolbar className={styles.toolBar}>
                     <IconButton
                         color="inherit"
                         edge="start"
                         onClick={handleNavBar}
-                        sx={{ mr: 2, display: isMobile ? 'block' : 'none' }}
+                        sx={{ 
+                            mr: 2, 
+                        }}
+                        className={styles.iconButton}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -168,17 +166,15 @@ function Header(props: Props) {
                             <Typography
                                 variant="h6"
                                 component="div"
-                                sx={{
-                                    flexGrow: isMobile ? '1' : '0',
-                                    display: isMobile ? 'none' : 'block',
-                                    ml: 2
-                                }}
+                                sx={{ ml: 2 }}
+                                className={styles.name}
                             >
                                 Zhaoyu Zhang
                             </Typography>
                         </Button>
                     </Tooltip>
-                    <Box sx={{ display: isMobile ? 'none' : 'block', mr: 2 }}>
+                    <Box sx={{ mr: 2 }} className={styles.navItems}
+                    >
                         {navItems.map((item) => (
                         <Button key={item} sx={{ 
                             color: '#fff', textTransform: 'none',
@@ -195,7 +191,8 @@ function Header(props: Props) {
                         </Tooltip>
                     </Box>
                 </Toolbar>
-                <Toolbar sx={{ display: isMobile ? 'flex' : 'none', alignItems: 'center' }}>
+                <Toolbar sx={{ alignItems: 'center' }} className={styles.darkModeToggler}
+                >
                     <Box>
                         <Tooltip title={"Change Background Mode"}>
                             <FormControlLabel
@@ -215,10 +212,8 @@ function Header(props: Props) {
                     ModalProps={{
                         keepMounted: true, // Better open performance on mobile.
                     }}
-                    sx={{
-                        display: isMobile ? 'block' : 'none',
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
+                    sx={{ '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth } }}
+                    className={styles.drawer}
                 >
                 {navBar}
                 </Drawer>
