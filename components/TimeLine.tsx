@@ -132,7 +132,6 @@ function TimeLine() {
                 {events.map((e) => (
                 <TimelineItem key={e.primary}>
                     <TimelineOppositeContent
-                        // sx={{ m: 'auto 0', fontSize: "1.5vw" }}
 						sx={{ m: 'auto 0' }}
                         variant="body2"
                         color="text.secondary"
@@ -157,7 +156,7 @@ function TimeLine() {
                         <Typography 
                             variant="h6"
                             component="span"
-							className={styles.primary}  
+							className={styles.primary}
                         >
                             {e.primary}
                         </Typography>

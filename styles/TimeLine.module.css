@@ -27,18 +27,18 @@
     }
 
     .timeLineHeader {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .timeLineOppositeContent {
-        font-size: 25px;
+        font-size: 15px;
     }
 
     .primary {
-        font-size: 35px;
+        font-size: 25px;
     }
 
     .secondary {
-        font-size: 25px;
+        font-size: 15px;
     }
 }
