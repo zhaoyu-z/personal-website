@@ -186,7 +186,11 @@ function Header(props: Props) {
                         <Tooltip title={"Change Background Mode"}>
                             <FormControlLabel
                                 control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                                label={isDarkMode ? "Go Light" : "Go Dark"}
+                                label={
+                                    <Typography>
+                                        {isDarkMode ? "Go Light" : "Go Dark"}
+                                    </Typography>
+                                }
                             />
                         </Tooltip>
                     </Box>
@@ -197,7 +201,11 @@ function Header(props: Props) {
                         <Tooltip title={"Change Background Mode"}>
                             <FormControlLabel
                                 control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                                label={isDarkMode ? "Go Light" : "Go Dark"}
+                                label={
+                                    <Typography>
+                                        {isDarkMode ? "Go Light" : "Go Dark"}
+                                    </Typography>
+                                }
                             />
                         </Tooltip>
                     </Box>

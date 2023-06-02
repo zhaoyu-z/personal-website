@@ -16,4 +16,5 @@ a {
 
 .MuiTypography-root, .MuiButton-root {
 	font-family: 'Varela Round';
+	color: palegoldenrod;
 }
