@@ -64,11 +64,11 @@ function Intro(props?: IntroProps) {
             <CssBaseline />
             <Avatar 
                 src={"../Homepage Background.png"} 
-                alt="Image Alt Text"
+                alt={"Image of \"What Obsessed Me Shapes My Future\""}
                 variant="square"
                 style={{
                     width: "100%",
-                    height: "40%"
+                    height: "auto"
                 }}
                 sx={{ 
                     position: 'relative', top: '0',
@@ -94,7 +94,7 @@ function Intro(props?: IntroProps) {
                 ]}
                 speed={10}
                 deletionSpeed={80}
-                style={{ fontSize: '5em', position: 'absolute' }}
+                style={{ position: 'absolute' }}
                 repeat={Infinity}
                 cursor={false}
                 className={styles.type}
