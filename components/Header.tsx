@@ -135,11 +135,11 @@ function Header(props: Props) {
                         edge="start"
                         onClick={handleNavBar}
                         sx={{ 
-                            mr: 2, 
+                            ml: 1,
                         }}
                         className={styles.iconButton}
                     >
-                        <MenuIcon />
+                        <MenuIcon sx={{ color: 'palegoldenrod', scale: '1.5', display: 'flex' }}/>
                     </IconButton>
                     {/* TODO */}
                     <Tooltip title="Back to Home">
@@ -151,7 +151,7 @@ function Header(props: Props) {
                             startIcon={
                                 <Avatar 
                                     src={isDarkMode ? "../ZZY_LOGO_WHITE.svg" : "../ZZY_LOGO.svg"} 
-                                    alt="ZZY LOGO" 
+                                    alt="ZZY LOGO"
                                 />
                             }
                             sx={{
