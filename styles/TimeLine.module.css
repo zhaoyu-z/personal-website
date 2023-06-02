@@ -9,14 +9,17 @@
 
 .timeLineOppositeContent {
     font-size: 1.5vw;
+    color: #9b59b6;
 }
 
 .primary {
     font-size: 1.5vw;
+    color: #2ecc71;
 }
 
 .secondary {
     font-size: 0.75vw;
+    color: #f39c12;
 }
 
 /* styles for mobile devices */

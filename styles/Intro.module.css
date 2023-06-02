@@ -7,6 +7,7 @@
 
 .type {
     font-size: 5em;
+    color: palegoldenrod;
 }
 
 .type::after {

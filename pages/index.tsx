@@ -26,10 +26,19 @@ const Home: NextPage = () => {
     () =>
       createTheme({
         palette: {
-          mode: isDarkMode ? 'dark' : 'light',
+			mode: isDarkMode ? 'dark' : 'light',
+			background: {
+				default: isDarkMode ? '#333' : '#fff', // Customize the default background color
+				// paper: isDarkMode ? '#424242' : '#f5f5f5', // Customize the background color of paper components
+				paper: isDarkMode ? '#333' : '#999 !important',
+          	},
+			text: {
+				primary: isDarkMode ? '#fff' : '#333', // Customize the primary font color
+				secondary: isDarkMode ? '#aaa' : '#777', // Customize the secondary font color
+			},
         },
         transitions: {
-          create: () => 'all 0.5s ease',
+          	create: () => 'all 0.5s ease',
         },
       }),
     [isDarkMode],

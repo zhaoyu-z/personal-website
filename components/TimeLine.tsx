@@ -156,12 +156,12 @@ function TimeLine() {
                         <Typography 
                             variant="h6"
                             component="span"
-							className={styles.primary}
+                            className={styles.primary}
                         >
                             {e.primary}
                         </Typography>
                         <Typography
-							className={styles.secondary}
+                            className={styles.secondary}
                         >
                             {e.secondary}
                         </Typography>
