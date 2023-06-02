@@ -59,7 +59,7 @@ function Intro(props?: IntroProps) {
     return (
         <Box
             className={styles.background}
-            sx={{ ...props?.additionalStyles, overflow: 'hidden' }}
+            sx={{ ...props?.additionalStyles, overflow: 'hidden', width: '100%' }}
         >
             <CssBaseline />
             <Avatar 

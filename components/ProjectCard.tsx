@@ -6,16 +6,19 @@ import {
     Typography,
     Stack,
     ImageList,
-    ImageListItem
+    ImageListItem,
+    Button
 } from '@mui/material'
 import Image from 'next/image'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import { formatDate } from './TimeLine'
 
 type ProjectCardProps = {
-    image: any,
+    image?: any,
     name: string,
     time: Date,
     techs: Array<string>,
-    link: string,
+    link?: string,
 }
 
 function ProjectCard(props: ProjectCardProps) {
@@ -28,13 +31,22 @@ function ProjectCard(props: ProjectCardProps) {
     } = props
 
     return (
-        <Box>
+        <Box
+            sx={{ 
+                width: "50%", 
+                height: "300px", 
+                justifyContent: "center", 
+                alignItems: "center", 
+                display: "flex",
+                flexDirection: "column"
+            }}
+        >
             <CssBaseline />
             <Typography variant='h5'>
                 {name}
             </Typography>
             <Typography variant='h6'>
-                {time}
+                {formatDate(time)}
             </Typography>
             {/* <Stack direction="row"> */}
             <ImageList
@@ -54,7 +66,23 @@ function ProjectCard(props: ProjectCardProps) {
                         />
                     </ImageListItem>
                 ))}
-                </ImageList>
+            </ImageList>
+            {link && <Button
+                component={Link} 
+                href={link} 
+                underline="none" 
+                color="inherit"
+                endIcon={
+                    <ArrowForwardIcon />
+                } 
+            >
+                <Typography
+                    variant="h6"
+                    component="div"
+                >
+                    View Source
+                </Typography>
+            </Button>}
             {/* </Stack> */}
         </Box>
     )

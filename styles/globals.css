@@ -3,6 +3,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Varela Round';
+	max-width: 100vw;
+	/* overflow-x: hidden; */
 }
 
 a {

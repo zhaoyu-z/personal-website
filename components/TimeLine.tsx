@@ -34,7 +34,7 @@ const monthMap: MonthDict = {
   11: 'December'
 }
 
-function formatDate(date: Date) {
+export function formatDate(date: Date) {
   const month: string = monthMap[date.getMonth()].toString()
   const day: string = date.getDate().toString()
   const year: string = date.getFullYear().toString()

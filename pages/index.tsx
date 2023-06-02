@@ -9,6 +9,7 @@ import Header from '../components/Header'
 import TimeLine from '../components/TimeLine'
 import Intro from '../components/Intro'
 import Title from '../components/Title'
+import ProjectCard from '../components/ProjectCard'
 
 const Home: NextPage = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -48,10 +49,21 @@ const Home: NextPage = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Title isDarkMode={isDarkMode} />
-        <Box sx={{ transition: "all 0.5s ease" }}>
+        <Box sx={{ 
+			transition: "all 0.5s ease",
+		 	display: "flex",
+		  	flexDirection: "column",
+			justifyContent: "center",
+			alignItems: "center"
+		}}>
             <Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
             <Intro />
             <TimeLine />
+			{/* <ProjectCard
+				name={"Temp"}
+				time={new Date()}
+				techs={[ "t1", "t2", "t3" ]}
+			/> */}
         </Box>
       </ThemeProvider>
     </StyledEngineProvider>
