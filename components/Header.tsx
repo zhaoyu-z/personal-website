@@ -183,15 +183,10 @@ function Header(props: Props) {
                             {item}
                         </Button>
                         ))}
-                        <Tooltip title={"Change Background Mode"}>
-                            <FormControlLabel
-                                control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                                label={
-                                    <Typography>
-                                        {isDarkMode ? "Go Light" : "Go Dark"}
-                                    </Typography>
-                                }
-                            />
+                        <Tooltip title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}>
+                            <Box>
+                                <DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>
+                            </Box>
                         </Tooltip>
                     </Box>
                 </Toolbar>

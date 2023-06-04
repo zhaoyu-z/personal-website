@@ -14,6 +14,7 @@ import {
 } from '@mui/lab' 
 import FastfoodIcon from '@mui/icons-material/Fastfood'
 import styles from '../styles/TimeLine.module.css'
+import fadein from '../styles/FadeIn.module.css'
 
 type MonthDict = {
   [index: number]: string
@@ -121,7 +122,7 @@ events.sort((a, b) => b.time.valueOf() - a.time.valueOf())
 function TimeLine() {
 
     return (
-        <Box className={styles.timeLine}>
+        <Box className={`${styles.timeLine} ${fadein.global_fadein}`}>
             <CssBaseline />
             <Box>
 				<Typography textAlign='center' className={styles.timeLineHeader}>
