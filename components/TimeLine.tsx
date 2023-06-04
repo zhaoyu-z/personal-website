@@ -15,31 +15,36 @@ import {
 import FastfoodIcon from '@mui/icons-material/Fastfood'
 import styles from '../styles/TimeLine.module.css'
 import fadein from '../styles/FadeIn.module.css'
+import { lazyload } from 'react-lazyload'
+
+type TimeLineProps = {
+	isVisible: boolean
+}
 
 type MonthDict = {
-  [index: number]: string
+	[index: number]: string
 }
 
 const monthMap: MonthDict = {
-  0: 'January',
-  1: 'February',
-  2: 'March',
-  3: 'April',
-  4: 'May',
-  5: 'June',
-  6: 'July',
-  7: 'August',
-  8: 'September',
-  9: 'October',
-  10: 'November',
-  11: 'December'
+	0: 'January',
+	1: 'February',
+	2: 'March',
+	3: 'April',
+	4: 'May',
+	5: 'June',
+	6: 'July',
+	7: 'August',
+	8: 'September',
+	9: 'October',
+	10: 'November',
+	11: 'December'
 }
 
 export function formatDate(date: Date) {
-  const month: string = monthMap[date.getMonth()].toString()
-  const day: string = date.getDate().toString()
-  const year: string = date.getFullYear().toString()
-  return `${month} ${day}, ${year}`
+	const month: string = monthMap[date.getMonth()].toString()
+	const day: string = date.getDate().toString()
+	const year: string = date.getFullYear().toString()
+	return `${month} ${day}, ${year}`
 }
 
 const events = [
@@ -119,10 +124,10 @@ const events = [
 
 events.sort((a, b) => b.time.valueOf() - a.time.valueOf())
 
-function TimeLine() {
+function TimeLine(props: TimeLineProps) {
 
     return (
-        <Box className={`${styles.timeLine} ${fadein.global_fadein}`}>
+        <Box id='TimeLine' className={`${styles.timeLine} ${props.isVisible ? fadein.global_fadein : ''}`}>
             <CssBaseline />
             <Box>
 				<Typography textAlign='center' className={styles.timeLineHeader}>
