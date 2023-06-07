@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import Image from 'next/image'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-import { formatDate } from './TimeLine'
+import { formatDate } from './shared/utilities'
 
 type ProjectCardProps = {
     image?: any,
