@@ -16,7 +16,7 @@ import FastfoodIcon from '@mui/icons-material/Fastfood'
 import styles from '../styles/TimeLine.module.css'
 import fadein from '../styles/FadeIn.module.css'
 import { formatDate } from './shared/utilities'
-import * as config from './config/TimeLineConfig'
+import * as config from './config/TimeLine.config'
 
 type TimeLineProps = {
 	isVisible: boolean

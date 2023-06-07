@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Title.module.css'
-import * as config from './config/TitleConfig'
+import * as config from './config/Title.config'
 
 type Props = {
     isDarkMode: boolean,

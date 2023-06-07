@@ -8,7 +8,7 @@ import {
 import { TypeAnimation } from 'react-type-animation'
 import styles from '../styles/Intro.module.css'
 import fadein from '../styles/FadeIn.module.css'
-import * as config from './config/IntroConfig'
+import * as config from './config/Intro.config'
 
 type IntroProps = {
     additionalStyles?: any

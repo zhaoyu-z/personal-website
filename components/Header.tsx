@@ -23,7 +23,7 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import styles from '../styles/Header.module.css'
-import * as config from './config/HeaderConfig'
+import * as config from './config/Header.config'
 
 interface Props {
     /**
