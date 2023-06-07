@@ -23,6 +23,7 @@ import {
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import styles from '../styles/Header.module.css'
+import * as config from './config/HeaderConfig'
 
 interface Props {
     /**
@@ -32,9 +33,6 @@ interface Props {
     onToggleTheme: () => void
     isDarkMode: boolean
 }
-
-const drawerWidth = 240
-const navItems = ['Home', 'Portfolio', 'Photos']
 
 /*
  * Home: My study and work Timeline and My Projects.
@@ -108,11 +106,11 @@ function Header(props: Props) {
     const navBar = (
         <Box onClick={handleNavBar} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                Zhaoyu Zhang
+                {config.logoName}
             </Typography>
             <Divider />
             <List>
-                {navItems.map((item) => (
+                {config.navItems.map((item) => (
                 <ListItem key={item} disablePadding>
                     <ListItemButton sx={{ textAlign: 'center' }}>
                     <ListItemText primary={item} />
@@ -139,10 +137,10 @@ function Header(props: Props) {
                         }}
                         className={styles.iconButton}
                     >
-                        <MenuIcon sx={{ color: 'palegoldenrod', scale: '1.5', display: 'flex' }}/>
+                        <MenuIcon sx={{ color: config.fontColor, scale: '1.5', display: 'flex' }}/>
                     </IconButton>
                     {/* TODO */}
-                    <Tooltip title="Back to Home">
+                    <Tooltip title={config.toolTips['logo']}>
                         <Button 
                             component={Link} 
                             href="./" 
@@ -150,8 +148,8 @@ function Header(props: Props) {
                             color="inherit" 
                             startIcon={
                                 <Avatar 
-                                    src={isDarkMode ? "../ZZY_LOGO_WHITE.svg" : "../ZZY_LOGO.svg"} 
-                                    alt="ZZY LOGO"
+                                    src={isDarkMode ? config.logo_path_DARKMODE : config.logo_path_LIGHTMODE} 
+                                    alt={config.logoAlt}
                                 />
                             }
                             sx={{
@@ -169,13 +167,13 @@ function Header(props: Props) {
                                 sx={{ ml: 2 }}
                                 className={styles.name}
                             >
-                                Zhaoyu Zhang
+                                {config.logoName}
                             </Typography>
                         </Button>
                     </Tooltip>
                     <Box sx={{ mr: 2 }} className={styles.navItems}
                     >
-                        {navItems.map((item) => (
+                        {config.navItems.map((item) => (
                         <Button key={item} sx={{ 
                             color: '#fff', textTransform: 'none',
                             fontWeight: '400', fontSize: '1rem'
@@ -183,7 +181,7 @@ function Header(props: Props) {
                             {item}
                         </Button>
                         ))}
-                        <Tooltip title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}>
+                        <Tooltip title={isDarkMode ? config.toolTips['themeToggler_DARKMODE_DESKTOP'] : config.toolTips['themeToggler_LIGHTMODE_DESKTOP']}>
                             <Box>
                                 <DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>
                             </Box>
@@ -193,16 +191,14 @@ function Header(props: Props) {
                 <Toolbar sx={{ alignItems: 'center' }} className={styles.darkModeToggler}
                 >
                     <Box>
-                        <Tooltip title={"Change Background Mode"}>
-                            <FormControlLabel
-                                control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
-                                label={
-                                    <Typography>
-                                        {isDarkMode ? "Go Light" : "Go Dark"}
-                                    </Typography>
-                                }
-                            />
-                        </Tooltip>
+                        <FormControlLabel
+                            control={<DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>}
+                            label={
+                                <Typography>
+                                    {isDarkMode ? config.toolTips['themeToggler_DARKMODE_MOBILE'] : config.toolTips['themeToggler_LIGHTMODE_MOBILE']}
+                                </Typography>
+                            }
+                        />
                     </Box>
                 </Toolbar>
             </AppBar>
@@ -215,7 +211,7 @@ function Header(props: Props) {
                     ModalProps={{
                         keepMounted: true, // Better open performance on mobile.
                     }}
-                    sx={{ '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth } }}
+                    sx={{ '& .MuiDrawer-paper': { boxSizing: 'border-box', width: config.drawerWidth } }}
                     className={styles.drawer}
                 >
                 {navBar}

@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Title.module.css'
+import * as config from './config/TitleConfig'
 
 type Props = {
     isDarkMode: boolean,
@@ -8,15 +9,15 @@ type Props = {
 
 function Title(props: Props) {
 
-    const [logo, setLogo] = React.useState<string>(props.isDarkMode ? "../ZZY_LOGO_WHITE.svg" : "../ZZY_LOGO.svg")
+    const logo = props.isDarkMode ? config.logo_path_DARKMODE : config.logo_path_LIGHTMODE
 
     return (
     <Head>
-        <title>Zhaoyu Zhang</title>
-        <meta charSet="utf-8" />
-        <meta name="description" content="Zhaoyu Zhang's Personal Website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content="zhaoyu zhang, Zhaoyu Zhang, personal website" />
+        <title>{config.title}</title>
+        <meta charSet={config.charSet} />
+        <meta name="description" content={config.description} />
+        <meta name="viewport" content={config.viewport} />
+        <meta name="keywords" content={config.keywords} />
         <link rel="icon" href={logo} type="image/x-icon" />
     </Head>
     )

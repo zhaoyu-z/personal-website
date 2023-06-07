@@ -7,9 +7,12 @@ import {
 } from '@mui/material'
 import { TypeAnimation } from 'react-type-animation'
 import styles from '../styles/Intro.module.css'
+import fadein from '../styles/FadeIn.module.css'
+import * as config from './config/IntroConfig'
 
 type IntroProps = {
     additionalStyles?: any
+    isVisible: boolean
 }
 
 function Intro(props?: IntroProps) {
@@ -58,13 +61,14 @@ function Intro(props?: IntroProps) {
 
     return (
         <Box
-            className={styles.background}
+            id="Intro"
+            className={`${styles.background} ${props?.isVisible ? fadein.global_fadein : ''}`}
             sx={{ ...props?.additionalStyles, overflow: 'hidden', width: '100%' }}
         >
             <CssBaseline />
             <Avatar 
-                src={"../Homepage Background.png"} 
-                alt={"Image of \"What Obsessed Me Shapes My Future\""}
+                src={config.backgroundImage} 
+                alt={config.backgroundImageAlt}
                 variant="square"
                 style={{
                     width: "100%",
@@ -82,20 +86,11 @@ function Intro(props?: IntroProps) {
                 onMouseLeave={handleMouseLeave}
             />
             <TypeAnimation
-                sequence={[
-                    'Hi, I\'m Zhaoyu Zhang',
-                    1000,
-                    'Welcome to My Personal Website!',
-                    1000,
-                    'I\'m a Software Engineer',
-                    1000,
-                    'Contact Me if You Need Anything!',
-                    1000,
-                ]}
-                speed={10}
-                deletionSpeed={80}
+                sequence={config.typingAnimation.sequence}
+                speed={config.typingAnimation.speed}
+                deletionSpeed={config.typingAnimation.deletionSpeed}
                 style={{ position: 'absolute' }}
-                repeat={Infinity}
+                repeat={config.typingAnimation.repeat}
                 cursor={false}
                 className={styles.type}
             />

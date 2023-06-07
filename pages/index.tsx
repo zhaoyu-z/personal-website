@@ -10,32 +10,7 @@ import TimeLine from '../components/TimeLine'
 import Intro from '../components/Intro'
 import Title from '../components/Title'
 // import ProjectCard from '../components/ProjectCard'
-// import LazyLoad from 'react-lazyload'
-
-const HandleComponentScroll = (componentId: string, setIsVisible: React.Dispatch<React.SetStateAction<boolean>>) => {
-	const handleScroll = () => {
-		const componentElement = document.getElementById(componentId)
-		if (componentElement) {
-			const componentPosition = componentElement.getBoundingClientRect()
-			const { top, bottom } = componentPosition
-			const isVisible = top < window.innerHeight && bottom >= 0
-
-			if (isVisible) {
-				setIsVisible(true)
-			}
-		} else {
-			console.log("Could not find component id: " + componentId)
-		}
-	}
-  
-	React.useEffect(() => {
-		window.addEventListener('scroll', handleScroll)
-		handleScroll() // Check initial visibility on mount
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
-	}, [])
-  }
+import { HandleComponentScroll } from '../components/shared/utilities'
   
 
 const Home: NextPage = () => {
@@ -51,7 +26,8 @@ const Home: NextPage = () => {
 	}, [isDarkMode])
 
 	/* used for checking a component has been scrolled down into viewport*/
-	const [isVisible, setIsVisible] = React.useState(false)
+	const [isIntroVisible, setIsIntroVisible] = React.useState(false)
+	const [isTimeLineVisible, setIsTimeLineVisible] = React.useState(false)
 
 	const theme = React.useMemo(() =>
 		createTheme({
@@ -71,7 +47,8 @@ const Home: NextPage = () => {
 		},
 	}), [isDarkMode],)
 
-	HandleComponentScroll('TimeLine', setIsVisible)
+	HandleComponentScroll('Intro', setIsIntroVisible)
+	HandleComponentScroll('TimeLine', setIsTimeLineVisible)
 
 	return (
 		<StyledEngineProvider injectFirst>
@@ -86,8 +63,8 @@ const Home: NextPage = () => {
 				alignItems: "center"
 			}}>
 				<Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-				<Intro />
-				<TimeLine isVisible={isVisible}/>
+				<Intro isVisible={isIntroVisible}/>
+				<TimeLine isVisible={isTimeLineVisible}/>
 				{/* <ProjectCard
 					name={"Temp"}
 					time={new Date()}
