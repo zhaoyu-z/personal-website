@@ -6,15 +6,15 @@ Updated on 2023-2-6
 
 ## Milestones
 
-- [ ] Personalised home page
+- [x] Personalised home page
 - [x] Darkmode
 - [ ] Social media contact links.
-- [ ] Automated integration using Github Actions and AWS S3.
+- [x] Automated integration using Github Actions and Vercel.
 - [ ] HTML-version CV
 - [ ] HTML-version papers and reports
-- [ ] Timeline of my education and experience
+- [x] Timeline of my education and experience
 - [ ] Sample showcase of selected projects
-- [ ] Mobile Compatibility - Responsive Design 
+- [x] Mobile Compatibility - Responsive Design 
 - [ ] Daily life record
 - [ ] Professional Developer Blog
 - [ ] Image-to-text conversion page
