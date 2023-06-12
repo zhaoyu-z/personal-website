@@ -14,7 +14,7 @@ import {
 } from '@mui/lab' 
 import FastfoodIcon from '@mui/icons-material/Fastfood'
 import styles from '../styles/TimeLine.module.css'
-import fadein from '../styles/FadeIn.module.css'
+import animations from '../styles/Animations.module.css'
 import { formatDate } from './shared/utilities'
 import * as config from './config/TimeLine.config'
 
@@ -27,7 +27,7 @@ config.events.sort((a, b) => b.time.valueOf() - a.time.valueOf())
 function TimeLine(props: TimeLineProps) {
 
     return (
-        <Box id='TimeLine' className={`${styles.timeLine} ${props.isVisible ? fadein.global_fadein : ''}`}>
+        <Box id='TimeLine' className={`${styles.timeLine} ${props.isVisible ? animations.global_fadein : ''}`}>
             <CssBaseline />
             <Box>
 				<Typography textAlign='center' className={styles.timeLineHeader}>

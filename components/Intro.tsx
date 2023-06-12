@@ -7,7 +7,7 @@ import {
 } from '@mui/material'
 import { TypeAnimation } from 'react-type-animation'
 import styles from '../styles/Intro.module.css'
-import fadein from '../styles/FadeIn.module.css'
+import animations from '../styles/Animations.module.css'
 import * as config from './config/Intro.config'
 
 type IntroProps = {
@@ -62,7 +62,7 @@ function Intro(props?: IntroProps) {
     return (
         <Box
             id="Intro"
-            className={`${styles.background} ${props?.isVisible ? fadein.global_fadein : ''}`}
+            className={`${styles.background} ${props?.isVisible ? animations.global_fadein : ''}`}
             sx={{ ...props?.additionalStyles, overflow: 'hidden', width: '100%' }}
         >
             <CssBaseline />
