@@ -69,13 +69,11 @@ export const events = [
     },
     {
       primary: "Full Stack Engineer",
-      secondary: "I started working as a Java Springboot, React, and Postgresql developer at Radley Associates.",
+      secondary: "I started working as a Full Stack developer at Radley Associates.",
       time: new Date("March 10, 2023"),
       image: ""
     },
 ]
-
-// const TimeLineConfig: {
 // 	timeLineTitle: string;
 // 	events: ({
 // 		primary: string;

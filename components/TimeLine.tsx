@@ -41,7 +41,6 @@ function TimeLine(props: TimeLineProps) {
 						sx={{ m: 'auto 0' }}
                         variant="body2"
                         color="text.secondary"
-						
                     >
                       <Typography className={styles.timeLineOppositeContent}>
                         {formatDate(e.time)}
