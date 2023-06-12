@@ -62,7 +62,7 @@ function Intro(props?: IntroProps) {
     return (
         <Box
             id="Intro"
-            className={`${styles.background} ${props?.isVisible ? animations.fadein_l2r : ''}`}
+            className={`${styles.background} ${props?.isVisible ? animations.fadein : ''}`}
             sx={{ ...props?.additionalStyles, overflow: 'hidden', width: '100%' }}
         >
             <CssBaseline />

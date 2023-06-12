@@ -7,21 +7,23 @@
 }
 
 .timeLineOppositeContent {
-    font-size: 1.5vw;
+    font-size: 0.8vw;
     /* color: #9b59b6; */
     color: palegoldenrod;
 }
 
 .primary {
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     /* color: #2ecc71; */
     color: #F78B7F;
 }
 
 .secondary {
-    font-size: 0.75vw;
+    font-size: 0.8vw;
     /* color: #f39c12; */
-    color: #7B5B6F;
+    /* color: #7B5B6F; */
+    color: #6D6A7F;
+    filter: brightness(140%);
 }
 
 /* styles for mobile devices */

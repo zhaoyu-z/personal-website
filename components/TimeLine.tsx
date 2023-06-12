@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import { CssBaseline } from '@mui/material'
+import { CssBaseline, ListItemIcon, styled } from '@mui/material'
 import Image from 'next/image'
 import {
     Timeline,
@@ -13,6 +13,7 @@ import {
     TimelineDot
 } from '@mui/lab' 
 import FastfoodIcon from '@mui/icons-material/Fastfood'
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import styles from '../styles/TimeLine.module.css'
 import animations from '../styles/Animations.module.css'
 import { formatDate } from './shared/utilities'
@@ -60,29 +61,53 @@ function TimeLine(props: TimeLineProps) {
                 </Typography>
             </Box>
             <Timeline position='alternate'>
-                {config.events.map((e) => (
+                {config.events.map((e, index) => (
                 <TimelineItem id={e.primary} key={e.primary}>
                     <TimelineOppositeContent
 						sx={{ m: 'auto 0' }}
                         variant="body2"
                         color="text.secondary"
                     >
-                      <Typography className={`${styles.timeLineOppositeContent} ${eventVisibilityStates[e.primary] ? animations.fadein_l2r : ""}`}>
-                        {formatDate(e.time)}
-                      </Typography>
-                      {(e.image) &&
-                        <Image src={e.image} alt={`${e.image}_image`} width="2500px" height="900px">
-                        </Image>
-                      }
+                        {/* <ListItemIcon>
+                            <AccessTimeIcon />
+                        </ListItemIcon> */}
+                        <Typography className={
+                            /* 
+                                adds the corresponding animation (when index divides 2, show l2r, else show r2l)
+                                when the component has entered the viewport (check the states variable)
+                            */ 
+                            `${styles.timeLineOppositeContent} ${
+                                eventVisibilityStates[e.primary] 
+                                ? (index % 2 === 0 ? animations.fadein_l2r : animations.fadein_r2l) 
+                                : ""
+                            }`
+                        }>
+                            {formatDate(e.time)}
+                        </Typography>
+                        {(e.image) &&
+                            <Image src={e.image} alt={`${e.image}_image`} width="2500px" height="900px">
+                            </Image>
+                        }
                     </TimelineOppositeContent>
                     <TimelineSeparator>
-                        <TimelineConnector />
+                        <TimelineConnector sx={{ height: `${config.lengthOfGapBetweenEachItem}` }}/>
                         <TimelineDot variant='outlined'>
                             <FastfoodIcon />
                         </TimelineDot>
-                        <TimelineConnector />
+                        <TimelineConnector sx={{ height: `${config.lengthOfGapBetweenEachItem}` }}/>
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <TimelineContent sx={{ 
+                        py: '12px', px: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center"
+                    }}
+                        className={`${
+                            eventVisibilityStates[e.primary]
+                            ? (index % 2 === 1 ? animations.fadein_l2r : animations.fadein_r2l) 
+                            : ""
+                        }`}
+                    >
                         <Typography 
                             variant="h6"
                             component="span"

@@ -1,4 +1,4 @@
-export const timeLineTitle = "Until ..."
+export const timeLineTitle = "Continue ...";
 
 export const events = [
     {
@@ -25,12 +25,12 @@ export const events = [
       time: new Date("September 1, 2015"),
       image: ""
     },
-    {
-      primary: "First Part-time Job",
-      secondary: "I worked as a chef at Burger King for two months during my first year of senior high school.",
-      time: new Date("July 1, 2016"),
-      image: ""
-    },
+    // {
+    //   primary: "First Part-time Job",
+    //   secondary: "I worked as a chef at Burger King for two months during my first year of senior high school.",
+    //   time: new Date("July 1, 2016"),
+    //   image: ""
+    // },
     {
       primary: "University of Manchester",
       secondary: "I pursued a Master of Engineering with Honours in Computer Science.",
@@ -50,7 +50,7 @@ export const events = [
       image: ""
     },
     {
-      primary: "Meeting My Girlfriend",
+      primary: "Met My Love",
       secondary: "I met my lovely girlfriend, Lynn.",
       time: new Date("April 29, 2022"),
       image: ""
@@ -73,4 +73,6 @@ export const events = [
       time: new Date("March 10, 2023"),
       image: ""
     },
-]
+];
+
+export const lengthOfGapBetweenEachItem = "35px";
