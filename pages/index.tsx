@@ -11,7 +11,6 @@ import Intro from '../components/Intro'
 import Title from '../components/Title'
 // import ProjectCard from '../components/ProjectCard'
 import { HandleComponentScroll } from '../components/shared/utilities'
-  
 
 const Home: NextPage = () => {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
@@ -24,13 +23,9 @@ const Home: NextPage = () => {
 	const toggleTheme = React.useCallback(() => {
 		setIsDarkMode(!isDarkMode)
 	}, [isDarkMode])
-
-	/* used for checking a component has been scrolled down into viewport*/
-	const [isIntroVisible, setIsIntroVisible] = React.useState(false)
-	const [isTimeLineVisible, setIsTimeLineVisible] = React.useState(false)
-
+	
 	const theme = React.useMemo(() =>
-		createTheme({
+	createTheme({
 		palette: {
 			mode: isDarkMode ? 'dark' : 'light',
 			background: {
@@ -46,9 +41,21 @@ const Home: NextPage = () => {
 			create: () => 'all 0.5s ease',
 		},
 	}), [isDarkMode],)
+	
+	/* used for checking a component has been scrolled down into viewport*/
+	const [isIntroVisible, setIsIntroVisible] = React.useState(false)
+	// const [isTimeLineVisible, setIsTimeLineVisible] = React.useState(false)
 
-	HandleComponentScroll('Intro', setIsIntroVisible)
-	HandleComponentScroll('TimeLine', setIsTimeLineVisible)
+	const scrollControlList = [
+		{
+			componentId: "Intro",
+			setter: setIsIntroVisible
+		},
+	]
+
+	scrollControlList.map(({componentId, setter}) => {
+		HandleComponentScroll(componentId, setter);
+	})
 
 	return (
 		<StyledEngineProvider injectFirst>
@@ -64,7 +71,8 @@ const Home: NextPage = () => {
 			}}>
 				<Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
 				<Intro isVisible={isIntroVisible}/>
-				<TimeLine isVisible={isTimeLineVisible}/>
+				{/* <TimeLine isVisible={isTimeLineVisible}/> */}
+				<TimeLine />
 				{/* <ProjectCard
 					name={"Temp"}
 					time={new Date()}

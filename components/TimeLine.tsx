@@ -17,17 +17,42 @@ import styles from '../styles/TimeLine.module.css'
 import animations from '../styles/Animations.module.css'
 import { formatDate } from './shared/utilities'
 import * as config from './config/TimeLine.config'
+import { HandleSubComponentScroll } from './shared/utilities'
 
 type TimeLineProps = {
-	isVisible: boolean
+	isVisible?: boolean
 }
+
+export type EventState = {
+    [key: string]: boolean;
+};
 
 config.events.sort((a, b) => b.time.valueOf() - a.time.valueOf())
 
 function TimeLine(props: TimeLineProps) {
 
+    /* used for checking components has been scrolled down into viewport*/
+    const [eventVisibilityStates, setEventVisibilityStates] = React.useState<EventState>({});
+
+    /* initialise the component states */
+    React.useEffect(() => {
+        const newState: EventState = {};
+        config.events.forEach(event => {
+            newState[event.primary] = false;
+        });
+        setEventVisibilityStates(newState);
+    }, []);
+
+    // React.useEffect(() => {
+    //     console.log('Current State:', eventVisibilityStates);
+    // }, [eventVisibilityStates]);
+
+    config.events.map((event) => {
+        HandleSubComponentScroll(event.primary, setEventVisibilityStates, eventVisibilityStates);
+    })
+
     return (
-        <Box id='TimeLine' className={`${styles.timeLine} ${props.isVisible ? animations.global_fadein : ''}`}>
+        <Box id='TimeLine' className={`${styles.timeLine} ${props.isVisible ? animations.fadein_l2r : ''}`}>
             <CssBaseline />
             <Box>
 				<Typography textAlign='center' className={styles.timeLineHeader}>
@@ -36,13 +61,13 @@ function TimeLine(props: TimeLineProps) {
             </Box>
             <Timeline position='alternate'>
                 {config.events.map((e) => (
-                <TimelineItem key={e.primary}>
+                <TimelineItem id={e.primary} key={e.primary}>
                     <TimelineOppositeContent
 						sx={{ m: 'auto 0' }}
                         variant="body2"
                         color="text.secondary"
                     >
-                      <Typography className={styles.timeLineOppositeContent}>
+                      <Typography className={`${styles.timeLineOppositeContent} ${eventVisibilityStates[e.primary] ? animations.fadein_l2r : ""}`}>
                         {formatDate(e.time)}
                       </Typography>
                       {(e.image) &&

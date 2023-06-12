@@ -1,12 +1,30 @@
-.global_fadein {
+/* Fade in left to right */
+.fadein_l2r { 
     opacity: 0;
-    animation: fadein 2s forwards;
+    animation: fadeinl2r 2s forwards;
 }
-  
-@keyframes fadein {
+
+@keyframes fadeinl2r {
     from {
         opacity: 0;
         transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in right to left */
+.fadein_r2l {
+    opacity: 0;
+    animation: fadeinr2l 2s forwards;
+}
+
+@keyframes fadeinr2l {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
     }
     to {
         opacity: 1;
