@@ -26,3 +26,5 @@ export const typingAnimation: typingAnimationType = {
     deletionSpeed: 80,
     repeat: Infinity
 }
+
+export const resetBackgroundImageIntervalInMilliSeconds = 1000;

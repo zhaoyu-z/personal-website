@@ -57,7 +57,7 @@ export const events = [
     },
     {
       primary: "Graduation",
-      secondary: "I received a Second Class, Division One degree.",
+      secondary: "I graduated from the University of Manchester. Big Step in my life.",
       time: new Date("July 1, 2022"),
       image: ""
     },

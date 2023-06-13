@@ -24,6 +24,6 @@
 /* styles for mobile devices */
 @media (max-width: 900px) {
     .type {
-        font-size: 1.5em;
+        font-size: 1em;
     }
 }

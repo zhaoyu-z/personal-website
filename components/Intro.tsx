@@ -21,7 +21,6 @@ function Intro(props?: IntroProps) {
     const [rightMovement, setRightMovement] = React.useState(0)
     const prevMouseXRef = React.useRef(null)
     const timerRef = React.useRef<number | any>(null)
-    const resetBackgroundImageIntervalInMilliSeconds = 1000
 
     const handleMouseEnter = (event: any) => {
         clearInterval(timerRef.current)
@@ -56,7 +55,7 @@ function Intro(props?: IntroProps) {
                 clearInterval(timerRef.current)
                 prevMouseXRef.current = null
             }
-        }, resetBackgroundImageIntervalInMilliSeconds / totalIterations)
+        }, config.resetBackgroundImageIntervalInMilliSeconds / totalIterations)
     }
 
     return (
