@@ -1,0 +1,36 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.socialMediaLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialMediaIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.contactMe {
+    font-size: 2.5em;
+}
+
+/* styles for mobile devices */
+@media (max-width: 900px) {
+    .socialMediaIcon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .contactMe {
+        font-size: 20px;
+    }
+}

@@ -9,6 +9,7 @@ import Header from '../components/Header'
 import TimeLine from '../components/TimeLine'
 import Intro from '../components/Intro'
 import Title from '../components/Title'
+import Footer from '../components/Footer'
 // import ProjectCard from '../components/ProjectCard'
 import { HandleComponentScroll } from '../components/shared/utilities'
 
@@ -78,6 +79,7 @@ const Home: NextPage = () => {
 					time={new Date()}
 					techs={[ "t1", "t2", "t3" ]}
 				/> */}
+				<Footer />
 			</Box>
 			</ThemeProvider>
 		</StyledEngineProvider>
