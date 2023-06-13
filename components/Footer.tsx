@@ -16,7 +16,7 @@ function Footer() {
     return (
         <Box className={styles.footer}>
             <Typography sx={{ mb: 4 }} className={styles.contactMe}>
-                Contact Me
+                {config.title}
             </Typography>
             <Breadcrumbs className={styles.socialMediaLinks}>
             {config.socialMediaList.map((item, index) => (

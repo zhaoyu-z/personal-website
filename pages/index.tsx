@@ -72,7 +72,6 @@ const Home: NextPage = () => {
 			}}>
 				<Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
 				<Intro isVisible={isIntroVisible}/>
-				{/* <TimeLine isVisible={isTimeLineVisible}/> */}
 				<TimeLine />
 				{/* <ProjectCard
 					name={"Temp"}

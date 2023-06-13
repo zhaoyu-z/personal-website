@@ -30,3 +30,5 @@ export const socialMediaList = [
         imagePath: "../../contacts/gmail-logo.svg"
     },
 ]
+
+export const title = "Get in touch"
