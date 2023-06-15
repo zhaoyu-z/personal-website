@@ -22,7 +22,7 @@
 
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: row;
     min-width: 1200px;
 }
