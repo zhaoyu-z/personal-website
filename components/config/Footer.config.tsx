@@ -31,4 +31,12 @@ export const socialMediaList = [
     },
 ]
 
-export const title = "Get in touch"
+export const title = "Stay in Touch"
+
+export const subtitle = "Send Direct Message to Me - I will get back to you as soon as I can!"
+
+// export const pageLinks = [
+//     {
+//         title: "home"
+//     }
+// ]

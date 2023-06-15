@@ -3,8 +3,41 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    /* margin-top: 10vh; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vh;
+}
+
+.divider {
+    border-color: rgba(194, 224, 255, 0.08);
+    border-width: 0px 0px thin;
+    width: 100vw;
+    /* border-style: solid; */
+}
+
+.container {
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: row;
+    min-width: 1200px;
+}
+
+.leftContainer {
+    display: block;
+}
+
+.title {
+    font-weight: 700;
+}
+
+.subtitle {
+    margin-bottom: 10px;
+    font-weight: 400;
 }
 
 .socialMediaLinks {
