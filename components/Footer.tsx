@@ -18,12 +18,19 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
 import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
+import emailjs from 'emailjs-com';
 import * as config from './config/Footer.config'
 import styles from '../styles/Footer.module.css'
 import { isValidEmail, HandleComponentScroll, ResizableTextArea } from './shared/utilities';
 import animations from '../styles/Animations.module.css'
 
 function Footer() {
+
+    const [name, setName] = React.useState<string>('');
+
+    const handleNameChange = (e: any) => {
+        setName(e.target.value);
+    }
 
     const [emailInputBox, setEmailInputBox] = React.useState<string>('');
     const [isLegalEmail, setIsLegalEmail] = React.useState<boolean>(true);
@@ -52,13 +59,12 @@ function Footer() {
 		HandleComponentScroll(componentId, setter);
 	})
 
-    const [message, setMessage] = React.useState<string>();
+    const [message, setMessage] = React.useState<string>('');
     const [messageError, setMessageError] = React.useState<boolean>(false);
     const [messageHelperText, setMessageHelperText] = React.useState<string>("");
 
     const handleMessageChange = (event: any) => {
         setMessage(event.target.value);
-        
     };
 
     React.useEffect(() => {
@@ -70,6 +76,34 @@ function Footer() {
             setMessageHelperText("");
         }
     }, [message])
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+    
+        const emailData = {
+            contact_number: 1,
+            name: name,
+            email: emailInputBox,
+            message: message,
+        };
+        
+        try {
+            await emailjs.send(
+                'service_zhangzy517',
+                'contact_iamzzy.com',
+                emailData,
+                'ICE3dACU9d2mH1-S9'
+            );
+        
+            alert('Email sent successfully!');
+            setName('');
+            setEmailInputBox('');
+            setMessage('');
+        } catch (error) {
+            console.error(error);
+            alert('An error occurred while sending the email.');
+        }
+    };
 
     return (
         <Box className={styles.footer}>
@@ -94,6 +128,8 @@ function Footer() {
                         <PersonIcon sx={{ mr: 1, my: 0.5 }}/>
                         <TextField id="input_name" label={config.nameLabel} variant="outlined"
                             autoComplete='name'
+                            value={name}
+                            onChange={handleNameChange}
                         />
                     </Box>
 
@@ -111,7 +147,7 @@ function Footer() {
                     <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 1 }}>
                         <MessageIcon sx={{ mr: 1, my: 2 }} />
                         <TextField id="input_message" label={config.messageLabel} variant="outlined"
-                            multiline={true}
+                            multiline={true} value={message}
                             InputProps={{ sx: {
                                 alignItems: "flex-start",
                             }}}
@@ -132,6 +168,7 @@ function Footer() {
                     <Box sx={{ display: "flex", justifyContent: "center" }}>
                         <Button variant='outlined'
                             sx={{ mt: 1 }} size="large"
+                            onClick={handleSubmit}
                         >
                             {config.buttonLabel}
                         </Button>

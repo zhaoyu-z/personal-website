@@ -47,9 +47,19 @@ const Home: NextPage = () => {
 					input: {
 						/* make the MuiOutlinedInput stay as same color as background when
                         you use chrome's autocomplete (#333 is the color) to fill it */
+
+						/* The use of these code will propose following errors in console:
+						1. Using kebab-case for css properties in objects is not supported.
+						Did you mean WebkitBoxShadow?
+						2. Using kebab-case for css properties in objects is not supported. 
+						Did you mean WebkitTextFillColor?
+						
+						They can be ignored because if you remove the dash before attributes
+						the browser will not find the correct style.
+						*/
 						'&:-webkit-autofill': {
-							'webkitBoxShadow': '0 0 0 100px #333 inset',
-							'webkitTextFillColor': '#fff',
+							'-webkitBoxShadow': '0 0 0 100px #333 inset',
+							'-webkitTextFillColor': '#fff',
 						},
 					},
 			  	},
