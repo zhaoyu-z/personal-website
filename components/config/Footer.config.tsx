@@ -40,3 +40,9 @@ export const nameLabel = "Your Name";
 export const emailLabel = "Your Email";
 
 export const messageLabel = "Message";
+
+export const buttonLabel = "Send";
+
+export const maxLength = 500;
+
+export const messageExceedMaxLength = `You can only send maximum ${maxLength} characters`;

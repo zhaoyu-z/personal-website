@@ -48,8 +48,8 @@ const Home: NextPage = () => {
 						/* make the MuiOutlinedInput stay as same color as background when
                         you use chrome's autocomplete (#333 is the color) to fill it */
 						'&:-webkit-autofill': {
-							'-webkit-box-shadow': '0 0 0 100px #333 inset',
-							'-webkit-text-fill-color': '#fff',
+							'webkitBoxShadow': '0 0 0 100px #333 inset',
+							'webkitTextFillColor': '#fff',
 						},
 					},
 			  	},

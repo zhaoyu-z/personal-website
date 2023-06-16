@@ -20,7 +20,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
 import * as config from './config/Footer.config'
 import styles from '../styles/Footer.module.css'
-import { isValidEmail, HandleComponentScroll } from './shared/utilities';
+import { isValidEmail, HandleComponentScroll, ResizableTextArea } from './shared/utilities';
 import animations from '../styles/Animations.module.css'
 
 function Footer() {
@@ -34,8 +34,6 @@ function Footer() {
         setIsLegalEmail(isValidEmail(inputValue));
     };
 
-    // const [isLeftVisible, setIsLeftVisible] = React.useState<boolean>(false);
-    // const [isRightVisible, setIsRightVisible] = React.useState<boolean>(false);
     const [isTopVisible, setIsTopVisible] = React.useState<boolean>(false);
     const [isBottomVisible, setIsBottomVisible] = React.useState<boolean>(false);
 
@@ -54,6 +52,25 @@ function Footer() {
 		HandleComponentScroll(componentId, setter);
 	})
 
+    const [message, setMessage] = React.useState<string>();
+    const [messageError, setMessageError] = React.useState<boolean>(false);
+    const [messageHelperText, setMessageHelperText] = React.useState<string>("");
+
+    const handleMessageChange = (event: any) => {
+        setMessage(event.target.value);
+        
+    };
+
+    React.useEffect(() => {
+        if (message && message.length >= config.maxLength) {
+            setMessageHelperText(config.messageExceedMaxLength);
+            setMessageError(true);
+        } else {
+            setMessageError(false);
+            setMessageHelperText("");
+        }
+    }, [message])
+
     return (
         <Box className={styles.footer}>
 
@@ -63,24 +80,24 @@ function Footer() {
             className={`${styles.container} ${isTopVisible ? animations.fadein_b2t : ""}`}>
             
             <Box className={styles.leftContainer}>
-                <Box>
-                    <Typography className={styles.title}>
+                <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                    <Typography className={styles.title} textAlign='center' sx={{ my: 1 }}>
                         {config.title}
                     </Typography>
-                    <Typography className={styles.subtitle}>
+                    <Typography className={styles.subtitle} textAlign='center' sx={{ my: 1 }}>
                         {config.subtitle}
                     </Typography>
                 </Box>
 
-                <Box >
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: "center", mb: 1 }}>
                         <PersonIcon sx={{ mr: 1, my: 0.5 }}/>
                         <TextField id="input_name" label={config.nameLabel} variant="outlined"
                             autoComplete='name'
                         />
                     </Box>
 
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', mt: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 1 }}>
                         <EmailIcon sx={{ mr: 1, my: 2 }} />
                         <TextField id="input_email" label={config.emailLabel} variant="outlined" 
                             autoComplete='email'
@@ -91,15 +108,33 @@ function Footer() {
                         />
                     </Box>
                     
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', mt: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 1 }}>
                         <MessageIcon sx={{ mr: 1, my: 2 }} />
                         <TextField id="input_message" label={config.messageLabel} variant="outlined"
-                            multiline={true} rows={8} sx={{ width: "223px" }}
-                            InputProps={{ sx: { 
-                                height: "223px",
+                            multiline={true}
+                            InputProps={{ sx: {
                                 alignItems: "flex-start",
                             }}}
+                            inputProps={{ sx: {
+                                resize: "both",
+                                minWidth: "195px",
+                                maxWidth: "300px",
+                                minHeight: "184px",
+                                maxHeight: "400px"
+                            }, maxLength: config.maxLength
+                            }}
+                            onChange={handleMessageChange}
+                            error={messageError}
+                            helperText={messageHelperText}
                         />
+                    </Box>
+
+                    <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <Button variant='outlined'
+                            sx={{ mt: 1 }} size="large"
+                        >
+                            {config.buttonLabel}
+                        </Button>
                     </Box>
                 </Box>
             </Box>
