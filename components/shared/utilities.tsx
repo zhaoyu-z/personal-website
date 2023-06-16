@@ -92,3 +92,9 @@ export const formatDate = (date: Date) => {
 	const year: string = date.getFullYear().toString()
 	return `${month} ${day}, ${year}`
 }
+
+export function isValidEmail(email: string) {
+	if (email.length === 0) return true;
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	return emailRegex.test(email);
+}

@@ -20,9 +20,19 @@ import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
 import * as config from './config/Footer.config'
 import styles from '../styles/Footer.module.css'
+import { isValidEmail } from './shared/utilities';
 
 function Footer() {
-    // console.log(config.socialMediaList)
+
+    const [emailInputBox, setEmailInputBox] = React.useState<string>('');
+    const [isLegalEmail, setIsLegalEmail] = React.useState<boolean>(true);
+
+    const handleEmailChange = (event: any) => {
+        const inputValue = event.target.value;
+        setEmailInputBox(inputValue);
+        setIsLegalEmail(isValidEmail(inputValue));
+    };
+
     return (
         <Box className={styles.footer}>
 
@@ -44,25 +54,29 @@ function Footer() {
                 <Box >
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                         <PersonIcon sx={{ mr: 1, my: 0.5 }}/>
-                        <TextField id="input_name" label="Name" variant="outlined"
+                        <TextField id="input_name" label={config.nameLabel} variant="outlined"
                             autoComplete='name'
                         />
                     </Box>
 
-                    <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
-                        <EmailIcon sx={{ mr: 1, my: 0.5 }} />
-                        <TextField id="input_email" label="Email" variant="outlined" 
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', mt: 1 }}>
+                        <EmailIcon sx={{ mr: 1, my: 2 }} />
+                        <TextField id="input_email" label={config.emailLabel} variant="outlined" 
                             autoComplete='email'
+                            value={emailInputBox}
+                            onChange={handleEmailChange}
+                            error={!isLegalEmail}
+                            helperText={!isLegalEmail ? 'Invalid email address' : ''}
                         />
                     </Box>
                     
                     <Box sx={{ display: 'flex', alignItems: 'flex-start', mt: 1 }}>
                         <MessageIcon sx={{ mr: 1, my: 2 }} />
-                        <TextField id="input_message" label="Message" variant="outlined"
+                        <TextField id="input_message" label={config.messageLabel} variant="outlined"
                             multiline={true} rows={8} sx={{ width: "223px" }}
                             InputProps={{ sx: { 
                                 height: "223px",
-                                alignItems: "flex-start"
+                                alignItems: "flex-start",
                             }}}
                         />
                     </Box>
