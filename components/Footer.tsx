@@ -14,10 +14,11 @@ import {
     InputAdornment,
     TextField
 } from '@mui/material'
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import LoadingButton from '@mui/lab/LoadingButton';
 import EmailIcon from '@mui/icons-material/Email';
 import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
+import SendIcon from '@mui/icons-material/Send';
 import emailjs from 'emailjs-com';
 import * as config from './config/Footer.config'
 import styles from '../styles/Footer.module.css'
@@ -77,14 +78,25 @@ function Footer() {
         }
     }, [message])
 
+    const [sending, setSending] = React.useState<boolean>(false);
+
     const handleSubmit = async (e: any) => {
+        if (!message || message.trim() === "" || message.length === 0) {
+            setMessageHelperText("Please Write Something to Send!");
+            return;
+        }
+
+        if (!isValidEmail(emailInputBox)) {
+            return;
+        }
+
+        setSending(true);
         e.preventDefault();
     
         const emailData = {
-            contact_number: 1,
-            name: name,
-            email: emailInputBox,
-            message: message,
+            name: name ? name : "Not Specified",
+            email: emailInputBox ? emailInputBox : "Not Specified",
+            message: message ? message : "Not Specified",
         };
         
         try {
@@ -95,13 +107,13 @@ function Footer() {
                 'ICE3dACU9d2mH1-S9'
             );
         
-            alert('Email sent successfully!');
+            setSending(false);
             setName('');
             setEmailInputBox('');
             setMessage('');
+            setMessageHelperText("Message sent successfully!");
         } catch (error) {
             console.error(error);
-            alert('An error occurred while sending the email.');
         }
     };
 
@@ -166,12 +178,15 @@ function Footer() {
                     </Box>
 
                     <Box sx={{ display: "flex", justifyContent: "center" }}>
-                        <Button variant='outlined'
+                        <LoadingButton variant='outlined'
                             sx={{ mt: 1 }} size="large"
                             onClick={handleSubmit}
+                            loading={sending}
+                            endIcon={<SendIcon />}
+                            loadingPosition="end"
                         >
                             {config.buttonLabel}
-                        </Button>
+                        </LoadingButton>
                     </Box>
                 </Box>
             </Box>
