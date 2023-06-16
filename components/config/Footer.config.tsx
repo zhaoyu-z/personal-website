@@ -40,8 +40,3 @@ export const nameLabel = "Your Name";
 export const emailLabel = "Your Email";
 
 export const messageLabel = "Message";
-// export const pageLinks = [
-//     {
-//         title: "home"
-//     }
-// ]

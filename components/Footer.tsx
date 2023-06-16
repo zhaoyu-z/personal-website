@@ -20,7 +20,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
 import * as config from './config/Footer.config'
 import styles from '../styles/Footer.module.css'
-import { isValidEmail } from './shared/utilities';
+import { isValidEmail, HandleComponentScroll } from './shared/utilities';
+import animations from '../styles/Animations.module.css'
 
 function Footer() {
 
@@ -33,13 +34,33 @@ function Footer() {
         setIsLegalEmail(isValidEmail(inputValue));
     };
 
+    // const [isLeftVisible, setIsLeftVisible] = React.useState<boolean>(false);
+    // const [isRightVisible, setIsRightVisible] = React.useState<boolean>(false);
+    const [isTopVisible, setIsTopVisible] = React.useState<boolean>(false);
+    const [isBottomVisible, setIsBottomVisible] = React.useState<boolean>(false);
+
+    const scrollControlList = [
+		{
+			componentId: "TopContainer",
+			setter: setIsTopVisible
+		},
+        // {
+		// 	componentId: "BottomContainer",
+		// 	setter: setIsBottomVisible
+		// },
+	]
+
+	scrollControlList.map(({componentId, setter}) => {
+		HandleComponentScroll(componentId, setter);
+	})
+
     return (
         <Box className={styles.footer}>
 
-            <Divider className={styles.divider}/>
+            <Divider className={styles.topDivider}/>
 
-            <Box className={styles.container}>
-
+            <Box id="TopContainer" 
+            className={`${styles.container} ${isTopVisible ? animations.fadein_b2t : ""}`}>
             
             <Box className={styles.leftContainer}>
                 <Box>
@@ -116,6 +137,8 @@ function Footer() {
             </Box>
 
             </Box>
+
+            <Divider className={styles.bottomDivider}/>
         </Box>
     )
 }

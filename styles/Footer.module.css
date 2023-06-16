@@ -9,11 +9,17 @@
     margin-bottom: 1vh;
 }
 
-.divider {
+.topDivider {
     border-color: rgba(194, 224, 255, 0.08);
     border-width: 0px 0px thin;
     width: 100vw;
     /* border-style: solid; */
+}
+
+.bottomDivider {
+    border-color: rgba(194, 224, 255, 0.08);
+    border-width: 0px 0px thin;
+    width: 1200px;
 }
 
 .container {

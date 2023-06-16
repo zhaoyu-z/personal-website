@@ -46,3 +46,37 @@
         opacity: 1;
     }
 }
+
+/* Fade in top to bottom */
+.fadein_t2b {
+    opacity: 0;
+    animation: fadeint2b 2s forwards;
+}
+
+@keyframes fadeint2b {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in bottom to top */
+.fadein_b2t {
+    opacity: 0;
+    animation: fadeinb2t 2s forwards;
+}
+
+@keyframes fadeinb2t {
+    from {
+        opacity: 0;
+        transform: translateY(+100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
