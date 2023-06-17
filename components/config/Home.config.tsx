@@ -1,15 +1,3 @@
-import useMediaQuery from '@mui/material/useMediaQuery';
+type Theme = "system" | "light" | "dark";
 
-export class ThemeInitialiser {
-
-    public prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    
-    public themeOptions = {
-        "system":  this.prefersDarkMode,
-        "light": false,
-        "dark": true
-    }
-}
-
-
-export const defaultTheme = "dark";
+export const defaultTheme: Theme = "dark";
