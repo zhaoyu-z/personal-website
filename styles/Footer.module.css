@@ -65,6 +65,36 @@
 
 /* styles for mobile devices */
 @media (max-width: 900px) {
+    .footer {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding-top: 40px;
+        padding-bottom: 80px;
+    
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        /* min-width: 1200px; */
+    }
+
+    .leftContainer {
+        /* display: block; */
+        margin-bottom: 40px;
+    }
+
+    .rightContainer {
+        margin-top: 40px;
+    }
+
+    .subtitle {
+        max-width: 100vw;
+        text-wrap: balance;
+    }
+
     .socialMediaIcon {
         width: 15px;
         height: 15px;
