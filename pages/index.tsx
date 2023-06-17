@@ -12,14 +12,20 @@ import Title from '../components/Title'
 import Footer from '../components/Footer'
 // import ProjectCard from '../components/ProjectCard'
 import { HandleComponentScroll } from '../components/shared/utilities'
+import styles from '../styles/Home.module.css';
+import { ThemeInitialiser } from '../components/config/Home.config';
+import * as config from '../components/config/Home.config';
 
 const Home: NextPage = () => {
-	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-	const [isDarkMode, setIsDarkMode] = React.useState(prefersDarkMode)
+	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+	const themeInitializer = new ThemeInitialiser();
+	const defaultTheme = themeInitializer.themeOptions[config.defaultTheme];
+	console.log(defaultTheme);
+	const [isDarkMode, setIsDarkMode] = React.useState(defaultTheme);
 
-	React.useEffect(() => {
-		setIsDarkMode(prefersDarkMode)
-	}, [prefersDarkMode])
+	// React.useEffect(() => {
+	// 	setIsDarkMode(prefersDarkMode)
+	// }, [prefersDarkMode])
 
 	const toggleTheme = React.useCallback(() => {
 		setIsDarkMode(!isDarkMode)
@@ -33,6 +39,7 @@ const Home: NextPage = () => {
 				default: isDarkMode ? '#333' : '#fff',
 				paper: isDarkMode ? '#333' : '#999 !important',
 			},
+
 			text: {
 				primary: isDarkMode ? '#fff' : '#333',
 				secondary: isDarkMode ? '#aaa' : '#777',
