@@ -28,18 +28,24 @@ import animations from '../styles/Animations.module.css'
 function Footer() {
 
     const [name, setName] = React.useState<string>('');
+    const [nameHelperText, setNameHelperText] = React.useState<string>("");
 
     const handleNameChange = (e: any) => {
         setName(e.target.value);
+        setNameHelperText("");
     }
 
     const [emailInputBox, setEmailInputBox] = React.useState<string>('');
     const [isLegalEmail, setIsLegalEmail] = React.useState<boolean>(true);
+    const [emailHelperText, setEmailHelperText] = React.useState<string>("");
 
     const handleEmailChange = (event: any) => {
         const inputValue = event.target.value;
         setEmailInputBox(inputValue);
         setIsLegalEmail(isValidEmail(inputValue));
+        if (isValidEmail(emailInputBox)) {
+            setEmailHelperText("");
+        }
     };
 
     const [isTopVisible, setIsTopVisible] = React.useState<boolean>(false);
@@ -81,12 +87,24 @@ function Footer() {
     const [sending, setSending] = React.useState<boolean>(false);
 
     const handleSubmit = async (e: any) => {
+        if (!name || name.trim() === "" || name.length === 0) {
+            setNameHelperText("Please give me your name");
+            return;
+        }
+
+        if (!emailInputBox || emailInputBox.trim() === "" || emailInputBox.length === 0) {
+            setEmailHelperText("Please give me your email");
+            return;
+        }
+
         if (!message || message.trim() === "" || message.length === 0) {
             setMessageHelperText("Please Write Something to Send!");
             return;
         }
 
+
         if (!isValidEmail(emailInputBox)) {
+            setEmailHelperText("Invalid email address");
             return;
         }
 
@@ -136,27 +154,34 @@ function Footer() {
                 </Box>
 
                 <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: "center", mb: 1 }}>
-                        <PersonIcon sx={{ mr: 1, my: 0.5 }}/>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: "center", mt: 2 }}>
+                        <PersonIcon sx={{ mr: 1, my: 2 }}/>
                         <TextField id="input_name" label={config.nameLabel} variant="outlined"
                             autoComplete='name'
                             value={name}
                             onChange={handleNameChange}
+                            helperText={nameHelperText}
+                            sx={{  "& .MuiFormHelperText-root": {
+                                color: `${config.helperTextColor} !important`
+                            }}}
                         />
                     </Box>
 
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 2 }}>
                         <EmailIcon sx={{ mr: 1, my: 2 }} />
                         <TextField id="input_email" label={config.emailLabel} variant="outlined" 
                             autoComplete='email'
                             value={emailInputBox}
                             onChange={handleEmailChange}
                             error={!isLegalEmail}
-                            helperText={!isLegalEmail ? 'Invalid email address' : ''}
+                            helperText={!isLegalEmail ? 'Invalid email address' : emailHelperText}
+                            sx={{  "& .MuiFormHelperText-root": {
+                                color: `${config.helperTextColor}`
+                            }}}
                         />
                     </Box>
                     
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 2 }}>
                         <MessageIcon sx={{ mr: 1, my: 2 }} />
                         <TextField id="input_message" label={config.messageLabel} variant="outlined"
                             multiline={true} value={message}
@@ -174,6 +199,9 @@ function Footer() {
                             onChange={handleMessageChange}
                             error={messageError}
                             helperText={messageHelperText}
+                            sx={{  "& .MuiFormHelperText-root": {
+                                color: `${config.helperTextColor} !important`
+                            }}}
                         />
                     </Box>
 

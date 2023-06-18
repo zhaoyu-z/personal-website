@@ -46,3 +46,5 @@ export const buttonLabel = "Send";
 export const maxLength = 500;
 
 export const messageExceedMaxLength = `You can only send maximum ${maxLength} characters`;
+
+export const helperTextColor = "white";
