@@ -15,7 +15,8 @@ function Title(props: Props) {
         <Head>
             <title>{config.title}</title>
             <meta charSet={config.charSet} />
-            <meta name="description" content={config.description} />
+            <meta name="description" content={config.descriptions.a} />
+            <meta name="description" content={config.descriptions.b} />
             <meta name="viewport" content={config.viewport} />
             <meta name="keywords" content={config.keywords} />
             <link rel="icon" href={logo} type="image/x-icon" />

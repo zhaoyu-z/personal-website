@@ -89,7 +89,8 @@ const Home: NextPage = () => {
 			<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<Title isDarkMode={isDarkMode} />
-			<Box sx={{ 
+			<Box id="HomeContainer"
+			sx={{
 				transition: "all 0.5s ease",
 				display: "flex",
 				flexDirection: "column",
