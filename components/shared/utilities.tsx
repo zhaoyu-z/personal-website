@@ -1,31 +1,31 @@
-import * as React from 'react'
-import { EventState } from '../TimeLine'
+import * as React from 'react';
+import { EventState } from '../TimeLine';
 import { styled } from '@mui/system';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 export const HandleComponentScroll = (componentId: string, setIsVisible: React.Dispatch<React.SetStateAction<boolean>>) => {
 	const handleScroll = () => {
-		const componentElement = document.getElementById(componentId)
+		const componentElement = document.getElementById(componentId);
 		if (componentElement) {
-			const componentPosition = componentElement.getBoundingClientRect()
-			const { top, bottom } = componentPosition
-			const isVisible = top < window.innerHeight && bottom >= 0
+			const componentPosition = componentElement.getBoundingClientRect();
+			const { top, bottom } = componentPosition;
+			const isVisible = top < window.innerHeight && bottom >= 0;
 
 			if (isVisible) {
-				setIsVisible(true)
+				setIsVisible(true);
 			}
 		} else {
-			console.log("Could not find component id: " + componentId)
+			console.log("Could not find component id: " + componentId);
 		}
-	}
+	};
   
 	React.useEffect(() => {
-		window.addEventListener('scroll', handleScroll)
-		handleScroll() // Check initial visibility on mount
+		window.addEventListener('scroll', handleScroll);
+		handleScroll(); // Check initial visibility on mount
 		return () => {
-			window.removeEventListener('scroll', handleScroll)
+			window.removeEventListener('scroll', handleScroll);
 		}
-	}, []) // eslint-disable-line
+	}, []); // eslint-disable-line
 }
 
 /* 
@@ -41,11 +41,11 @@ export const HandleSubComponentScroll = (
 	states: EventState
 ) => {
 	const handleScroll = () => {
-		const componentElement = document.getElementById(componentId)
+		const componentElement = document.getElementById(componentId);
 		if (componentElement) {
-			const componentPosition = componentElement.getBoundingClientRect()
-			const { top, bottom } = componentPosition
-			const isVisible = top < window.innerHeight && bottom >= 0
+			const componentPosition = componentElement.getBoundingClientRect();
+			const { top, bottom } = componentPosition;
+			const isVisible = top < window.innerHeight && bottom >= 0;
 
 			if (isVisible) {
 				setState(prevState => ({
@@ -56,17 +56,17 @@ export const HandleSubComponentScroll = (
 				}));
 			}
 		} else {
-			console.log("Could not find component id: " + componentId)
+			console.log("Could not find component id: " + componentId);
 		}
 	}
   
 	React.useEffect(() => {
-		window.addEventListener('scroll', handleScroll)
-		handleScroll() // Check initial visibility on mount
+		window.addEventListener('scroll', handleScroll);
+		handleScroll(); // Check initial visibility on mount
 		return () => {
-			window.removeEventListener('scroll', handleScroll)
+			window.removeEventListener('scroll', handleScroll);
 		}
-	}, []) // eslint-disable-line
+	}, []); // eslint-disable-line
 }
 
 type MonthDict = {
@@ -89,10 +89,10 @@ export const monthMap: MonthDict = {
 }
 
 export const formatDate = (date: Date) => {
-	const month: string = monthMap[date.getMonth()].toString()
-	const day: string = date.getDate().toString()
-	const year: string = date.getFullYear().toString()
-	return `${month} ${day}, ${year}`
+	const month: string = monthMap[date.getMonth()].toString();
+	const day: string = date.getDate().toString();
+	const year: string = date.getFullYear().toString();
+	return `${month} ${day}, ${year}`;
 }
 
 export function isValidEmail(email: string) {

@@ -1,17 +1,17 @@
-import * as React from 'react'
-import type { NextPage } from 'next'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { StyledEngineProvider } from '@mui/material/styles'
-import Box from '@mui/material/Box'
-import Header from '../components/Header'
-import TimeLine from '../components/TimeLine'
-import Intro from '../components/Intro'
-import Title from '../components/Title'
-import Footer from '../components/Footer'
-// import ProjectCard from '../components/ProjectCard'
-import { HandleComponentScroll } from '../components/shared/utilities'
+import * as React from 'react';
+import type { NextPage } from 'next';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { StyledEngineProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Header from '../components/Header';
+import TimeLine from '../components/TimeLine';
+import Intro from '../components/Intro';
+import Title from '../components/Title';
+import Footer from '../components/Footer';
+// import ProjectCard from '../components/ProjectCard';
+import { HandleComponentScroll } from '../components/shared/utilities';
 import styles from '../styles/Home.module.css';
 import * as config from '../components/config/Home.config';
 
@@ -30,11 +30,11 @@ const Home: NextPage = () => {
 		if (config.defaultTheme === "system") {
 			setIsDarkMode(prefersDarkMode);
 		}
-	}, [prefersDarkMode])
+	}, [prefersDarkMode]);
 
 	const toggleTheme = React.useCallback(() => {
-		setIsDarkMode(!isDarkMode)
-	}, [isDarkMode])
+		setIsDarkMode(!isDarkMode);
+	}, [isDarkMode]);
 	
 	const theme = React.useMemo(() =>
 	createTheme({
@@ -67,10 +67,10 @@ const Home: NextPage = () => {
 			  	},
 			},
 		},
-	}), [isDarkMode],)
+	}), [isDarkMode],);
 	
 	/* used for checking a component has been scrolled down into viewport*/
-	const [isIntroVisible, setIsIntroVisible] = React.useState(false)
+	const [isIntroVisible, setIsIntroVisible] = React.useState(false);
 	// const [isTimeLineVisible, setIsTimeLineVisible] = React.useState(false)
 
 	const scrollControlList = [
@@ -78,11 +78,11 @@ const Home: NextPage = () => {
 			componentId: "Intro",
 			setter: setIsIntroVisible
 		},
-	]
+	];
 
 	scrollControlList.map(({componentId, setter}) => {
 		HandleComponentScroll(componentId, setter);
-	})
+	});
 
 	return (
 		<StyledEngineProvider injectFirst>
@@ -108,7 +108,7 @@ const Home: NextPage = () => {
 			</Box>
 			</ThemeProvider>
 		</StyledEngineProvider>
-	)
-}
+	);
+};
 
-export default Home
+export default Home;

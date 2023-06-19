@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import {
     Link,
     CssBaseline,
@@ -8,10 +8,10 @@ import {
     ImageList,
     ImageListItem,
     Button
-} from '@mui/material'
-import Image from 'next/image'
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
-import { formatDate } from './shared/utilities'
+} from '@mui/material';
+import Image from 'next/image';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { formatDate } from './shared/utilities';
 
 type ProjectCardProps = {
     image?: any,
@@ -28,7 +28,7 @@ function ProjectCard(props: ProjectCardProps) {
         time,
         techs,
         link
-    } = props
+    } = props;
 
     return (
         <Box
@@ -85,7 +85,7 @@ function ProjectCard(props: ProjectCardProps) {
             </Button>}
             {/* </Stack> */}
         </Box>
-    )
-}
+    );
+};
 
-export default ProjectCard
+export default ProjectCard;

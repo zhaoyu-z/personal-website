@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import {
     Avatar,
     Breadcrumbs,
@@ -13,17 +13,17 @@ import {
     Input,
     InputAdornment,
     TextField
-} from '@mui/material'
+} from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import EmailIcon from '@mui/icons-material/Email';
 import PersonIcon from '@mui/icons-material/Person';
 import MessageIcon from '@mui/icons-material/Message';
 import SendIcon from '@mui/icons-material/Send';
 import emailjs from 'emailjs-com';
-import * as config from './config/Footer.config'
-import styles from '../styles/Footer.module.css'
+import * as config from './config/Footer.config';
+import styles from '../styles/Footer.module.css';
 import { isValidEmail, HandleComponentScroll, ResizableTextArea } from './shared/utilities';
-import animations from '../styles/Animations.module.css'
+import animations from '../styles/Animations.module.css';
 
 function Footer() {
 
@@ -33,7 +33,7 @@ function Footer() {
     const handleNameChange = (e: any) => {
         setName(e.target.value);
         setNameHelperText("");
-    }
+    };
 
     const [emailInputBox, setEmailInputBox] = React.useState<string>('');
     const [isLegalEmail, setIsLegalEmail] = React.useState<boolean>(true);
@@ -60,11 +60,11 @@ function Footer() {
 		// 	componentId: "BottomContainer",
 		// 	setter: setIsBottomVisible
 		// },
-	]
+	];
 
 	scrollControlList.map(({componentId, setter}) => {
 		HandleComponentScroll(componentId, setter);
-	})
+	});
 
     const [message, setMessage] = React.useState<string>('');
     const [messageError, setMessageError] = React.useState<boolean>(false);
@@ -82,7 +82,7 @@ function Footer() {
             setMessageError(false);
             setMessageHelperText("");
         }
-    }, [message])
+    }, [message]);
 
     const [sending, setSending] = React.useState<boolean>(false);
 
@@ -256,7 +256,7 @@ function Footer() {
 
             <Divider className={styles.bottomDivider}/>
         </Box>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

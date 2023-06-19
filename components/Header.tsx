@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import {
     AppBar,
     Button,
@@ -20,10 +20,10 @@ import {
     Link,
     Tooltip,
     Avatar
-} from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
-import styles from '../styles/Header.module.css'
-import * as config from './config/Header.config'
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import styles from '../styles/Header.module.css';
+import * as config from './config/Header.config';
 
 interface Props {
     /**
@@ -32,7 +32,7 @@ interface Props {
     window?: () => Window
     onToggleTheme: () => void
     isDarkMode: boolean
-}
+};
 
 /*
  * Home: My study and work Timeline and My Projects.
@@ -96,12 +96,12 @@ const DarkModeSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 function Header(props: Props) {
-    const { window, onToggleTheme, isDarkMode } = props
-    const [navBarOpen, setNavBarOpen] = React.useState(false)
+    const { window, onToggleTheme, isDarkMode } = props;
+    const [navBarOpen, setNavBarOpen] = React.useState(false);
 
     const handleNavBar = () => {
-        setNavBarOpen((prevState) => !prevState)
-    }
+        setNavBarOpen((prevState) => !prevState);
+    };
 
     const navBar = (
         <Box onClick={handleNavBar} sx={{ textAlign: 'center' }}>
@@ -119,9 +119,9 @@ function Header(props: Props) {
                 ))}
             </List>
         </Box>
-    )
+    );
 
-    const container = window !== undefined ? () => window().document.body : undefined
+    const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
         <Box sx={{ display: 'flex', position: "fixed", zIndex: "100" }}>
@@ -221,7 +221,7 @@ function Header(props: Props) {
                 <Toolbar />
             </Box>
         </Box>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

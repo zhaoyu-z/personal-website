@@ -1,62 +1,62 @@
-import * as React from 'react'
+import * as React from 'react';
 import {
     Box,
     Typography,
     CssBaseline,
     Avatar
-} from '@mui/material'
-import { TypeAnimation } from 'react-type-animation'
-import styles from '../styles/Intro.module.css'
-import animations from '../styles/Animations.module.css'
-import * as config from './config/Intro.config'
+} from '@mui/material';
+import { TypeAnimation } from 'react-type-animation';
+import styles from '../styles/Intro.module.css';
+import animations from '../styles/Animations.module.css';
+import * as config from './config/Intro.config';
 
 type IntroProps = {
     additionalStyles?: any
     isVisible: boolean
-}
+};
 
 function Intro(props?: IntroProps) {
 
-    const [leftMovement, setLeftMovement] = React.useState(0)
-    const [rightMovement, setRightMovement] = React.useState(0)
-    const prevMouseXRef = React.useRef(null)
-    const timerRef = React.useRef<number | any>(null)
+    const [leftMovement, setLeftMovement] = React.useState(0);
+    const [rightMovement, setRightMovement] = React.useState(0);
+    const prevMouseXRef = React.useRef(null);
+    const timerRef = React.useRef<number | any>(null);
 
     const handleMouseEnter = (event: any) => {
-        clearInterval(timerRef.current)
-        prevMouseXRef.current = event.clientX
-    }
+        clearInterval(timerRef.current);
+        prevMouseXRef.current = event.clientX;
+    };
 
     const handleMouseMove = (event: any) => {
-        const mouseX = event.clientX
+        const mouseX = event.clientX;
 
         if (prevMouseXRef.current !== null) {
             if (prevMouseXRef.current > mouseX) {
-                const movement = Math.floor((prevMouseXRef.current - mouseX) / 8)
-                setLeftMovement(movement)
+                const movement = Math.floor((prevMouseXRef.current - mouseX) / 8);
+                setLeftMovement(movement);
             } else {
-                const movement = Math.floor((mouseX - prevMouseXRef.current) / 8)
-                setRightMovement(movement)
+                const movement = Math.floor((mouseX - prevMouseXRef.current) / 8);
+                setRightMovement(movement);
             }
         }
-    }
+    };
 
     const handleMouseLeave = () => {
 
-        let totalIterations = Math.max(leftMovement, rightMovement)
+        let totalIterations = Math.max(leftMovement, rightMovement);
       
         timerRef.current = setInterval(() => {
-            setLeftMovement((prevLeftMovement) => Math.max(prevLeftMovement - 1, 0))
-            setRightMovement((prevRightMovement) => Math.max(prevRightMovement - 1, 0))
+            setLeftMovement((prevLeftMovement) => Math.max(prevLeftMovement - 1, 0));
+            setRightMovement((prevRightMovement) => Math.max(prevRightMovement - 1, 0));
         
-            totalIterations--
+            totalIterations--;
         
             if (totalIterations === 0) {
-                clearInterval(timerRef.current)
-                prevMouseXRef.current = null
+                clearInterval(timerRef.current);
+                prevMouseXRef.current = null;
             }
-        }, config.resetBackgroundImageIntervalInMilliSeconds / totalIterations)
-    }
+        }, config.resetBackgroundImageIntervalInMilliSeconds / totalIterations);
+    };
 
     return (
         <Box
@@ -94,7 +94,7 @@ function Intro(props?: IntroProps) {
                 className={styles.type}
             />
         </Box>
-    )
-}
+    );
+};
 
-export default Intro
+export default Intro;
