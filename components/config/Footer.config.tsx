@@ -45,6 +45,26 @@ export const buttonLabel = "Send";
 
 export const maxLength = 500;
 
-export const messageExceedMaxLength = `You can only send maximum ${maxLength} characters`;
-
 export const helperTextColor = "white";
+
+export const infoMessages = {
+    emailField: "Not Specified"
+}
+
+export const successMessages = {
+    emailSent: "Message sent successfully!"
+}
+
+export const errorMessages = {
+    messageExceedMaxLength: `You can only send maximum ${maxLength} characters`,
+    emptyName: "Please give me your name",
+    emptyEmail: "Please give me your email",
+    emptyMessage: "Please Write Something to Send!",
+    invalidEmail: "Invalid email address",
+}
+
+export const emailServer = {
+    service_id: 'service_zhangzy517',
+    template_id: 'contact_iamzzy.com',
+    public_key: 'ICE3dACU9d2mH1-S9'
+}

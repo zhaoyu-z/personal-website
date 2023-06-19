@@ -76,7 +76,7 @@ function Footer() {
 
     React.useEffect(() => {
         if (message && message.length >= config.maxLength) {
-            setMessageHelperText(config.messageExceedMaxLength);
+            setMessageHelperText(config.errorMessages.messageExceedMaxLength);
             setMessageError(true);
         } else {
             setMessageError(false);
@@ -88,23 +88,23 @@ function Footer() {
 
     const handleSubmit = async (e: any) => {
         if (!name || name.trim() === "" || name.length === 0) {
-            setNameHelperText("Please give me your name");
+            setNameHelperText(config.errorMessages.emptyName);
             return;
         }
 
         if (!emailInputBox || emailInputBox.trim() === "" || emailInputBox.length === 0) {
-            setEmailHelperText("Please give me your email");
+            setEmailHelperText(config.errorMessages.emptyEmail);
             return;
         }
 
         if (!message || message.trim() === "" || message.length === 0) {
-            setMessageHelperText("Please Write Something to Send!");
+            setMessageHelperText(config.errorMessages.emptyMessage);
             return;
         }
 
 
         if (!isValidEmail(emailInputBox)) {
-            setEmailHelperText("Invalid email address");
+            setEmailHelperText(config.errorMessages.invalidEmail);
             return;
         }
 
@@ -112,24 +112,24 @@ function Footer() {
         e.preventDefault();
     
         const emailData = {
-            name: name ? name : "Not Specified",
-            email: emailInputBox ? emailInputBox : "Not Specified",
-            message: message ? message : "Not Specified",
+            name: name ? name : config.infoMessages.emailField,
+            email: emailInputBox ? emailInputBox : config.infoMessages.emailField,
+            message: message ? message : config.infoMessages.emailField,
         };
         
         try {
             await emailjs.send(
-                'service_zhangzy517',
-                'contact_iamzzy.com',
+                config.emailServer.service_id,
+                config.emailServer.template_id,
                 emailData,
-                'ICE3dACU9d2mH1-S9'
+                config.emailServer.public_key
             );
         
             setSending(false);
             setName('');
             setEmailInputBox('');
             setMessage('');
-            setMessageHelperText("Message sent successfully!");
+            setMessageHelperText(config.successMessages.emailSent);
         } catch (error) {
             console.error(error);
         }
@@ -174,7 +174,7 @@ function Footer() {
                             value={emailInputBox}
                             onChange={handleEmailChange}
                             error={!isLegalEmail}
-                            helperText={!isLegalEmail ? 'Invalid email address' : emailHelperText}
+                            helperText={!isLegalEmail ? config.errorMessages.invalidEmail : emailHelperText}
                             sx={{  "& .MuiFormHelperText-root": {
                                 color: `${config.helperTextColor}`
                             }}}
@@ -243,8 +243,9 @@ function Footer() {
                                 marginLeft: '0px',
                                 marginRight: '0px'
                             },
-                            minWidth: '0px'
+                            minWidth: '0px',
                         }}
+                        className={styles.socialMediaLink}
                         />
                     </Tooltip>
                 ))}
