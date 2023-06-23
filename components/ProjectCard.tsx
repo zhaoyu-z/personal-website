@@ -13,13 +13,14 @@ import {
     CardContent,
     CardActions
 } from '@mui/material';
-import Image from 'next/image';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { formatDate } from './shared/utilities';
+// import Image from 'next/image';
+// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+// import { formatDate } from './shared/utilities';
 
 type ProjectCardProps = {
-    image?: any,
-    name?: string,
+    image: string,
+    imageTitle: string
+    name: string,
     time?: Date,
     techs?: Array<string>,
     link?: string,
@@ -28,6 +29,7 @@ type ProjectCardProps = {
 function ProjectCard(props: ProjectCardProps) {
     const {
         image,
+        imageTitle,
         name,
         time,
         techs,
@@ -38,8 +40,8 @@ function ProjectCard(props: ProjectCardProps) {
         <Card sx={{ margin: "20px" }}>
             <CardMedia
                 sx={{ height: "600px", width: "600px" }}
-                image="../projectLogos/avatar.jpg"
-                title="Zhaoyu Avatar"
+                image={image}
+                title={imageTitle}
             >
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
@@ -54,7 +56,7 @@ function ProjectCard(props: ProjectCardProps) {
                 <Button size="small">Learn More</Button>
             </CardActions> */}
             </CardMedia>
-            </Card>
+        </Card>
     );
 };
 

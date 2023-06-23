@@ -14,7 +14,8 @@ import Footer from '../components/Footer';
 import { HandleComponentScroll } from '../components/shared/utilities';
 import styles from '../styles/Home.module.css';
 import * as config from '../components/config/Home.config';
-import ProjectCard from '../components/ProjectCard';
+// import ProjectCard from '../components/ProjectCard';
+import Projects from '../components/Projects';
 
 const Home: NextPage = () => {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -106,7 +107,8 @@ const Home: NextPage = () => {
 					time={new Date()}
 					techs={[ "t1", "t2", "t3" ]}
 				/> */}
-				<ProjectCard />
+				{/* <ProjectCard /> */}
+				<Projects />
 				<Footer />
 			</Box>
 			</ThemeProvider>
