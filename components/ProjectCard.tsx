@@ -7,7 +7,11 @@ import {
     Stack,
     ImageList,
     ImageListItem,
-    Button
+    Button,
+    Card,
+    CardMedia,
+    CardContent,
+    CardActions
 } from '@mui/material';
 import Image from 'next/image';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -15,9 +19,9 @@ import { formatDate } from './shared/utilities';
 
 type ProjectCardProps = {
     image?: any,
-    name: string,
-    time: Date,
-    techs: Array<string>,
+    name?: string,
+    time?: Date,
+    techs?: Array<string>,
     link?: string,
 }
 
@@ -31,60 +35,26 @@ function ProjectCard(props: ProjectCardProps) {
     } = props;
 
     return (
-        <Box
-            sx={{ 
-                width: "50%", 
-                height: "300px", 
-                justifyContent: "center", 
-                alignItems: "center", 
-                display: "flex",
-                flexDirection: "column"
-            }}
-        >
-            <CssBaseline />
-            <Typography variant='h5'>
-                {name}
-            </Typography>
-            <Typography variant='h6'>
-                {formatDate(time)}
-            </Typography>
-            {/* <Stack direction="row"> */}
-            <ImageList
-                sx={{ width: 500, height: 450 }}
-                variant="quilted"
-                cols={4}
-                rowHeight={121}
+        <Card sx={{ margin: "20px" }}>
+            <CardMedia
+                sx={{ height: "600px", width: "600px" }}
+                image="../projectLogos/avatar.jpg"
+                title="Zhaoyu Avatar"
             >
-                {techs.map((item) => (
-                    <ImageListItem key={item} cols={1} >
-                        <Image
-                            src={""}
-                            alt={item}
-                            loading="lazy"
-                            width="20px" 
-                            height="20px"
-                        />
-                    </ImageListItem>
-                ))}
-            </ImageList>
-            {link && <Button
-                component={Link} 
-                href={link} 
-                underline="none" 
-                color="inherit"
-                endIcon={
-                    <ArrowForwardIcon />
-                } 
-            >
-                <Typography
-                    variant="h6"
-                    component="div"
-                >
-                    View Source
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    {name}
                 </Typography>
-            </Button>}
-            {/* </Stack> */}
-        </Box>
+                <Typography variant="body2" color="text.secondary">
+                    {techs}
+                </Typography>
+            </CardContent>
+            {/* <CardActions>
+                <Button size="small">Share</Button>
+                <Button size="small">Learn More</Button>
+            </CardActions> */}
+            </CardMedia>
+            </Card>
     );
 };
 
