@@ -20,3 +20,7 @@ a {
 	font-family: 'Varela Round';
 	color: palegoldenrod;
 }
+
+.dn {
+	display: none;
+}

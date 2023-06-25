@@ -19,3 +19,14 @@
     flex-direction: row;
     width: 100vw;
 }
+
+.projectHeader {
+    font-size: 2vw;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .projectHeader {
+        font-size: 20px;
+    }
+}

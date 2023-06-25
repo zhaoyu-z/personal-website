@@ -8,9 +8,12 @@ import {
     Breadcrumbs
 } from '@mui/material';
 import styles from '../styles/ProjectCard.module.css';
-// import animations from '../styles/Animations.module.css';
+import animations from '../styles/Animations.module.css';
 
 type ProjectCardProps = {
+    id: string,
+    isVisible: boolean,
+    animationDirection: "left2right" | "right2left",
     image: string,
     imageTitle: string
     imageAspectRatio: string
@@ -22,6 +25,9 @@ type ProjectCardProps = {
 
 function ProjectCard(props: ProjectCardProps) {
     const {
+        id,
+        isVisible,
+        animationDirection,
         image,
         imageTitle,
         imageAspectRatio,
@@ -32,8 +38,13 @@ function ProjectCard(props: ProjectCardProps) {
     } = props;
 
     return (
-        <Card sx={{ margin: "20px", borderRadius: "24px", flexBasis: "40%",
-        }}>
+        <Card id={id} sx={{ margin: "20px", borderRadius: "24px", flexBasis: "40%", }}
+            className={`${
+                isVisible 
+                ? animationDirection === "left2right" ? animations.fadein_l2r : animations.fadein_r2l 
+                : ""
+            }`}
+        >
             <Link href={link} target="_blank" sx={{ textDecoration: "none" }}>
                 <CardMedia
                     image={image}

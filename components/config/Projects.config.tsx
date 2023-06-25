@@ -1,4 +1,4 @@
-export const header = "Explore...";
+export const header = "Explore My Projects...";
 
 const pathPrefix = "../../projectLogos/";
 

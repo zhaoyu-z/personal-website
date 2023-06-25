@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { EventState } from '../TimeLine';
+import { ProjectState } from '../Projects';
 import { styled } from '@mui/system';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 
@@ -37,8 +38,8 @@ export const HandleComponentScroll = (componentId: string, setIsVisible: React.D
 */
 export const HandleSubComponentScroll = (
 	componentId: string,
-	setState: React.Dispatch<React.SetStateAction<EventState>>,
-	states: EventState
+	setState: React.Dispatch<React.SetStateAction<EventState | ProjectState>>,
+	states: EventState | ProjectState
 ) => {
 	const handleScroll = () => {
 		const componentElement = document.getElementById(componentId);
