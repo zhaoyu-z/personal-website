@@ -16,16 +16,19 @@ const Projects = () => {
                 </Typography>
             </Box>
             <Box className={styles.projectsContainer}>
-                <ProjectCard 
-                    image="../projectLogos/avatar.jpg"
-                    imageTitle="avatar"
-                    name="My Avatar"
-                />
-                <ProjectCard 
-                    image="../projectLogos/avatar.jpg"
-                    imageTitle="avatar"
-                    name="My Avatar"
-                />
+                {config.projects.map((p, index) => (
+                    <ProjectCard
+                        key={index}
+                        image={p.image}
+                        imageTitle={p.imageTitle}
+                        imageAspectRatio={p.imageAspectRatio}
+                        // imageWidth={p.imageWidth}
+                        name={p.name}
+                        description={p.description}
+                        techs={p.techs}
+                        link={p.link}
+                    />
+                ))}
             </Box>
         </Box>
     );
