@@ -1,17 +1,10 @@
 import * as React from 'react';
 import {
     Link,
-    // CssBaseline,
     Box,
     Typography,
-    // Stack,
-    // ImageList,
-    // ImageListItem,
-    // Button,
     Card,
     CardMedia,
-    // CardContent,
-    // CardActions,
     Breadcrumbs
 } from '@mui/material';
 import styles from '../styles/ProjectCard.module.css';
@@ -21,7 +14,6 @@ type ProjectCardProps = {
     image: string,
     imageTitle: string
     imageAspectRatio: string
-    // imageWidth?: string
     name: string,
     description: string,
     techs: Array<string>,
@@ -33,7 +25,6 @@ function ProjectCard(props: ProjectCardProps) {
         image,
         imageTitle,
         imageAspectRatio,
-        // imageWidth,
         name,
         description,
         techs,
@@ -42,16 +33,14 @@ function ProjectCard(props: ProjectCardProps) {
 
     return (
         <Card sx={{ margin: "20px", borderRadius: "24px", flexBasis: "40%",
-            // width: imageWidth ? `${imageWidth} !important` : ""
         }}>
-            <Link href={link} sx={{ textDecoration: "none" }}>
+            <Link href={link} target="_blank" sx={{ textDecoration: "none" }}>
                 <CardMedia
                     image={image}
                     title={imageTitle}
                     className={styles.cardMedia}
                     sx={{ 
                         paddingBottom: imageAspectRatio,
-                        // width: imageWidth ? `${imageWidth} !important` : ""
                     }}
                 >
                     <Box className={`${styles.hoverDiv}`}>

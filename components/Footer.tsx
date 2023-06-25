@@ -229,7 +229,8 @@ function Footer() {
                     <Button
                         key={index}
                         component={Link} 
-                        href={item.link} 
+                        href={item.link}
+                        target="_blank"
                         underline="none" 
                         color="inherit" 
                         startIcon={
