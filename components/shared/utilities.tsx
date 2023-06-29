@@ -3,6 +3,7 @@ import { EventState } from '../TimeLine';
 import { ProjectState } from '../Projects';
 import { styled } from '@mui/system';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
+import * as colors from './colors';
 
 export const HandleComponentScroll = (componentId: string, setIsVisible: React.Dispatch<React.SetStateAction<boolean>>) => {
 	const handleScroll = () => {
@@ -102,28 +103,6 @@ export function isValidEmail(email: string) {
 	return emailRegex.test(email);
 }
 
-export const blue = {
-    100: '#DAECFF',
-    200: '#b6daff',
-    400: '#3399FF',
-    500: '#007FFF',
-    600: '#0072E5',
-    900: '#003A75',
-};
-
-export const grey = {
-    50: '#f6f8fa',
-    100: '#eaeef2',
-    200: '#d0d7de',
-    300: '#afb8c1',
-    400: '#8c959f',
-    500: '#6e7781',
-    600: '#57606a',
-    700: '#424a53',
-    800: '#32383f',
-    900: '#24292f',
-};
-
 export const ResizableTextArea = styled(TextareaAutosize)(
     ({ theme }) => `
 	resize: vertical;
@@ -135,18 +114,66 @@ export const ResizableTextArea = styled(TextareaAutosize)(
     line-height: 1.5;
     padding: 12px;
     border-radius: 12px;
-    color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-    background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-    border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-    box-shadow: 0px 2px 2px ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
+    color: ${theme.palette.mode === 'dark' ? colors.grey[300] : colors.grey[900]};
+    background: ${theme.palette.mode === 'dark' ? colors.grey[900] : '#fff'};
+    border: 1px solid ${theme.palette.mode === 'dark' ? colors.grey[700] : colors.grey[200]};
+    box-shadow: 0px 2px 2px ${theme.palette.mode === 'dark' ? colors.grey[900] : colors.grey[50]};
   
     &:hover {
-      border-color: ${blue[400]};
+      border-color: ${colors.blue[400]};
     }
   
     &:focus {
-      border-color: ${blue[400]};
-      box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? blue[500] : blue[200]};
+      border-color: ${colors.blue[400]};
+      box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? colors.blue[500] : colors.blue[200]};
     }
   `,
 );
+
+export const repeatString = (value: string, n: number) => {
+	if (n <= 0) {
+	    return "";
+	}
+	var result = "";
+	for (let x=0; x<n; x++) {
+	    result += value + " ";
+	}
+	return result;
+}
+
+/* 
+	used to create a grid layout css property of areas
+	sample usage:
+
+	a = createGrid(9, 2, ["0:5", "5:9", "0:4", "4:9", "0:5", "5:9", "0:4", "4:9"])
+	
+	gives
+
+	Area1 Area1 Area1 Area1 Area1 Area2 Area2 Area2 Area2
+	Area3 Area3 Area3 Area3 Area4 Area4 Area4 Area4 Area4
+	Area5 Area5 Area5 Area5 Area5 Area6 Area6 Area6 Area6
+	Area7 Area7 Area7 Area7 Area8 Area8 Area8 Area8 Area8
+*/
+export function createGrid(noOfCols: number, noOfElementsPerRow: number, ranges: Array<string>) {
+	let eIndex = 0;
+	let result = "";
+	const noOfRows = Math.floor(ranges.length / noOfElementsPerRow);
+
+	for (let i = 0; i < noOfRows; i++) {
+	  let row = "";
+	  const curRanges = ranges.slice(eIndex, eIndex + noOfElementsPerRow);
+
+	  for (let r of curRanges) {
+		let curElement = "Area" + (eIndex + 1);
+		const [start, end] = r.split(":").map(Number);
+
+		for (let j = start; j < end; j++) {
+		  row += curElement + " ";
+		}
+
+		eIndex++;
+	  }
+		result += `"${row.trim()}"\n`;
+	}
+	return result.trim();
+}

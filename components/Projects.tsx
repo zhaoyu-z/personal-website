@@ -6,7 +6,7 @@ import {
 import ProjectCard from './ProjectCard';
 import styles from '../styles/Projects.module.css';
 import * as config from './config/Projects.config';
-import { HandleSubComponentScroll } from './shared/utilities';
+import { HandleSubComponentScroll, createGrid, repeatString } from './shared/utilities';
 
 export type ProjectState = {
     [key: string]: boolean;
@@ -37,7 +37,19 @@ const Projects = () => {
                     {config.header}
                 </Typography>
             </Box>
-            <Box className={styles.projectsContainer}>
+            <Box className={styles.projectsContainer}
+                sx={{
+                    gridColumnGap: config.grid.columnGap,
+                    gridRowGap: config.grid.rowGap,
+                    gridTemplateAreas: createGrid(
+                        config.grid.noOfCols,
+                        config.grid.noOfElementsPerRow,
+                        config.grid.areas
+                    ),
+                    gridTemplateColumns: repeatString(config.grid.colWidth, config.grid.noOfCols),
+                    gridTemplateRows: repeatString(config.grid.elementHeight, config.grid.noOfRows),
+                }}
+            >
                 {config.projects.map((p, index) => (
                     <ProjectCard
                         id={p.name}
@@ -45,12 +57,13 @@ const Projects = () => {
                         animationDirection={index % 2 == 0 ? "left2right" : "right2left"}
                         key={index}
                         image={p.image}
-                        imageTitle={p.imageTitle}
-                        imageAspectRatio={p.imageAspectRatio}
+                        // imageTitle={p.imageTitle}
+                        // imageAspectRatio={p.imageAspectRatio}
                         name={p.name}
                         description={p.description}
                         techs={p.techs}
                         link={p.link}
+                        area={`Area`+String(index+1)}
                     />
                 ))}
             </Box>
