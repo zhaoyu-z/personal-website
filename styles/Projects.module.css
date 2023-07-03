@@ -12,12 +12,6 @@
 }
 
 .projectsContainer {
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    width: 100vw; */
     display: grid;
     /* margin-bottom: 70px; */
     /* grid-auto-columns: 1fr; */

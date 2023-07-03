@@ -80,9 +80,9 @@ function Intro(props?: IntroProps) {
                     ? (leftMovement ? `translateX(${leftMovement})` : `translateX(${rightMovement})`)
                     : `translateX(0)`,
                 }}
-                onMouseEnter={handleMouseEnter}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
+                // onMouseEnter={handleMouseEnter}
+                // onMouseMove={handleMouseMove}
+                // onMouseLeave={handleMouseLeave}
             />
             <TypeAnimation
                 sequence={config.typingAnimation.sequence}
