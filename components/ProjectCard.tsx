@@ -15,8 +15,6 @@ type ProjectCardProps = {
     isVisible: boolean,
     animationDirection: "left2right" | "right2left",
     image: string,
-    // imageTitle: string
-    // imageAspectRatio: string
     name: string,
     description: string,
     techs: Array<string>,
@@ -30,8 +28,6 @@ function ProjectCard(props: ProjectCardProps) {
         isVisible,
         animationDirection,
         image,
-        // imageTitle,
-        // imageAspectRatio,
         name,
         description,
         techs,
@@ -61,21 +57,26 @@ function ProjectCard(props: ProjectCardProps) {
                 <Box className={styles.techsContainer}>
                     <Breadcrumbs separator="|">
                         {techs.map((t, index) => (
-                            <Typography key={index} color="white !important">
+                            <Typography key={index} color="white !important"
+                                className={styles.tech}    
+                            >
                                 {t}
                             </Typography>
                         ))}
                     </Breadcrumbs>
                 </Box>
                 <Box className={styles.nameContainer}>
-                    <Typography textAlign='right' variant='h6'
+                    <Typography textAlign='right' 
+                        variant='h6'
                         sx={{ color: "white !important" }}
                         className={styles.description}
                     >
                         {description}
                     </Typography>
-                    <Typography textAlign='right' variant='h4'
+                    <Typography textAlign='right' 
+                        variant='h4'
                         sx={{ color: "white !important" }}
+                        className={styles.name}
                     >
                         {name}
                     </Typography>

@@ -1,13 +1,9 @@
 .link {
     position: relative;
-    /* background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; */
     background-position: 0px 0px, 80% 50%;
     background-size: auto, cover;
     background-repeat: repeat, no-repeat;
     width: 100%;
-    /* height: 100px; */
 }
 
 .techsContainer {
@@ -28,6 +24,11 @@
 
 .description {
     text-wrap: balance;
+    font-size: 20px;
+}
+
+.name {
+    font-size: 32px;
 }
 
 .hoverDiv {
@@ -35,6 +36,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    /* width: 0; */
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
@@ -44,18 +46,57 @@
 
     opacity: 0;
     transition: all 0.3s ease-in-out;
+    /* transition: width 0.3s; */
+    /* will-change: width; */
 }
 
 .link:hover .hoverDiv {
     opacity: 1;
-    animation: left2right 0.3s ease-in-out;
+    /* animation: left2right 0.3s ease-in-out; */
+    /* width: 100%; */
 }
 
 @keyframes left2right {
     from {
-        transform: translateX(-100%);
+        transform: translateX(-1%);
+        /* width: 0; */
     }
     to {
         transform: translateX(0);
+        /* width: 100%; */
+    }
+}
+
+/* styles for mobile devices */
+@media (max-width: 900px) {
+    .hoverDiv {
+        opacity: 0.7;
+    }
+
+    .link {
+        width: 200px;
+        height: 200px;
+    }
+
+    .techsContainer {
+        top: 8px;
+        left: 8px;
+    }
+
+    .tech {
+        font-size: 8px;
+    }
+
+    .nameContainer {
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 8px;
     }
 }

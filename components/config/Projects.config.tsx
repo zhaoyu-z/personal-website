@@ -9,7 +9,7 @@ export const projects = [
         image: pathPrefix + "project-euler.png",
         name: "Project Euler",
         description: "My Project Euler Solutions",
-        techs: ["Python", "Markdown"],
+        techs: ["Python", "Algorithm", "Sieve of Erotosthenes", "Markdown"],
         link: "https://github.com/Zhayu517/project-euler"
     },
     {

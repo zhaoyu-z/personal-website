@@ -57,8 +57,6 @@ const Projects = () => {
                         animationDirection={index % 2 == 0 ? "left2right" : "right2left"}
                         key={index}
                         image={p.image}
-                        // imageTitle={p.imageTitle}
-                        // imageAspectRatio={p.imageAspectRatio}
                         name={p.name}
                         description={p.description}
                         techs={p.techs}
