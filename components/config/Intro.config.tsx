@@ -1,3 +1,5 @@
+import { TextTurningProps } from '../TextTurning';
+
 export const backgroundImage = "../Homepage Background.png";
 
 export const backgroundImageAlt = "Image of \"What Obsessed Me Shapes My Future\"";
@@ -10,6 +12,13 @@ type typingAnimationType = {
     deletionSpeed?: number,
     repeat: number
 };
+
+export const sequence = [
+    'Hi, I\'m Zhaoyu Zhang',
+    'Welcome to My Personal Website!',
+    'I\'m a Software Engineer',
+    'Contact Me if You Need Anything!',
+];
 
 export const typingAnimation: typingAnimationType = {
     sequence: [
@@ -28,3 +37,17 @@ export const typingAnimation: typingAnimationType = {
 };
 
 export const resetBackgroundImageIntervalInMilliSeconds = 1000;
+
+export const textTurning: TextTurningProps = {
+    sequence: [
+        'Hi, I\'m Zhaoyu Zhang',
+        'Welcome to My Personal Website!',
+        'I\'m a Software Engineer',
+        'Contact Me if You Need Anything!',
+    ],
+    holdingTime: 1,
+    animationTime: 1,
+    fontSize: '20px',
+    fontColor: 'white',
+    fontFamily: 'Sans Sarif'
+}

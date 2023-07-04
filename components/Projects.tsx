@@ -31,7 +31,7 @@ const Projects = () => {
     });
 
     return (
-        <Box className={styles.container}>
+        <Box id="Projects" className={styles.container}>
             <Box className={styles.headerContainer}>
                 <Typography className={styles.projectHeader}>
                     {config.header}

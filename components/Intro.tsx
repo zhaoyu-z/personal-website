@@ -9,10 +9,11 @@ import { TypeAnimation } from 'react-type-animation';
 import styles from '../styles/Intro.module.css';
 import animations from '../styles/Animations.module.css';
 import * as config from './config/Intro.config';
+import TextTurning from './TextTurning';
 
 type IntroProps = {
     additionalStyles?: any
-    isVisible: boolean
+    isVisible?: boolean
 };
 
 function Intro(props?: IntroProps) {
@@ -84,7 +85,7 @@ function Intro(props?: IntroProps) {
                 // onMouseMove={handleMouseMove}
                 // onMouseLeave={handleMouseLeave}
             />
-            <TypeAnimation
+            {/* <TypeAnimation
                 sequence={config.typingAnimation.sequence}
                 speed={config.typingAnimation.speed}
                 deletionSpeed={config.typingAnimation.deletionSpeed}
@@ -92,6 +93,14 @@ function Intro(props?: IntroProps) {
                 repeat={config.typingAnimation.repeat}
                 cursor={false}
                 className={styles.type}
+            /> */}
+            <TextTurning
+                sequence={config.textTurning.sequence}
+                holdingTime={config.textTurning.holdingTime}
+                animationTime={config.textTurning.animationTime}
+                fontSize={config.textTurning.fontSize}
+                fontColor={config.textTurning.fontColor}
+                fontFamily={config.textTurning.fontFamily}
             />
         </Box>
     );

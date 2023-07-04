@@ -10,12 +10,10 @@ import TimeLine from '../components/TimeLine';
 import Intro from '../components/Intro';
 import Title from '../components/Title';
 import Footer from '../components/Footer';
-// import ProjectCard from '../components/ProjectCard';
-import { HandleComponentScroll } from '../components/shared/utilities';
+// import { HandleComponentScroll } from '../components/shared/utilities';
 import styles from '../styles/Home.module.css';
-import * as config from '../components/config/Home.config';
-// import ProjectCard from '../components/ProjectCard';
 import Projects from '../components/Projects';
+import * as config from '../components/config/Home.config';
 
 const Home: NextPage = () => {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -71,25 +69,26 @@ const Home: NextPage = () => {
 		},
 	}), [isDarkMode],);
 	
-	/* used for checking a component has been scrolled down into viewport*/
-	const [isIntroVisible, setIsIntroVisible] = React.useState(false);
+	/* used for checking a component has been scrolled down into viewport */
+	// const [isIntroVisible, setIsIntroVisible] = React.useState(false);
 	// const [isTimeLineVisible, setIsTimeLineVisible] = React.useState(false)
 
-	const scrollControlList = [
-		{
-			componentId: "Intro",
-			setter: setIsIntroVisible
-		},
-	];
+	// const scrollControlList = [
+	// 	{
+	// 		componentId: "Home_Intro",
+	// 		setter: setIsIntroVisible
+	// 	},
+	// ];
 
-	scrollControlList.map(({componentId, setter}) => {
-		HandleComponentScroll(componentId, setter);
-	});
+	// scrollControlList.map(({componentId, setter}) => {
+	// 	HandleComponentScroll(componentId, setter);
+	// });
 
 	return (
 		<StyledEngineProvider injectFirst>
 			<ThemeProvider theme={theme}>
 			<CssBaseline />
+			{/* <ScrollNavigation /> */}
 			<Title isDarkMode={isDarkMode} />
 			<Box id="HomeContainer"
 			sx={{
@@ -100,7 +99,8 @@ const Home: NextPage = () => {
 				alignItems: "center"
 			}}>
 				<Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-				<Intro isVisible={isIntroVisible}/>
+				{/* <Intro isVisible={isIntroVisible}/> */}
+				<Intro />
 				<TimeLine />
 				{/* <ProjectCard
 					name={"Temp"}

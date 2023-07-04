@@ -21,6 +21,21 @@
     }
 }
 
+@keyframes turningAnimation {
+    0% {
+      transform: perspective(800px) rotateX(0deg);
+    }
+    30% {
+      transform: perspective(800px) rotateX(-15deg);
+    }
+    70% {
+      transform: perspective(800px) rotateX(15deg);
+    }
+    100% {
+      transform: perspective(800px) rotateX(0deg);
+    }
+}
+
 /* styles for mobile devices */
 @media (max-width: 900px) {
     .type {
