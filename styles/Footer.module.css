@@ -67,6 +67,10 @@
     font-size: 2.5em;
 }
 
+.submitButton {
+    width: 100px;
+}
+
 /* styles for mobile devices */
 @media (max-width: 900px) {
     .footer {

@@ -205,16 +205,27 @@ function Footer() {
                         />
                     </Box>
 
-                    <Box sx={{ display: "flex", justifyContent: "center" }}>
+                    <Box sx={{ display: "flex", justifyContent: "center", 
+                        flexDirection: "column", alignItems: 'center'
+                    }}>
                         <LoadingButton variant='outlined'
-                            sx={{ mt: 1 }} size="large"
+                            sx={{ mt: 2 }} size="large"
                             onClick={handleSubmit}
                             loading={sending}
                             endIcon={<SendIcon />}
                             loadingPosition="end"
+                            disabled={
+                                !name || name === "" ||
+                                !emailInputBox || emailInputBox === "" || !isLegalEmail ||
+                                !message || message === "" || messageError
+                            }
+                            className={styles.submitButton}
                         >
                             {config.buttonLabel}
                         </LoadingButton>
+                        <Typography sx={{ mt: 2 }} >
+                            {config.mandatoryFieldIndication}
+                        </Typography>
                     </Box>
                 </Box>
             </Box>

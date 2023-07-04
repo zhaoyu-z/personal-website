@@ -35,11 +35,13 @@ export const title = "Stay in Touch";
 
 export const subtitle = "Send Direct Message to Me - I will get back to you as soon as I can!";
 
-export const nameLabel = "Your Name";
+export const nameLabel = "Your Name*";
 
-export const emailLabel = "Your Email";
+export const emailLabel = "Your Email*";
 
-export const messageLabel = "Message";
+export const messageLabel = "Message*";
+
+export const mandatoryFieldIndication = "* represents an mandatory field";
 
 export const buttonLabel = "Send";
 
