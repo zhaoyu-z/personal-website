@@ -85,7 +85,7 @@ function Intro(props?: IntroProps) {
                 // onMouseMove={handleMouseMove}
                 // onMouseLeave={handleMouseLeave}
             />
-            {/* <TypeAnimation
+            <TypeAnimation
                 sequence={config.typingAnimation.sequence}
                 speed={config.typingAnimation.speed}
                 deletionSpeed={config.typingAnimation.deletionSpeed}
@@ -93,15 +93,15 @@ function Intro(props?: IntroProps) {
                 repeat={config.typingAnimation.repeat}
                 cursor={false}
                 className={styles.type}
-            /> */}
-            <TextTurning
+            />
+            {/* <TextTurning
                 sequence={config.textTurning.sequence}
                 holdingTime={config.textTurning.holdingTime}
                 animationTime={config.textTurning.animationTime}
                 fontSize={config.textTurning.fontSize}
                 fontColor={config.textTurning.fontColor}
                 fontFamily={config.textTurning.fontFamily}
-            />
+            /> */}
         </Box>
     );
 };

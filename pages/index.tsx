@@ -14,6 +14,7 @@ import Footer from '../components/Footer';
 import styles from '../styles/Home.module.css';
 import Projects from '../components/Projects';
 import * as config from '../components/config/Home.config';
+import { motion, useScroll } from "framer-motion";
 
 const Home: NextPage = () => {
 	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -84,10 +85,13 @@ const Home: NextPage = () => {
 	// 	HandleComponentScroll(componentId, setter);
 	// });
 
+	const { scrollYProgress } = useScroll();
+
 	return (
 		<StyledEngineProvider injectFirst>
 			<ThemeProvider theme={theme}>
 			<CssBaseline />
+			<motion.div style={{ scaleX: scrollYProgress }} className={styles.progressBar}/>
 			{/* <ScrollNavigation /> */}
 			<Title isDarkMode={isDarkMode} />
 			<Box id="HomeContainer"

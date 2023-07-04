@@ -22,13 +22,13 @@ export const sequence = [
 
 export const typingAnimation: typingAnimationType = {
     sequence: [
-        'Hi, I\'m Zhaoyu Zhang',
+        'I\'m Zhaoyu Zhang',
         1000,
-        'Welcome to My Personal Website!',
+        'I\'m Creator and Leader',
         1000,
-        'I\'m a Software Engineer',
+        'I\'m Designer and Coder',
         1000,
-        'Contact Me if You Need Anything!',
+        'I\'m Engineer and Doer',
         1000,
     ],
     speed: 10,

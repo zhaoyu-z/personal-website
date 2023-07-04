@@ -1,3 +1,14 @@
 .fade_in {
     transition: color 1s ease; /* Add transition property for color */
 }
+
+.progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: palegoldenrod;
+    transform-origin: 0%;
+    z-index: 1200;
+}
