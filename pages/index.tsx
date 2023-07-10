@@ -92,7 +92,6 @@ const Home: NextPage = () => {
 			<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<motion.div style={{ scaleX: scrollYProgress }} className={styles.progressBar}/>
-			{/* <ScrollNavigation /> */}
 			<Title isDarkMode={isDarkMode} />
 			<Box id="HomeContainer"
 			sx={{

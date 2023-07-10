@@ -9,7 +9,7 @@ import { TypeAnimation } from 'react-type-animation';
 import styles from '../styles/Intro.module.css';
 import animations from '../styles/Animations.module.css';
 import * as config from './config/Intro.config';
-import TextTurning from './TextTurning';
+import { TextLoop } from "react-text-loop-next";
 
 type IntroProps = {
     additionalStyles?: any
@@ -63,7 +63,12 @@ function Intro(props?: IntroProps) {
         <Box
             id="Intro"
             className={`${styles.background} ${props?.isVisible ? animations.fadein : ''}`}
-            sx={{ ...props?.additionalStyles, overflow: 'hidden', width: '100%' }}
+            sx={{ ...props?.additionalStyles, overflow: 'hidden', width: '100%',
+                // backgroundImage: 'url("../Homepage Background Full.webp")',
+                // backgroundPosition: 'center',
+                // backgroundRepeat: 'no-repeat',
+                // backgroundSize: 'cover'
+            }}
         >
             <CssBaseline />
             <Avatar 
@@ -85,7 +90,7 @@ function Intro(props?: IntroProps) {
                 // onMouseMove={handleMouseMove}
                 // onMouseLeave={handleMouseLeave}
             />
-            <TypeAnimation
+            {/* <TypeAnimation
                 sequence={config.typingAnimation.sequence}
                 speed={config.typingAnimation.speed}
                 deletionSpeed={config.typingAnimation.deletionSpeed}
@@ -93,15 +98,37 @@ function Intro(props?: IntroProps) {
                 repeat={config.typingAnimation.repeat}
                 cursor={false}
                 className={styles.type}
-            />
-            {/* <TextTurning
-                sequence={config.textTurning.sequence}
-                holdingTime={config.textTurning.holdingTime}
-                animationTime={config.textTurning.animationTime}
-                fontSize={config.textTurning.fontSize}
-                fontColor={config.textTurning.fontColor}
-                fontFamily={config.textTurning.fontFamily}
             /> */}
+            <Box 
+                sx={{
+                    position: "absolute",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-start",
+                }}
+            >
+                <Typography className={styles.textLoop}>
+                    {config.textLoop.prefix}
+                </Typography>
+                <Typography className={styles.textLoop}>
+                    &nbsp;
+                </Typography>
+                <TextLoop
+                    interval={config.textLoop.interval}
+                    delay={config.textLoop.delay}
+                    fade={config.textLoop.fade}
+                    mask={config.textLoop.mask}
+                >
+                    {config.textLoop.sequence.map((s, index) => (
+                        <Typography key={index}
+                            className={styles.textLoop}
+                        >
+                            {s}
+                        </Typography>
+                    ))}
+                </TextLoop>
+            </Box>
         </Box>
     );
 };
