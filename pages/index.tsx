@@ -93,20 +93,30 @@ const Home: NextPage = () => {
 			<CssBaseline />
 			<motion.div style={{ scaleX: scrollYProgress }} className={styles.progressBar}/>
 			<Title isDarkMode={isDarkMode} />
-			<Box id="HomeContainer"
-			sx={{
-				transition: "all 0.5s ease",
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "center",
-				alignItems: "center"
-			}}>
-				<Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-				{/* <Intro isVisible={isIntroVisible}/> */}
-				<Intro />
-				<TimeLine />
-				<Projects />
-				<Footer />
+			<Box id="HomeBackgroundImage"
+				sx={{ 
+					backgroundImage: 'url("../Homepage Background Full.webp")',
+					backgroundPosition: 'center',
+					backgroundRepeat: 'no-repeat',
+					backgroundAttachment: 'fixed',
+				}}
+				className={styles.backgroundImage}
+			>
+				<Box id="HomeContainer"
+					sx={{
+						transition: "all 0.5s ease",
+						display: "flex",
+						flexDirection: "column",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+					<Intro />
+					<TimeLine />
+					<Projects />
+					<Footer />
+				</Box>
 			</Box>
 			</ThemeProvider>
 		</StyledEngineProvider>

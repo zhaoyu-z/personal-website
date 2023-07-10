@@ -13,9 +13,17 @@
     z-index: 1200;
 }
 
+.backgroundImage {
+    background-size: 100% 100vh;
+}
+
 /* styles for mobile devices */
 @media (max-width: 900px) {
     .progressBar {
         top: 56px;
+    }
+
+    .backgroundImage {
+        background-size: cover;
     }
 }

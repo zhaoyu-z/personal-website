@@ -71,7 +71,7 @@ function Intro(props?: IntroProps) {
             }}
         >
             <CssBaseline />
-            <Avatar 
+            {/* <Avatar 
                 src={config.backgroundImage} 
                 alt={config.backgroundImageAlt}
                 variant="square"
@@ -89,7 +89,7 @@ function Intro(props?: IntroProps) {
                 // onMouseEnter={handleMouseEnter}
                 // onMouseMove={handleMouseMove}
                 // onMouseLeave={handleMouseLeave}
-            />
+            /> */}
             {/* <TypeAnimation
                 sequence={config.typingAnimation.sequence}
                 speed={config.typingAnimation.speed}
