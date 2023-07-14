@@ -108,6 +108,11 @@
     width: 100px;
 }
 
+.logoLink {
+    justify-content: flex-start;
+    margin-bottom: 8px;
+}
+
 /* styles for mobile devices */
 @media (max-width: 900px) {
     .footer {
@@ -126,6 +131,13 @@
         /* min-width: 1200px; */
     }
 
+    .bottomContainer {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+    }
+
     .topLeftContainer {
         /* display: block; */
         margin-bottom: 40px;
@@ -133,6 +145,15 @@
 
     .topRightContainer {
         margin-top: 40px;
+    }
+
+    .bottomLeftContainer {
+        margin-bottom: 40px;
+    }
+
+    .logoLink {
+        justify-content: center;
+        margin-bottom: 16px;
     }
 
     .subtitle {

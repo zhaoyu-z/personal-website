@@ -260,13 +260,13 @@ function Footer() {
                 className={`${styles.bottomContainer} ${isBottomVisible ? animations.fadein_b2t : ""}`}
             >
                 <Box className={styles.bottomLeftContainer}>
-                    <Link href="./" mb={1} sx={{ 
+                    <Link href="./" sx={{
                         display: "flex",
                         flexDirection: "row",
-                        justifyContent: "flex-start",
+                        // justifyContent: "flex-start",
                         alignItems: "center",
                         textDecoration: "none"
-                    }}>
+                    }} className={styles.logoLink}>
                         <Avatar 
                             src={config.logo_path} 
                             alt={config.logoAlt}
