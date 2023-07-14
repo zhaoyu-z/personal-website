@@ -56,10 +56,10 @@ function Footer() {
 			componentId: "TopContainer",
 			setter: setIsTopVisible
 		},
-        // {
-		// 	componentId: "BottomContainer",
-		// 	setter: setIsBottomVisible
-		// },
+        {
+			componentId: "BottomContainer",
+			setter: setIsBottomVisible
+		},
 	];
 
 	scrollControlList.map(({componentId, setter}) => {
@@ -141,132 +141,177 @@ function Footer() {
             <Divider className={styles.topDivider}/>
 
             <Box id="TopContainer" 
-            className={`${styles.container} ${isTopVisible ? animations.fadein_b2t : ""}`}>
-            
-            <Box className={styles.leftContainer}>
-                <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
-                    <Typography className={styles.title} textAlign='center' sx={{ my: 1 }}>
-                        {config.title}
-                    </Typography>
-                    <Typography className={styles.subtitle} textAlign='center' sx={{ my: 1 }}>
-                        {config.subtitle}
-                    </Typography>
-                </Box>
-
-                <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: "center", mt: 2 }}>
-                        <PersonIcon sx={{ mr: 1, my: 2 }}/>
-                        <TextField id="input_name" label={config.nameLabel} variant="outlined"
-                            autoComplete='name'
-                            value={name}
-                            onChange={handleNameChange}
-                            helperText={nameHelperText}
-                            sx={{  "& .MuiFormHelperText-root": {
-                                color: `${config.helperTextColor} !important`
-                            }}}
-                        />
-                    </Box>
-
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 2 }}>
-                        <EmailIcon sx={{ mr: 1, my: 2 }} />
-                        <TextField id="input_email" label={config.emailLabel} variant="outlined" 
-                            autoComplete='email'
-                            value={emailInputBox}
-                            onChange={handleEmailChange}
-                            error={!isLegalEmail}
-                            helperText={!isLegalEmail ? config.errorMessages.invalidEmail : emailHelperText}
-                            sx={{  "& .MuiFormHelperText-root": {
-                                color: `${config.helperTextColor}`
-                            }}}
-                        />
-                    </Box>
-                    
-                    <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 2 }}>
-                        <MessageIcon sx={{ mr: 1, my: 2 }} />
-                        <TextField id="input_message" label={config.messageLabel} variant="outlined"
-                            multiline={true} value={message}
-                            InputProps={{ sx: {
-                                alignItems: "flex-start",
-                            }}}
-                            inputProps={{ sx: {
-                                resize: "both",
-                                minWidth: "195px",
-                                maxWidth: "300px",
-                                minHeight: "184px",
-                                maxHeight: "400px"
-                            }, maxLength: config.maxLength
-                            }}
-                            onChange={handleMessageChange}
-                            error={messageError}
-                            helperText={messageHelperText}
-                            sx={{  "& .MuiFormHelperText-root": {
-                                color: `${config.helperTextColor} !important`
-                            }}}
-                        />
-                    </Box>
-
-                    <Box sx={{ display: "flex", justifyContent: "center", 
-                        flexDirection: "column", alignItems: 'center'
-                    }}>
-                        <LoadingButton variant='outlined'
-                            sx={{ mt: 2 }} size="large"
-                            onClick={handleSubmit}
-                            loading={sending}
-                            endIcon={<SendIcon />}
-                            loadingPosition="end"
-                            disabled={
-                                !name || name === "" ||
-                                !emailInputBox || emailInputBox === "" || !isLegalEmail ||
-                                !message || message === "" || messageError
-                            }
-                            className={styles.submitButton}
-                        >
-                            {config.buttonLabel}
-                        </LoadingButton>
-                        <Typography sx={{ mt: 2 }} >
-                            {config.mandatoryFieldIndication}
+                className={`${styles.topContainer} ${isTopVisible ? animations.fadein_b2t : ""}`}
+            >
+                <Box className={styles.topLeftContainer}>
+                    <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                        <Typography className={styles.title} textAlign='center' sx={{ my: 1 }}>
+                            {config.title}
+                        </Typography>
+                        <Typography className={styles.subtitle} textAlign='center' sx={{ my: 1 }}>
+                            {config.subtitle}
                         </Typography>
                     </Box>
-                </Box>
-            </Box>
 
-            <Box className={styles.rightContainer}>
-                <Breadcrumbs 
-                    className={styles.socialMediaLinks}
-                    separator=""
-                >
-                {config.socialMediaList.map((item, index) => (
-                    <Tooltip key={index} title={item.title}>
-                    <Button
-                        key={index}
-                        component={Link} 
-                        href={item.link}
-                        target="_blank"
-                        underline="none" 
-                        color="inherit" 
-                        startIcon={
-                            <Avatar 
-                            src={item.imagePath} 
-                            className={styles.socialMediaIcon}
+                    <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: "center", mt: 2 }}>
+                            <PersonIcon sx={{ mr: 1, my: 2 }}/>
+                            <TextField id="input_name" label={config.nameLabel} variant="outlined"
+                                autoComplete='name'
+                                value={name}
+                                onChange={handleNameChange}
+                                helperText={nameHelperText}
+                                sx={{  "& .MuiFormHelperText-root": {
+                                    color: `${config.helperTextColor} !important`
+                                }}}
                             />
-                        }
-                        sx={{
-                            '& .MuiButton-startIcon': {
-                                marginLeft: '0px',
-                                marginRight: '0px'
-                            },
-                            minWidth: '0px',
-                        }}
-                        className={styles.socialMediaLink}
-                        />
-                    </Tooltip>
-                ))}
-                </Breadcrumbs >
-            </Box>
+                        </Box>
 
+                        <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 2 }}>
+                            <EmailIcon sx={{ mr: 1, my: 2 }} />
+                            <TextField id="input_email" label={config.emailLabel} variant="outlined" 
+                                autoComplete='email'
+                                value={emailInputBox}
+                                onChange={handleEmailChange}
+                                error={!isLegalEmail}
+                                helperText={!isLegalEmail ? config.errorMessages.invalidEmail : emailHelperText}
+                                sx={{  "& .MuiFormHelperText-root": {
+                                    color: `${config.helperTextColor}`
+                                }}}
+                            />
+                        </Box>
+                        
+                        <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: "center", mt: 2 }}>
+                            <MessageIcon sx={{ mr: 1, my: 2 }} />
+                            <TextField id="input_message" label={config.messageLabel} variant="outlined"
+                                multiline={true} value={message}
+                                InputProps={{ sx: {
+                                    alignItems: "flex-start",
+                                }}}
+                                inputProps={{ sx: {
+                                    resize: "both",
+                                    minWidth: "195px",
+                                    maxWidth: "300px",
+                                    minHeight: "184px",
+                                    maxHeight: "400px"
+                                }, maxLength: config.maxLength
+                                }}
+                                onChange={handleMessageChange}
+                                error={messageError}
+                                helperText={messageHelperText}
+                                sx={{  "& .MuiFormHelperText-root": {
+                                    color: `${config.helperTextColor} !important`
+                                }}}
+                            />
+                        </Box>
+
+                        <Box sx={{ display: "flex", justifyContent: "center", 
+                            flexDirection: "column", alignItems: 'center'
+                        }}>
+                            <LoadingButton variant='outlined'
+                                sx={{ mt: 2 }} size="large"
+                                onClick={handleSubmit}
+                                loading={sending}
+                                endIcon={<SendIcon />}
+                                loadingPosition="end"
+                                disabled={
+                                    !name || name === "" ||
+                                    !emailInputBox || emailInputBox === "" || !isLegalEmail ||
+                                    !message || message === "" || messageError
+                                }
+                                className={styles.submitButton}
+                            >
+                                {config.buttonLabel}
+                            </LoadingButton>
+                            <Typography sx={{ mt: 2 }} >
+                                {config.mandatoryFieldIndication}
+                            </Typography>
+                        </Box>
+                    </Box>
+                </Box>
+
+                <Box className={styles.topRightContainer}>
+                    {config.links.map((link, index) => (
+                        <Box key={index} className={styles.pageLinksContainer}>
+                            <Link href={link.to} className={styles.pageTitleLink}>
+                                <Typography className={styles.pageTitle}>
+                                    {link.text}
+                                </Typography>
+                            </Link>
+                            <Box className={styles.pageChildrenLinksContainer}>
+                                {link.children.map((child, childIndex) => (
+                                    <Link key={childIndex} href={child.to}
+                                        className={styles.pageContentLink}
+                                    >
+                                        <Typography className={styles.pageContent}>
+                                            {child.text}
+                                        </Typography>
+                                    </Link>
+                                ))}
+                            </Box>
+                        </Box>
+                    ))}
+                </Box>
             </Box>
 
             <Divider className={styles.bottomDivider}/>
+
+            <Box id="BottomContainer" 
+                className={`${styles.bottomContainer} ${isBottomVisible ? animations.fadein_b2t : ""}`}
+            >
+                <Box className={styles.bottomLeftContainer}>
+                    <Link href="./" mb={1} sx={{ 
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        textDecoration: "none"
+                    }}>
+                        <Avatar 
+                            src={config.logo_path} 
+                            alt={config.logoAlt}
+                        />
+                    </Link>
+
+                    <Typography>
+                        {config.copyright}
+                    </Typography>
+                </Box>
+
+                <Box className={styles.bottomRightContainer}>
+                    <Breadcrumbs 
+                        className={styles.socialMediaLinks}
+                        separator=""
+                    >
+                    {config.socialMediaList.map((item, index) => (
+                        <Tooltip key={index} title={item.title}>
+                        <Button
+                            key={index}
+                            component={Link} 
+                            href={item.link}
+                            target="_blank"
+                            underline="none" 
+                            color="inherit" 
+                            startIcon={
+                                <Avatar 
+                                src={item.imagePath} 
+                                className={styles.socialMediaIcon}
+                                />
+                            }
+                            sx={{
+                                '& .MuiButton-startIcon': {
+                                    marginLeft: '0px',
+                                    marginRight: '0px'
+                                },
+                                minWidth: '0px',
+                            }}
+                            className={styles.socialMediaLink}
+                            />
+                        </Tooltip>
+                    ))}
+                    </Breadcrumbs >
+                </Box>
+            </Box>
         </Box>
     );
 };

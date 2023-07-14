@@ -5,7 +5,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PetsIcon from '@mui/icons-material/Pets';
 
-export const timeLineTitle = "Continue ...";
+export const timeLineTitle = "Time Line Continues ...";
 
 export const eventIcons = {
 

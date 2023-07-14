@@ -70,3 +70,42 @@ export const emailServer = {
     template_id: 'contact_iamzzy.com',
     public_key: 'ICE3dACU9d2mH1-S9'
 };
+
+export const logoName = "Zhaoyu Zhang";
+
+export const logo_path = "../ZZY_LOGO_WHITE.svg";
+
+export const logoAlt = "ZZY LOGO";
+
+export const copyright = "Copyright © 2023 Zhaoyu Zhang, All Rights Reserved.";
+
+export const links = [
+    {
+        text: "Home",
+        to: "./#",
+        children: [
+            {
+                text: "Time Line",
+                to: "./#TimeLine",
+            },
+            {
+                text: "Projects",
+                to: "./#Projects",
+            },
+        ]
+    },
+    // {
+    //     text: "Home",
+    //     to: "./#",
+    //     children: [
+    //         {
+    //             text: "Time Line",
+    //             to: "./#TimeLine",
+    //         },
+    //         {
+    //             text: "Projects",
+    //             to: "./#Projects",
+    //         },
+    //     ]
+    // },
+]
