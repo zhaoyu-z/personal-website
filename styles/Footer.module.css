@@ -110,7 +110,18 @@
 
 .logoLink {
     justify-content: flex-start;
-    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+.copyrightContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.bottomLeftContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 /* styles for mobile devices */
@@ -148,6 +159,7 @@
     }
 
     .bottomLeftContainer {
+        flex-direction: column;
         margin-bottom: 40px;
     }
 
@@ -172,5 +184,10 @@
 
     .contactMe {
         font-size: 20px;
+    }
+
+    .copyrightContainer {
+        flex-direction: column;
+        text-align: center;
     }
 }

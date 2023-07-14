@@ -273,9 +273,14 @@ function Footer() {
                         />
                     </Link>
 
-                    <Typography>
-                        {config.copyright}
-                    </Typography>
+                    <Box className={styles.copyrightContainer}>
+                        <Typography>
+                            {config.copyright1}
+                        </Typography>&nbsp;
+                        <Typography>
+                            {config.copyright2}
+                        </Typography>
+                    </Box>
                 </Box>
 
                 <Box className={styles.bottomRightContainer}>

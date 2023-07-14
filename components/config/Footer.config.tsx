@@ -77,7 +77,9 @@ export const logo_path = "../ZZY_LOGO_WHITE.svg";
 
 export const logoAlt = "ZZY LOGO";
 
-export const copyright = "Copyright © 2023 Zhaoyu Zhang, All Rights Reserved.";
+export const copyright1 = "Copyright © 2023 Zhaoyu Zhang.";
+
+export const copyright2 = "All Rights Reserved.";
 
 export const links = [
     {
@@ -94,18 +96,18 @@ export const links = [
             },
         ]
     },
-    {
-        text: "Home",
-        to: "./#",
-        children: [
-            {
-                text: "Time Line",
-                to: "./#TimeLine",
-            },
-            {
-                text: "Projects",
-                to: "./#Projects",
-            },
-        ]
-    },
+    // {
+    //     text: "Home",
+    //     to: "./#",
+    //     children: [
+    //         {
+    //             text: "Time Line",
+    //             to: "./#TimeLine",
+    //         },
+    //         {
+    //             text: "Projects",
+    //             to: "./#Projects",
+    //         },
+    //     ]
+    // },
 ]
