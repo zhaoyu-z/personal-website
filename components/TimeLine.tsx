@@ -19,6 +19,7 @@ import animations from '../styles/Animations.module.css';
 import { formatDate } from './shared/utilities';
 import * as config from './config/TimeLine.config';
 import { HandleSubComponentScroll } from './shared/utilities';
+// import SchoolIcon from '@mui/icons-material/School';
 
 type TimeLineProps = {
 	isVisible?: boolean
@@ -68,9 +69,6 @@ function TimeLine(props: TimeLineProps) {
                         variant="body2"
                         color="text.secondary"
                     >
-                        {/* <ListItemIcon>
-                            <AccessTimeIcon />
-                        </ListItemIcon> */}
                         <Typography className={
                             /* 
                                 adds the corresponding animation (when index divides 2, show l2r, else show r2l)
@@ -92,7 +90,8 @@ function TimeLine(props: TimeLineProps) {
                     <TimelineSeparator>
                         <TimelineConnector sx={{ height: `${config.lengthOfGapBetweenEachItem}` }}/>
                         <TimelineDot variant='outlined'>
-                            <FastfoodIcon />
+                            {/* <FastfoodIcon /> */}
+                            {e.icon}
                         </TimelineDot>
                         <TimelineConnector sx={{ height: `${config.lengthOfGapBetweenEachItem}` }}/>
                     </TimelineSeparator>
