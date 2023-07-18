@@ -30,7 +30,7 @@ Using Typescript, Javascript, Html, Css
 First, clone this project
 
 ```bash
-git clone https://github.com/Zhayu517/personal-website.git
+git clone https://github.com/zhaoyu-z/personal-website.git
 cd personal-website
 ```
 

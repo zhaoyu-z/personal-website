@@ -11,17 +11,17 @@ export const socialMediaList = [
     },
     {
         title: "Facebook",
-        link: "https://www.facebook.com/zhaoyu.zhang.771",
+        link: "https://www.facebook.com/zhaoyu.zzhang",
         imagePath: "../../contacts/facebook.svg"
     },
     {
         title: "Wechat",
-        link: "https://raw.githubusercontent.com/Zhayu517/Zhayu517/main/images/wechat-account.png",
+        link: "https://raw.githubusercontent.com/zhaoyu-z/zhaoyu-z/main/images/wechat-account.png",
         imagePath: "../../contacts/wechat.svg"
     },
     {
         title: "Whatsapp",
-        link: "https://raw.githubusercontent.com/Zhayu517/Zhayu517/main/images/whatsapp-account.png",
+        link: "https://raw.githubusercontent.com/zhaoyu-z/zhaoyu-z/main/images/whatsapp-account.png",
         imagePath: "../../contacts/whatsapp.svg"
     },
     {
