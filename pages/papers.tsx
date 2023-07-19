@@ -13,7 +13,7 @@ import Footer from '../components/Footer';
 // import { HandleComponentScroll } from '../components/shared/utilities';
 import styles from '../styles/Home.module.css';
 import Projects from '../components/Projects';
-import * as config from '../components/config/Home.config';
+import * as config from '../components/config/Theme.config';
 import { motion, useScroll } from "framer-motion";
 // import Header from '../components/Header';
 
