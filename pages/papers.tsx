@@ -15,19 +15,20 @@ import styles from '../styles/Home.module.css';
 import Projects from '../components/Projects';
 import * as config from '../components/config/Home.config';
 import { motion, useScroll } from "framer-motion";
+// import Header from '../components/Header';
 
 const Papers = () => {
+
+	const { scrollYProgress } = useScroll();
+
     return (
         <StyledEngineProvider injectFirst>
-			{/* <ThemeProvider theme={theme}> */}
 			<CssBaseline />
-			{/* <motion.div style={{ scaleX: scrollYProgress }} className={styles.progressBar}/> */}
-			{/* <Title isDarkMode={isDarkMode} /> */}
+			<motion.div style={{ scaleX: scrollYProgress }} className={styles.progressBar}/>
             <Title />
-			<Box>
-                Temporary
+			<Box className={styles.paperContainer}>
+				<Header />
 			</Box>
-			{/* </ThemeProvider> */}
 		</StyledEngineProvider>
     );
 };

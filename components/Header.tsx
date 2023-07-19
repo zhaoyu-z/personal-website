@@ -30,8 +30,8 @@ interface Props {
      * Injected by the documentation to work in an iframe.
      */
     window?: () => Window
-    onToggleTheme: () => void
-    isDarkMode: boolean
+    onToggleTheme?: () => void
+    isDarkMode?: boolean
 };
 
 /*
@@ -115,7 +115,7 @@ function Header(props: Props) {
                     <ListItemButton
                         component={Link}
                         href={item.link}
-                        target='_blank'
+                        // target='_blank'
                         sx={{ textAlign: 'center' }}
                     >
                         <ListItemText primary={item.page} />
@@ -182,8 +182,8 @@ function Header(props: Props) {
                         <Button 
                             key={index} 
                             component={Link}
-                            href={item.link}
-                            target="_blank"
+                            href={item.link ? item.link : undefined}
+                            // target="_blank"
                             sx={{ 
                                 color: '#fff', textTransform: 'none',
                                 fontWeight: '400', fontSize: '1rem'

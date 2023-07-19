@@ -46,8 +46,8 @@ export const textLoop: textLoopType = {
         'Designer and Coder',
         'Engineer and Doer',
     ],
-    interval: 3000,
-    delay: 1000,
+    interval: 2000,
+    delay: 0,
     fade: true,
     mask: false,
 }
