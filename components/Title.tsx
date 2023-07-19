@@ -4,7 +4,7 @@ import styles from '../styles/Title.module.css';
 import * as config from './config/Title.config';
 
 type Props = {
-    isDarkMode: boolean,
+    isDarkMode?: boolean,
 };
 
 function Title(props: Props) {

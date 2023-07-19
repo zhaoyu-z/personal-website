@@ -2,7 +2,28 @@ export const logoName = "Zhaoyu Zhang";
 
 export const drawerWidth = 240;
 
-export const navItems = ['Home', 'Portfolio', 'Photos'];
+// export const navItems = [
+//     'Home', 'Papers', 'Photos', 'Portfolio'
+// ];
+
+export const navItems = [
+    {
+        page: "Home",
+        link: "/",
+    },
+    {
+        page: "Papers",
+        link: "/papers/",
+    },
+    {
+        page: "Photos",
+        link: "",
+    },
+    {
+        page: "Portfolio",
+        link: "",
+    },
+];
 
 export const fontColor = "palegoldenrod";
 

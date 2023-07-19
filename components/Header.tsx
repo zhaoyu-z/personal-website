@@ -110,10 +110,15 @@ function Header(props: Props) {
             </Typography>
             <Divider />
             <List>
-                {config.navItems.map((item) => (
-                <ListItem key={item} disablePadding>
-                    <ListItemButton sx={{ textAlign: 'center' }}>
-                    <ListItemText primary={item} />
+                {config.navItems.map((item, index) => (
+                <ListItem key={index} disablePadding>
+                    <ListItemButton
+                        component={Link}
+                        href={item.link}
+                        target='_blank'
+                        sx={{ textAlign: 'center' }}
+                    >
+                        <ListItemText primary={item.page} />
                     </ListItemButton>
                 </ListItem>
                 ))}
@@ -173,12 +178,18 @@ function Header(props: Props) {
                     </Tooltip>
                     <Box sx={{ mr: 2 }} className={styles.navItems}
                     >
-                        {config.navItems.map((item) => (
-                        <Button key={item} sx={{ 
-                            color: '#fff', textTransform: 'none',
-                            fontWeight: '400', fontSize: '1rem'
-                        }}>
-                            {item}
+                        {config.navItems.map((item, index) => (
+                        <Button 
+                            key={index} 
+                            component={Link}
+                            href={item.link}
+                            target="_blank"
+                            sx={{ 
+                                color: '#fff', textTransform: 'none',
+                                fontWeight: '400', fontSize: '1rem'
+                            }}
+                        >
+                            {item.page}
                         </Button>
                         ))}
                         <Tooltip title={isDarkMode ? config.toolTips['themeToggler_DARKMODE_DESKTOP'] : config.toolTips['themeToggler_LIGHTMODE_DESKTOP']}>
