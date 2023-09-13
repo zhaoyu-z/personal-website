@@ -19,6 +19,10 @@ export const navItems = [
         page: "Portfolio",
         link: "",
     },
+    {
+        page: "Lynn Workout",
+        link: "./Lynn_workout.html"
+    }
 ];
 
 export const fontColor = "palegoldenrod";
