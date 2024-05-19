@@ -77,7 +77,7 @@ export const logo_path = "../ZZY_LOGO_WHITE.svg";
 
 export const logoAlt = "ZZY LOGO";
 
-export const copyright1 = "Copyright © 2023 Zhaoyu Zhang.";
+export const copyright1 = "Copyright © 2024 Zhaoyu Zhang.";
 
 export const copyright2 = "All Rights Reserved.";
 
