@@ -113,8 +113,8 @@ const Home: NextPage = () => {
 				>
 					<Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
 					<Intro />
-					<TimeLine />
 					<Projects />
+					<TimeLine />
 					<Footer />
 				</Box>
 			</Box>
