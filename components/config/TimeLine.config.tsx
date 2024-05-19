@@ -5,7 +5,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import PetsIcon from '@mui/icons-material/Pets';
 
-export const timeLineTitle = "Time Line Continues ...";
+export const timeLineTitle = "Continuing the Journey ...";
 
 export const eventIcons = {
 
@@ -14,7 +14,7 @@ export const eventIcons = {
 export const events = [
     {
 		primary: "Birth",
-		secondary: "I was born in the beautiful city of Wuhan, China.",
+		secondary: "I was born in the beautiful city of <b>Wuhan</b>, China.",
 		time: new Date("May 17, 2000"),
 		image: "",
 		icon: <ChildCareIcon />
@@ -28,7 +28,7 @@ export const events = [
     },
     {
 		primary: "First Time Abroad",
-		secondary: "I spent two months in the lovely town of Bournemouth, United Kingdom.",
+		secondary: "I spent two months in the lovely town of <b>Bournemouth</b>, United Kingdom.",
 		time: new Date("July 1, 2013"),
 		image: "",
 		icon: <FlightTakeoffIcon />
@@ -63,7 +63,7 @@ export const events = [
     },
     {
 		primary: "Second Internship",
-		secondary: "I worked as a Software Engineer at iFlyTek.",
+		secondary: "I worked as a Software Engineer Intern at <b>iFlyTek</b>.",
 		time: new Date("July 1, 2021"),
 		image: "",
 		icon: <WorkIcon />
@@ -77,24 +77,31 @@ export const events = [
     },
     {
 		primary: "Graduation",
-		secondary: "I graduated from the University of Manchester. Big Step in my life.",
+		secondary: "I graduated from the <b>University of Manchester</b>. Big Step in my life.",
 		time: new Date("July 1, 2022"),
 		image: "",
 		icon: <SchoolIcon />
     },
     {
 		primary: "Our First Pet",
-		secondary: "We got a cute Netherland Dwarf Rabbit named Oreo.",
+		secondary: "We got a cute Netherland Dwarf Rabbit named <b>Oreo</b>.",
 		time: new Date("January 17, 2023"),
 		image: "",
 		icon: <PetsIcon />
     },
     {
-		primary: "Full Stack Engineer",
-		secondary: "I started working as a Full Stack developer at Radley Associates.",
+		primary: "Software Developer",
+		secondary: "I started working as a Software Developer at <b>Radley Associates</b>.",
 		time: new Date("March 10, 2023"),
 		image: "",
 		icon: <WorkIcon />
+    },
+	{
+		primary: "Our Second Pet",
+		secondary: "We got a beautiful Siberian Neva Cat named <b>Simba</b>.",
+		time: new Date("December 30, 2023"),
+		image: "",
+		icon: <PetsIcon />
     },
 ];
 

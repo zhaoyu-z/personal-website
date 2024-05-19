@@ -116,8 +116,9 @@ function TimeLine(props: TimeLineProps) {
                         </Typography>
                         <Typography
                             className={styles.secondary}
+							 // set e.secondary as innerHTML to allow more styles
+							dangerouslySetInnerHTML={{ __html: e.secondary }}
                         >
-                            {e.secondary}
                         </Typography>
                     </TimelineContent>
                 </TimelineItem>
