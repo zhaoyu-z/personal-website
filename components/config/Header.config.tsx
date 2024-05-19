@@ -20,7 +20,7 @@ export const navItems = [
         link: "",
     },
     {
-        page: "Lynn Workout",
+        page: "Workout",
         link: "./Lynn_workout.html"
     }
 ];

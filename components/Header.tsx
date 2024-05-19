@@ -192,14 +192,14 @@ function Header(props: Props) {
                             {item.page}
                         </Button>
                         ))}
-                        <Tooltip title={isDarkMode ? config.toolTips['themeToggler_DARKMODE_DESKTOP'] : config.toolTips['themeToggler_LIGHTMODE_DESKTOP']}>
+                        {/* <Tooltip title={isDarkMode ? config.toolTips['themeToggler_DARKMODE_DESKTOP'] : config.toolTips['themeToggler_LIGHTMODE_DESKTOP']}>
                             <Box>
                                 <DarkModeSwitch sx={{ m: 1 }} checked={isDarkMode} onChange={onToggleTheme}/>
                             </Box>
-                        </Tooltip>
+                        </Tooltip> */}
                     </Box>
                 </Toolbar>
-                <Toolbar sx={{ alignItems: 'center' }} className={styles.darkModeToggler}
+                {/* <Toolbar sx={{ alignItems: 'center' }} className={styles.darkModeToggler}
                 >
                     <Box>
                         <FormControlLabel
@@ -211,7 +211,7 @@ function Header(props: Props) {
                             }
                         />
                     </Box>
-                </Toolbar>
+                </Toolbar> */}
             </AppBar>
             <Box component="nav">
                 <Drawer
