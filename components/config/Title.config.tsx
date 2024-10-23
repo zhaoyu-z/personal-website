@@ -1,6 +1,4 @@
-export const logo_path_DARKMODE = "../ZZY_LOGO_WHITE.svg";
-
-export const logo_path_LIGHTMODE ="../ZZY_LOGO.svg";
+export const logo_path = "../ZZY_LOGO_WHITE.svg";
 
 export const title = "Zhaoyu Zhang";
 

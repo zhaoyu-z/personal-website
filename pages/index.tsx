@@ -1,6 +1,5 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -13,62 +12,9 @@ import Footer from '../components/Footer';
 // import { HandleComponentScroll } from '../components/shared/utilities';
 import styles from '../styles/Home.module.css';
 import Projects from '../components/Projects';
-import * as config from '../components/config/Theme.config';
 import { motion, useScroll } from "framer-motion";
 
 const Home: NextPage = () => {
-	const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-	const [isDarkMode, setIsDarkMode] = React.useState(
-		config.defaultTheme === "system"
-		?
-		prefersDarkMode
-		:
-		config.defaultTheme === "light" ? false : true
-	);
-
-	React.useEffect(() => {
-		if (config.defaultTheme === "system") {
-			setIsDarkMode(prefersDarkMode);
-		}
-	}, [prefersDarkMode]);
-
-	const toggleTheme = React.useCallback(() => {
-		setIsDarkMode(!isDarkMode);
-	}, [isDarkMode]);
-	
-	const theme = React.useMemo(() =>
-	createTheme({
-		palette: {
-			mode: isDarkMode ? 'dark' : 'light',
-			background: {
-				default: isDarkMode ? '#333' : '#fff',
-				paper: isDarkMode ? '#333' : '#999 !important',
-			},
-
-			text: {
-				primary: isDarkMode ? '#fff' : '#333',
-				secondary: isDarkMode ? '#aaa' : '#777',
-			},
-		},
-		transitions: {
-			create: () => 'all 0.5s ease',
-		},
-		components: {
-			MuiOutlinedInput: {
-			  	styleOverrides: {
-					input: {
-						/* make the MuiOutlinedInput stay as same color as background when
-                        you use chrome's autocomplete (#333 is the color) to fill it */
-						'&:-webkit-autofill': {
-							'WebkitBoxShadow': '0 0 0 100px #333 inset',
-							'WebkitTextFillColor': '#fff',
-						},
-					},
-			  	},
-			},
-		},
-	}), [isDarkMode],);
 	
 	/* used for checking a component has been scrolled down into viewport */
 	// const [isIntroVisible, setIsIntroVisible] = React.useState(false);
@@ -89,10 +35,9 @@ const Home: NextPage = () => {
 
 	return (
 		<StyledEngineProvider injectFirst>
-			<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<motion.div style={{ scaleX: scrollYProgress }} className={styles.progressBar}/>
-			<Title isDarkMode={isDarkMode} />
+			<Title />
 			<Box id="HomeBackgroundImage"
 				sx={{ 
 					backgroundImage: 'url("../Homepage Background Full.webp")',
@@ -111,14 +56,13 @@ const Home: NextPage = () => {
 						alignItems: "center",
 					}}
 				>
-					<Header onToggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+					<Header />
 					<Intro />
 					<Projects />
 					<TimeLine />
 					<Footer />
 				</Box>
 			</Box>
-			</ThemeProvider>
 		</StyledEngineProvider>
 	);
 };

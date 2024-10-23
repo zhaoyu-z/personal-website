@@ -95,19 +95,5 @@ export const links = [
                 to: "./#Projects",
             },
         ]
-    },
-    // {
-    //     text: "Home",
-    //     to: "./#",
-    //     children: [
-    //         {
-    //             text: "Time Line",
-    //             to: "./#TimeLine",
-    //         },
-    //         {
-    //             text: "Projects",
-    //             to: "./#Projects",
-    //         },
-    //     ]
-    // },
+    }
 ]

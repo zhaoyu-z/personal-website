@@ -1,6 +1,7 @@
 .appBar {
     justify-content: space-around;
     flex-direction: column;
+    background-color: #454545;
 }
 
 .toolBar {
@@ -23,8 +24,8 @@
     align-items: center;
 }
 
-.darkModeToggler {
-    display: none;
+.navItem:hover {
+    background-color: rgba(144, 202, 249, 0.08);
 }
 
 .drawer {
@@ -53,10 +54,6 @@
 
     .navItems {
         display: none;
-    }
-
-    .darkModeToggler {
-        display: flex;
     }
 
     .drawer {

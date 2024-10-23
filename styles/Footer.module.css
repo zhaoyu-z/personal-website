@@ -49,6 +49,10 @@
     display: block;
 }
 
+.formColor {
+    color: white;
+}
+
 .pageTitleLink, .pageContentLink {
     text-decoration: none;
 }

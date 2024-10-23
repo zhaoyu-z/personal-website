@@ -1,6 +1,5 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -13,7 +12,6 @@ import Footer from '../components/Footer';
 // import { HandleComponentScroll } from '../components/shared/utilities';
 import styles from '../styles/Home.module.css';
 import Projects from '../components/Projects';
-import * as config from '../components/config/Theme.config';
 import { motion, useScroll } from "framer-motion";
 // import Header from '../components/Header';
 

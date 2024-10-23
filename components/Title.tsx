@@ -3,13 +3,9 @@ import Head from 'next/head';
 import styles from '../styles/Title.module.css';
 import * as config from './config/Title.config';
 
-type Props = {
-    isDarkMode?: boolean,
-};
+function Title() {
 
-function Title(props: Props) {
-
-    const logo = props.isDarkMode ? config.logo_path_DARKMODE : config.logo_path_LIGHTMODE;
+    const logo = config.logo_path;
 
     return (
         <Head>

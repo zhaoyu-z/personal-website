@@ -22,6 +22,10 @@
     filter: brightness(140%);
 }
 
+.icon {
+    color: white;
+}
+
 /* styles for mobile devices */
 @media (max-width: 900px) {
     .timeLine {

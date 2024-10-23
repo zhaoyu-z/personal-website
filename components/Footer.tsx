@@ -22,7 +22,7 @@ import SendIcon from '@mui/icons-material/Send';
 import emailjs from 'emailjs-com';
 import * as config from './config/Footer.config';
 import styles from '../styles/Footer.module.css';
-import { isValidEmail, HandleComponentScroll, ResizableTextArea } from './shared/utilities';
+import { isValidEmail, HandleComponentScroll } from './shared/utilities';
 import animations from '../styles/Animations.module.css';
 
 function Footer() {
@@ -153,7 +153,9 @@ function Footer() {
                         </Typography>
                     </Box>
 
-                    <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                    <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
+                        className={styles.formColor}
+                    >
                         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: "center", mt: 2 }}>
                             <PersonIcon sx={{ mr: 1, my: 2 }}/>
                             <TextField id="input_name" label={config.nameLabel} variant="outlined"
@@ -161,9 +163,29 @@ function Footer() {
                                 value={name}
                                 onChange={handleNameChange}
                                 helperText={nameHelperText}
-                                sx={{  "& .MuiFormHelperText-root": {
-                                    color: `${config.helperTextColor} !important`
-                                }}}
+                                sx={{ 
+                                    input: { color: `${config.helperTextColor}` },
+                                    '& label': {
+                                        color: 'rgba(255, 255, 255, 0.5)',
+                                    },
+                                    '&:hover label': {
+                                        color: 'white',
+                                    },
+                                    '& label.Mui-focused': {
+                                        color: 'white',
+                                    },
+                                    '& .MuiOutlinedInput-root': {
+                                        '& fieldset': {
+                                            borderColor: 'rgba(255, 255, 255, 0.5)',
+                                        },
+                                        '&:hover fieldset': {
+                                            borderColor: 'white',
+                                        },
+                                        '&.Mui-focused fieldset': {
+                                            borderColor: 'white',
+                                        },
+                                    },
+                                }}
                             />
                         </Box>
 
@@ -175,9 +197,29 @@ function Footer() {
                                 onChange={handleEmailChange}
                                 error={!isLegalEmail}
                                 helperText={!isLegalEmail ? config.errorMessages.invalidEmail : emailHelperText}
-                                sx={{  "& .MuiFormHelperText-root": {
-                                    color: `${config.helperTextColor}`
-                                }}}
+                                sx={{ 
+                                    input: { color: `${config.helperTextColor}` },
+                                    '& label': {
+                                        color: 'rgba(255, 255, 255, 0.5)',
+                                    },
+                                    '&:hover label': {
+                                        color: 'white',
+                                    },
+                                    '& label.Mui-focused': {
+                                        color: 'white',
+                                    },
+                                    '& .MuiOutlinedInput-root': {
+                                        '& fieldset': {
+                                            borderColor: 'rgba(255, 255, 255, 0.5)',
+                                        },
+                                        '&:hover fieldset': {
+                                            borderColor: 'white',
+                                        },
+                                        '&.Mui-focused fieldset': {
+                                            borderColor: 'white',
+                                        },
+                                    },
+                                }}
                             />
                         </Box>
                         
@@ -199,9 +241,29 @@ function Footer() {
                                 onChange={handleMessageChange}
                                 error={messageError}
                                 helperText={messageHelperText}
-                                sx={{  "& .MuiFormHelperText-root": {
-                                    color: `${config.helperTextColor} !important`
-                                }}}
+                                sx={{ 
+                                    textarea: { color: `${config.helperTextColor}` },
+                                    '& label': {
+                                        color: 'rgba(255, 255, 255, 0.5)',
+                                    },
+                                    '&:hover label': {
+                                        color: 'white',
+                                    },
+                                    '& label.Mui-focused': {
+                                        color: 'white',
+                                    },
+                                    '& .MuiOutlinedInput-root': {
+                                        '& fieldset': {
+                                            borderColor: 'rgba(255, 255, 255, 0.5)',
+                                        },
+                                        '&:hover fieldset': {
+                                            borderColor: 'white',
+                                        },
+                                        '&.Mui-focused fieldset': {
+                                            borderColor: 'white',
+                                        },
+                                    },
+                                }}
                             />
                         </Box>
 
