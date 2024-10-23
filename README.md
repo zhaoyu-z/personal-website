@@ -7,17 +7,18 @@ Updated on 2023-2-6
 ## Milestones
 
 - [x] Personalised home page
-- [x] Darkmode
-- [ ] Social media contact links.
+- [*] Darkmode (REMOVED)
+- [x] Social media contact links.
 - [x] Automated integration using Github Actions and Vercel.
-- [ ] HTML-version CV
-- [ ] HTML-version papers and reports
 - [x] Timeline of my education and experience
-- [ ] Sample showcase of selected projects
-- [x] Mobile Compatibility - Responsive Design 
-- [ ] Daily life record
-- [ ] Professional Developer Blog
-- [ ] Image-to-text conversion page
+- [x] Sample showcase of selected projects
+- [x] Mobile Compatibility - Responsive Design
+- [ ] Rotary pages
+- [ ] Move social media links to rotary
+- [ ] Move to top button
+- [ ] Attended Activities/Events
+- [ ] HTML-version CV, downloadable
+- [ ] HTML-version papers and reports
 
 ## Deployment
 
