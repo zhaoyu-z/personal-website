@@ -155,7 +155,13 @@ function Header(props: Props) {
                     ModalProps={{
                         keepMounted: true, // Better open performance on mobile.
                     }}
-                    sx={{ '& .MuiDrawer-paper': { boxSizing: 'border-box', width: config.drawerWidth } }}
+                    sx={{ 
+                        '& .MuiDrawer-paper': { 
+                            boxSizing: 'border-box', 
+                            width: config.drawerWidth, 
+                            backgroundColor: '#454545' 
+                        },
+                    }}
                     className={styles.drawer}
                 >
                 {navBar}
