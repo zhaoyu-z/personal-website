@@ -7,22 +7,22 @@ export const navItems = [
         page: "Home",
         link: "./",
     },
-    {
-        page: "Papers",
-        link: "./papers/",
-    },
-    {
-        page: "Photos",
-        link: "",
-    },
-    {
-        page: "Portfolio",
-        link: "",
-    },
-    {
-        page: "Workout",
-        link: "./Lynn_workout.html"
-    }
+    // {
+    //     page: "Papers",
+    //     link: "./papers/",
+    // },
+    // {
+    //     page: "Photos",
+    //     link: "",
+    // },
+    // {
+    //     page: "Portfolio",
+    //     link: "",
+    // },
+    // {
+    //     page: "Workout",
+    //     link: "./Lynn_workout.html"
+    // }
 ];
 
 export const fontColor = "palegoldenrod";
